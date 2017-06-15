@@ -14,8 +14,9 @@ permalink: /products/
 
 Dynamic Gravity Systems Inc. (DgS) presents its airborne gravity survey system, a robust full feedback zero-length spring based gravity meter, with worldwide gravity range.
 Our new and upgraded systems feature full feedback magnetic damping, redesigned and improved platform control, integrated high-performance, temperature-controlled electronics, and a simplified user-friendly data display and system control interface.
+{:.left}
+![Airborne Gravity Meter](/images/img1.jpg){:.right}
 
-![Airborne Gravity Meter]('/images/img1.jpg')
 
 #### Features: ####
 * Full feedback magnetically damped zero-length spring
