@@ -41,17 +41,6 @@ nav {
         float: right;
         margin-right: 5px;
     }
-    a#dgs {
-        display: block;
-        float: left;
-        padding: 8px;
-        margin: 0;
-        margin-top: 5px;
-        color: $purple;
-        font-family: $navFont;
-        font-size: 1.5em;
-        font-weight: bolder;
-    }
     a.name:hover {
         color: black;
     }
@@ -67,6 +56,16 @@ nav {
     a.button:hover {
         color: $light!important;
         background-color: $dark!important;
+    }
+    #dgs {
+        float: left;
+        padding: 8px!important;
+        margin: 0;
+        margin-top: 5px;
+        color: $purple;
+        font-family: $navFont;
+        font-size: 1.5em;
+        font-weight: bolder;
     }
 }
 
