@@ -11,7 +11,7 @@ and accurate across the full worldwide range and the dynamic motions experienced
 by Lacoste and Romberg (Seasys and AirSeaII), ZLS (Ultrasys) and Micro-g Lacoste (AirSeaII) as well as the magnetically damped marine meter and Turnkey 
 Airborne Gravity System (TAGS) made by Micro-g Lacoste.
 
-####Please contact us for details and quotes.
+#### Please contact us for details and quotes. ####
 
 Some stuff in a special block
 {:.block}

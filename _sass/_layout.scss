@@ -142,6 +142,15 @@ article {
         padding-left: .5vw;
         color: $secondaryColor;
     }
+    p.center {
+        text-align: center;
+    }
+    p.block {
+        flex: auto;
+        justify-content: left;
+        width: 400px;
+        border: 1px solid $light;
+    }
     a {
         color: $linkColor;
         font-weight: bold;
@@ -150,12 +159,7 @@ article {
     blockquote {
         background-color: lightblue;
     }
-    div.block {
-        flex: auto;
-        justify-content: left;
-        width: 400px;
-        border: 1px solid $light;
-    }
+   
 }
 
 aside {
