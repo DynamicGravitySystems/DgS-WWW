@@ -8,14 +8,12 @@
     box-sizing: border-box;
     max-width: $maxWidth;
 }
-
 body {
     background-color: $bgColor;
     overflow: auto;
     padding: 0;
     margin: 0;
 }
-
 nav {
     position: fixed;
     top: 0;
@@ -43,7 +41,7 @@ nav {
         float: right;
         margin-right: 5px;
     }
-    a.name {
+    a#dgs {
         display: block;
         float: left;
         padding: 8px;
@@ -149,7 +147,7 @@ article {
         flex: auto;
         justify-content: left;
         width: 400px;
-        border: 1px solid $light;
+        border: 1px solid $dark;
     }
     a {
         color: $linkColor;
