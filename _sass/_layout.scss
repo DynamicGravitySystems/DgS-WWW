@@ -1,9 +1,3 @@
-@mixin center {
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%);
-}
-
 * {
     box-sizing: border-box;
     max-width: $maxWidth;
@@ -41,9 +35,7 @@ nav {
         float: right;
         margin-right: 5px;
     }
-    a.name:hover {
-        color: black;
-    }
+    
     a, a:visited {
         display: block;
         color: $purple;
@@ -56,6 +48,9 @@ nav {
     a.button:hover {
         color: $light!important;
         background-color: $dark!important;
+    }
+    a#dgs:hover {
+        color: black;
     }
     #dgs {
         float: left;
