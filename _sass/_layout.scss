@@ -129,15 +129,25 @@ article {
     h1.center {
         text-align: center;
     }
+    h4 {
+        font-weight: bold;
+        font-family: $bodyFont;
+        font-size: 1.2em;
+        color: $primaryColor;
+    }
     p {
         font-family: $bodyFont;
         font-size: .9em;
+        padding-left: .5vw;
         color: $secondaryColor;
     }
     a {
         color: $linkColor;
         font-weight: bold;
         text-decoration: none;
+    }
+    blockquote {
+        background-color: lightblue;
     }
 }
 
