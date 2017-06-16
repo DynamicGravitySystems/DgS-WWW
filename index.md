@@ -2,8 +2,9 @@
 layout: default
 ---
 
-Worldwide Gravity
-=================
+# Worldwide Gravity #
+{:.center-text}
+
 
 Dynamic Gravity Systems specializes in the manufacture, repair and servicing of marine and airborne gravity meters. 
 We make advanced technology gravity meters using a full feedback, zero length spring sensor which requires no spring tension motor and is more responsive 
@@ -14,5 +15,3 @@ Airborne Gravity System (TAGS) made by Micro-g Lacoste.
 
 #### Please contact us for details and quotes. ####
 
-Some stuff in a special block
-{:.block}

@@ -68,7 +68,6 @@ header {
     display: block;
     position: relative;
     margin: auto;
-    
     top: 50px;
     z-index: 1;
     width: $bodyWidth;
@@ -88,6 +87,7 @@ main {
     top: 50px;
     width: $bodyWidth;
     max-width: $contentMax;
+    margin: auto;
 }
 
 article {
@@ -95,11 +95,28 @@ article {
     margin: auto;
     margin-top: 5px;
     margin-bottom: 55px;
-    padding: -5px 5px 10px 5px;
+    padding: 5px 5px 10px 5px;
     background-color: $light;
-    border: 1px solid $dark;
+    border: 1px solid $blue;
     border-radius: 2px;
     
+    div.section {
+        position: relative;
+        padding: 10px;
+        background-color: $white;
+        border: 1px solid $purple;
+        border-radius: 3px;
+        box-shadow: 1px 1px 2px $dark;
+    }
+    .section:before,
+    .section:after {
+        content: " ";
+        display: table;
+    }
+    .section::after {
+        /*Ensure floated images don't overflow (Clearfix)*/
+        clear: both;
+    }
     .flex {
         display: flex;
         flex-direction: column;
@@ -115,14 +132,32 @@ article {
         margin: 3px;
         padding: 5px;
     }
+    .center-text,
+    {
+        text-align: center;
+    }
+    .right {
+        float: right;
+    }
+    .left {
+        float: left;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: .5em;
+        margin-top: .5em;
+    }
     h1 {
         font-weight: bolder;
         font-family: $headerFont;
         font-size: 2em;
         color: $primaryColor;
     }
-    h1.center {
-        text-align: center;
+    h2 {
+        font-weight: bold;
+        font-size: 1.7em;
+        font-family: $bodyFont;
+        color: $gray;
+        text-shadow: 1px 1px 2px $dark;
     }
     h4 {
         font-weight: bold;
@@ -136,13 +171,10 @@ article {
         padding-left: .5vw;
         color: $secondaryColor;
     }
-    p.center {
-        text-align: center;
-    }
     p.block {
         flex: auto;
         justify-content: left;
-        width: 400px;
+        width: 50%;
         border: 1px solid $dark;
     }
     a {
@@ -150,22 +182,27 @@ article {
         font-weight: bold;
         text-decoration: none;
     }
+    p.toplink > a {
+        position: absolute;
+        bottom: 5px;
+    }
     blockquote {
         background-color: lightblue;
     }
     img {
         display: inline;
-        border: 1px solid $dark;
-        border-radius: 2px;
-        max-width: 500px;
+        border: 2px solid $dark;
+        border-radius: 3px;
+        max-width: 400px;
         max-height: 400px;
+        margin: 0 10px 0 10px;
     }
-    .right {
-        float: right;
+    @media only screen and (max-width: 650px) {
+        img {
+            display: none;
+        }
     }
-    .left {
-        float: left;
-    }
+    
 }
 
 aside {
@@ -210,6 +247,15 @@ footer {
         float: left;
         margin-top: 12px;
         margin-left: 15px;
+    }
+    a:link, 
+    a:visited {
+        color: $light;
+        text-decoration: none;
+    }
+    a:hover {
+        color: $primaryColor;
+        text-decoration: underline;
     }
     p {
         display: inline;
