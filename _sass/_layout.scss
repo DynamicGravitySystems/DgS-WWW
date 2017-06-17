@@ -12,16 +12,13 @@ nav {
     position: fixed;
     top: 0;
     z-index: 2;
-    background-color: white;
-    box-shadow: 0 2px 2px 2px lighten($light, 20%);
+    background-color: rgba($white, .9);
+    box-shadow: 0 2px 2px 2px rgba($white, .9);
     width: 100%;
     margin: 0;
     padding: 0;
-    
     .container {
-        position: relative;
         width: $bodyWidth;
-        max-width: $contentMax;
         margin-left: 15%;
         margin-right: 15%;
     }
@@ -35,7 +32,6 @@ nav {
         float: right;
         margin-right: 5px;
     }
-    
     a, a:visited {
         display: block;
         color: $purple;
@@ -51,6 +47,7 @@ nav {
     }
     a#dgs:hover {
         color: black;
+
     }
     #dgs {
         float: left;
@@ -157,7 +154,9 @@ article {
         font-size: 1.7em;
         font-family: $bodyFont;
         color: $gray;
-        text-shadow: 1px 1px 2px $dark;
+    }
+    h2 > a {
+        text-shadow: 1px 1px 1px $dark;
     }
     h4 {
         font-weight: bold;
@@ -169,7 +168,7 @@ article {
         font-family: $bodyFont;
         font-size: .9em;
         padding-left: .5vw;
-        color: $secondaryColor;
+        color: $textColor;
     }
     p.block {
         flex: auto;
@@ -254,7 +253,7 @@ footer {
         text-decoration: none;
     }
     a:hover {
-        color: $primaryColor;
+        color: $secondaryColor;
         text-decoration: underline;
     }
     p {

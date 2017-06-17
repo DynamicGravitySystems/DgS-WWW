@@ -20,7 +20,6 @@ Our new and upgraded systems feature full feedback magnetic damping, redesigned 
 
 ![Airborne Gravity Meter](/images/img2.jpg){:.right}
 
-
 #### Features: ####
 * Full feedback magnetically damped zero-length spring
 * Advanced electronics and GPS aided platform control
