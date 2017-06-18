@@ -8,74 +8,33 @@ body {
     padding: 0;
     margin: 0;
 }
-nav {
-    position: fixed;
-    top: 0;
-    z-index: 2;
-    background-color: rgba($white, .9);
-    box-shadow: 0 2px 2px 2px rgba($white, .9);
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    .container {
-        width: $bodyWidth;
-        margin-left: 15%;
-        margin-right: 15%;
-    }
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        display: block;
-        float: right;
-        margin-right: 5px;
-    }
-    a, a:visited {
-        display: block;
-        color: $purple;
-        font-family: $navFont;
-        font-size: 1.2em;
-        font-weight: bolder;
-        text-decoration: none;
-        padding: 15px 5px 15px 5px;
-    }
-    a.button:hover {
-        color: $light!important;
-        background-color: $dark!important;
-    }
-    a#dgs:hover {
-        color: black;
-
-    }
-    #dgs {
-        float: left;
-        padding: 8px!important;
-        margin: 0;
-        margin-top: 5px;
-        color: $purple;
-        font-family: $navFont;
-        font-size: 1.5em;
-        font-weight: bolder;
-    }
-}
 
 header {
     display: block;
     position: relative;
-    margin: auto;
     top: 50px;
     z-index: 1;
+    margin: auto;
     width: $bodyWidth;
     max-width: $contentMax;
     height: 200px;
-    background-image: url('/images/DGS-Web-Banner.jpg');
+    background-image: url('/images/DGS-Banner-Clean.jpg');
     background-size: cover;
     background-position: 0px;
     background-repeat: no-repeat;
     border: 1px solid $dark;
     border-radius: 0 0 2px 2px;
+
+    #logo {
+        display: block;
+        background-image: url('/images/DGS-Logo.png');
+        background-size: contain;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        top: 25px;
+        left: 25px;
+    }
 }
 
 main {
@@ -85,190 +44,63 @@ main {
     width: $bodyWidth;
     max-width: $contentMax;
     margin: auto;
-}
-
-article {
-    min-height: 200px;
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 55px;
-    padding: 5px 5px 10px 5px;
-    background-color: $light;
-    border: 1px solid $blue;
-    border-radius: 2px;
-    
-    div.section {
-        position: relative;
-        padding: 10px;
-        background-color: $white;
-        border: 1px solid $purple;
-        border-radius: 3px;
-        box-shadow: 1px 1px 2px $dark;
-    }
-    .section:before,
-    .section:after {
-        content: " ";
-        display: table;
-    }
-    .section::after {
-        /*Ensure floated images don't overflow (Clearfix)*/
-        clear: both;
-    }
-    .flex {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        position: relative;
-        margin-top: 15px;
-        padding: 5px;
-    }
-    .flex-item {
-        flex: 1;
-        display: block;
-        margin: 3px;
-        padding: 5px;
-    }
-    .center-text,
-    {
-        text-align: center;
-    }
-    .right {
-        float: right;
-    }
-    .left {
-        float: left;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        margin-bottom: .5em;
-        margin-top: .5em;
-    }
-    h1 {
-        font-weight: bolder;
-        font-family: $headerFont;
-        font-size: 2em;
-        color: $primaryColor;
-    }
-    h2 {
-        font-weight: bold;
-        font-size: 1.7em;
-        font-family: $bodyFont;
-        color: $gray;
-    }
-    h2 > a {
-        text-shadow: 1px 1px 1px $dark;
-    }
-    h4 {
-        font-weight: bold;
-        font-family: $bodyFont;
-        font-size: 1.2em;
-        color: $primaryColor;
-    }
-    p {
-        font-family: $bodyFont;
-        font-size: .9em;
-        padding-left: .5vw;
-        color: $textColor;
-    }
-    p.block {
-        flex: auto;
-        justify-content: left;
-        width: 50%;
-        border: 1px solid $dark;
-    }
-    a {
-        color: $linkColor;
-        font-weight: bold;
-        text-decoration: none;
-    }
-    p.toplink > a {
-        position: absolute;
-        bottom: 5px;
-    }
-    blockquote {
-        background-color: lightblue;
-    }
-    img {
-        display: inline;
-        border: 2px solid $dark;
-        border-radius: 3px;
-        max-width: 400px;
-        max-height: 400px;
-        margin: 0 10px 0 10px;
-    }
-    @media only screen and (max-width: 650px) {
-        img {
-            display: none;
-        }
-    }
-    
-}
-
-aside {
-    display: flex;
-    flex-flow: row wrap;
-    margin: auto;
     margin-bottom: 75px;
-    padding: .5vw;
-    width: 70%;
-    background-color: $light;
-    border: 1px solid $dark;
-    border-radius: 2px;
-    overflow: hidden;
-    
-    div {
-        flex: auto;
-        justify-content: center;
-        align-items: center;
-        margin: .5vw;
-        width: 200px;
-        height: 300px;
-    }
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-}
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    background-color: $dark;
-    padding: 0px;
-    border-radius: 2px 2px 0 0;
-    i.logo {
-        content: url('/images/logo.png');
-        height: 25px;
-        width: 25px;
-        float: left;
-        margin-top: 12px;
-        margin-left: 15px;
-    }
-    a:link, 
-    a:visited {
-        color: $light;
-        text-decoration: none;
-    }
-    a:hover {
-        color: $secondaryColor;
-        text-decoration: underline;
-    }
-    p {
-        display: inline;
-        padding: 0;
-        font-family: $bodyFont;
-        font-size: 1em;
-        color: $light;
-    }
-    p.left {
-        margin-left: 10px;
-        float: left;
-    }
-    p.right {
-        margin-right: 10px;
-        float: right;
-    }
+    div.home {
+        display: flex;
+        width: 100%;
+        position: relative;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        a.container {
+            /* width: 250px; 
+            height: 250px; */
+            min-width: 250px;
+            min-height: 250px;
+            max-height: 350px;
+            border: 2px solid $dark;
+            margin: 5px;
+            flex: 1 1 auto;
+            object-fit: contain;
+            vertical-align: middle;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 3px;
+            text-decoration: none;
+
+            &:visited {
+                text-decoration: none;
+            }
+            &:hover, &:active {
+                border-color: $linkColor;
+                color: $linkColor;
+                .link {
+                    color: $linkColor;
+                }
+            }
+            .link {
+                display: block;
+                top: 100px;
+                width: 100%;
+                background-color: rgba($primaryColor, .95);
+                text-align: center;
+                color: $white;
+                font-family: $bodyFont;
+                font-weight: bold;
+                font-size: 1.7em;
+            }
+            &#air {
+            background-image: url('/images/home/air.jpg');
+            align-self: flex-start;
+            }
+            &#sea {
+                background-image: url('/images/home/sea.jpg');
+                align-self: center;
+            }
+            &#land {
+                background-image: url('/images/home/land.jpg');
+                align-self: center;
+            }
+        }
+    } 
 }

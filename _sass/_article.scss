@@ -1,0 +1,117 @@
+article {
+    min-height: 200px;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 5px 10px 5px;
+    background-color: darken($light, 5%);
+    border: 1px solid $dark;
+    border-radius: 2px;
+    
+    div.section {
+        position: relative;
+        padding: 10px;
+        background-color: $white;
+        border: 1px solid $purple;
+        border-radius: 3px;
+        box-shadow: 1px 1px 2px $dark;
+    }
+    .section:before,
+    .section:after {
+        content: " ";
+        display: table;
+    }
+    .section::after {
+        /*Ensure floated images don't overflow (Clearfix)*/
+        clear: both;
+    }
+    .flex {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        margin-top: 15px;
+        padding: 5px;
+    }
+    .flex-item {
+        flex: 1;
+        display: block;
+        margin: 3px;
+        padding: 5px;
+    }
+    .center-text,
+    {
+        text-align: center;
+    }
+    .right {
+        float: right;
+    }
+    .left {
+        float: left;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: .5em;
+        margin-top: .5em;
+    }
+    h1 {
+        font-weight: bolder;
+        font-family: $headerFont;
+        font-size: 2em;
+        color: $primaryColor;
+        padding-top: 50px;
+    }
+    h2 {
+        font-weight: bold;
+        font-size: 1.7em;
+        font-family: $bodyFont;
+        color: $gray;
+    }
+    h2 > a {
+        text-shadow: 1px 1px 1px $dark;
+    }
+    h4 {
+        font-weight: bold;
+        font-family: $bodyFont;
+        font-size: 1.2em;
+        color: $primaryColor;
+    }
+    p {
+        font-family: $bodyFont;
+        font-size: .9em;
+        padding-left: .5vw;
+        color: $textColor;
+    }
+    p.block {
+        flex: auto;
+        justify-content: left;
+        width: 50%;
+        border: 1px solid $dark;
+    }
+    a {
+        color: $linkColor;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    p.toplink > a {
+        position: absolute;
+        bottom: 5px;
+    }
+    blockquote {
+        background-color: lightblue;
+    }
+    img {
+        display: inline;
+        border: 2px solid $dark;
+        border-radius: 3px;
+        max-width: 400px;
+        max-height: 400px;
+        margin: 0 10px 0 10px;
+    }
+    @media only screen and (max-width: 650px) {
+        img {
+            display: none;
+        }
+    }
+    
+}

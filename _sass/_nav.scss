@@ -1,0 +1,52 @@
+nav {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    background-color: rgba($white, .9);
+    box-shadow: 0 2px 2px 2px rgba($white, .9);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    .container {
+        width: $bodyWidth;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        display: block;
+        float: right;
+        margin-right: 5px;
+    }
+    a, a:visited {
+        display: block;
+        color: $purple;
+        font-family: $navFont;
+        font-size: 1.2em;
+        font-weight: bolder;
+        text-decoration: none;
+        padding: 15px 5px 15px 5px;
+    }
+    a.button:hover {
+        color: $light!important;
+        background-color: $dark!important;
+    }
+    a#dgs:hover {
+        color: black;
+
+    }
+    #dgs {
+        float: left;
+        padding: 8px!important;
+        margin: 0;
+        margin-top: 5px;
+        color: $purple;
+        font-family: $navFont;
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
+}
