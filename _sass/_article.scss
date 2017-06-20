@@ -4,20 +4,17 @@ article {
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 5px 5px 10px 5px;
-    background-color: darken($light, 5%);
-    border: 1px solid $dark;
-    border-radius: 2px;
+    background-color: $light;
     
     div.section {
         position: relative;
         padding: 10px;
         background-color: $white;
-        border: 1px solid $purple;
         border-radius: 3px;
         box-shadow: 1px 1px 2px $dark;
     }
-    .section:before,
-    .section:after {
+    .section::before,
+    .section::after {
         content: " ";
         display: table;
     }
@@ -50,6 +47,9 @@ article {
     .left {
         float: left;
     }
+    p, a, li, span, h2, h3, h4 {
+        font-family: $bodyFont;
+    }
     h1, h2, h3, h4, h5, h6 {
         margin-bottom: .5em;
         margin-top: .5em;
@@ -59,25 +59,26 @@ article {
         font-family: $headerFont;
         font-size: 2em;
         color: $primaryColor;
-        padding-top: 50px;
     }
     h2 {
         font-weight: bold;
         font-size: 1.7em;
-        font-family: $bodyFont;
         color: $gray;
     }
     h2 > a {
         text-shadow: 1px 1px 1px $dark;
     }
+    h3 {
+        font-weight: 500;
+        font-size: 1.4em;
+        color: darken($secondaryColor, 15%);
+    }
     h4 {
         font-weight: bold;
-        font-family: $bodyFont;
         font-size: 1.2em;
         color: $primaryColor;
     }
     p {
-        font-family: $bodyFont;
         font-size: .9em;
         padding-left: .5vw;
         color: $textColor;
@@ -113,5 +114,10 @@ article {
             display: none;
         }
     }
-    
+}
+article#home {
+    margin-top: 20px;
+    border: none;
+    box-shadow: -3px -3px 3px 2px $gray;
+    background-color: $bgColor;
 }

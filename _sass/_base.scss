@@ -12,8 +12,19 @@ $blue: rgb(40, 30, 120);
 $fontColor: rgb(25,25,25);
 $linkColor: darkorange;
 $maxWidth: 2560px;
-$contentMax: 1792px;
 $bodyWidth: 70%;
-$navFont: Courier New, Courier, monospace;
-$bodyFont: Source Sans Pro, Helvetica Neue, monospace;
-$headerFont: Courier New, Courier, monospace;
+$contentMax: ($maxWidth * .7);
+$navFont: Orbitron, Courier New, Courier, monospace;
+$bodyFont: Open Sans, Source Sans Pro, Helvetica Neue, monospace;
+$headerFont: Orbitron, Courier New, Courier, monospace;
+
+* {
+    box-sizing: border-box;
+    max-width: $maxWidth;
+}
+body {
+    background-color: $bgColor;
+    overflow: auto;
+    padding: 0;
+    margin: 0;
+}
