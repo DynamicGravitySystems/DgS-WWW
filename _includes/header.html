@@ -2,7 +2,8 @@
     <div class="container">
     <a id="dgs" href="/">{{ site.title }}</a>
     <ul>
-        {% for page in site.pages %} {% if page.title %}
+        {% assign pages = site.pages | reverse %}
+        {% for page in pages %} {% if page.title %}
         <li><a class="button" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
         {% endif %} {% endfor %}
     </ul>
@@ -10,5 +11,7 @@
 </nav>
 
 <header id="top">
-    <span id="logo"></span>
+    <div class="container">
+        <a id="logo" href="/"></a>
+    </div>
 </header>
