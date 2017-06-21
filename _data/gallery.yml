@@ -1,0 +1,13 @@
+id: DGS Gallery
+description: Dynamic Gravity Systems Image Gallery
+imagePath: /images/gallery/
+images:
+    - name: land.jpg
+      thumb: landThumb.jpg
+      title: Land Gravity Meter
+    - name: airborne.jpg
+      thumb: airborneThumb.jpg
+      title: Airborne Gravity Meter
+    - name: sea.jpg
+      thumb: seaThumb.jpg
+      title: Marine Gravity Meter
