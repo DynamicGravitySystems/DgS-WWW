@@ -1,9 +1,20 @@
-@mixin box-shadow($h, $v) {
-    box-shadow: $h $v 1px 1px $dark;
+@mixin box-shadow($args...) {
+    /* h-shadow v-shadow blur spread color */ 
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}
+
+article#home {
+    margin-top: 20px;
+    border: none;
+    @include box-shadow(1px 1px 1px 1px $gray);
+    
+    background-color: $white;
 }
 
 article {
-    min-height: 200px;
+    min-height: 50px;
     margin: auto;
     margin-top: 5px;
     padding: 5px 5px 10px 5px;
@@ -15,7 +26,7 @@ article {
         margin-bottom: -55px;
         background-color: $white;
         border-radius: 3px;
-        box-shadow: 1px 1px 2px $dark;
+        @include box-shadow(1px 1px 2px $dark);
     }
     div.section:last-of-type {
         margin-bottom: 10px;
@@ -136,24 +147,15 @@ article {
         margin: 0 10px 0 10px;
         @include box-shadow(1px, 1px);
     }
-
     ul {
         list-style: lower-greek;
         /*li:before {
             content: "\2014  ";
         }*/
     }
-    
-
     @media only screen and (max-width: 650px) {
         img {
             display: none;
         }
     }
-}
-article#home {
-    margin-top: 20px;
-    border: none;
-    @include box-shadow(1px, 1px);
-    background-color: $bgColor;
 }
