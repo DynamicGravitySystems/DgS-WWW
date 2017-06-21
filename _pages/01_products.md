@@ -9,8 +9,12 @@ permalink: /products/
 
 ## [AIR][airborne] | [MARINE][marine] | [LAND][land] ##
 {:.center-text .navbox}
+
+---
+{:.dgs}
+
 ## Airborne Gravity ##
-{:.center-text}
+{:.center-text #air}
 
 <div class="section" markdown="1">
 #### Advanced Technology Airborne Gravity Meter ####
@@ -18,7 +22,8 @@ permalink: /products/
 Dynamic Gravity Systems Inc. (DgS) presents its airborne gravity survey system, a robust full feedback zero-length spring based gravity meter, with worldwide gravity range.
 Our new and upgraded systems feature full feedback magnetic damping, redesigned and improved platform control, integrated high-performance, temperature-controlled electronics, and a simplified user-friendly data display and system control interface.
 
-![Airborne Gravity Meter](/images/img2.jpg){:.right}
+
+[![Airborne Gravity Meter](/images/img2.jpg){:.right}][IMG2]{:data-lightbox="image2"}
 
 #### Features: ####
 * Full feedback magnetically damped zero-length spring
@@ -29,6 +34,8 @@ Our new and upgraded systems feature full feedback magnetic damping, redesigned 
 * Improved accuracy and repeatability in turbulent survey conditions (up to +/- .5g)
 * Improved reliability and lower maintenance/calibration requirements
 * No spring tension system or counter screw required, reduces mechanical failures
+
+![Airborne Gravity Meter 2](/images/img3.jpg){:.left}
 
 #### Specifications: ####
 * Worldwide gravity range
@@ -51,7 +58,7 @@ Our new and upgraded systems feature full feedback magnetic damping, redesigned 
 {:.toplink}
 </div>
 
-# Marine Gravity #
+## Marine Gravity ##
 {:.center-text}
 <div class="section" markdown="1">
 
@@ -71,7 +78,7 @@ Our new and upgraded systems feature full feedback magnetic damping, redesigned 
 {:.toplink}
 </div>
 
-# Land Gravity #
+## Land Gravity ##
 {:.center-text}
 <div class="section" markdown="1">
 
@@ -111,3 +118,4 @@ Dynamic Gravity Systems Inc. (DgS) Introduces its newest Advanced Technology to 
 [airborne]: #airborne-gravity
 [marine]: #marine-gravity
 [land]: #land-gravity
+[IMG2]: /images/img2.jpg

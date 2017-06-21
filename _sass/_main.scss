@@ -9,24 +9,25 @@ main {
 
     div.home {
         display: flex;
-        width: 100%;
-        position: relative;
         flex-flow: row wrap;
         justify-content: space-around;
+        width: 100%;
+        position: relative;
+        
         a.container {
             /* width: 250px; 
             height: 250px; */
             min-width: 250px;
             min-height: 250px;
             max-height: 350px;
-            border: 2px solid $dark;
+            border: 1px solid $dark;
+            border-radius: 0 0 3px 3px;
             margin: 5px;
             flex: 1 1 auto;
             object-fit: contain;
             vertical-align: middle;
             background-size: cover;
             background-repeat: no-repeat;
-            border-radius: 3px;
             text-decoration: none;
 
             &:visited {

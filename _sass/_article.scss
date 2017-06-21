@@ -1,17 +1,24 @@
+@mixin box-shadow($h, $v) {
+    box-shadow: $h $v 1px 1px $dark;
+}
+
 article {
     min-height: 200px;
     margin: auto;
     margin-top: 5px;
-    margin-bottom: 5px;
     padding: 5px 5px 10px 5px;
     background-color: $light;
     
     div.section {
         position: relative;
         padding: 10px;
+        margin-bottom: -55px;
         background-color: $white;
         border-radius: 3px;
         box-shadow: 1px 1px 2px $dark;
+    }
+    div.section:last-of-type {
+        margin-bottom: 10px;
     }
     .section::before,
     .section::after {
@@ -43,9 +50,11 @@ article {
     }
     .right {
         float: right;
+        margin-left: 30px;
     }
     .left {
         float: left;
+        margin-right: 30px;
     }
     p, a, li, span, h2, h3, h4 {
         font-family: $bodyFont;
@@ -63,7 +72,11 @@ article {
     h2 {
         font-weight: bold;
         font-size: 1.7em;
-        color: $gray;
+        color: $dark;
+        padding-top: 55px;
+    }
+    h2:first-of-type, h2#air {
+        padding-top: 10px;
     }
     h2 > a {
         text-shadow: 1px 1px 1px $dark;
@@ -77,6 +90,20 @@ article {
         font-weight: bold;
         font-size: 1.2em;
         color: $primaryColor;
+    }
+    hr.dgs {
+        margin-top: 25px;
+        margin-bottom: -20px;
+        border: none;
+        border-top: solid 1px $dark;
+        text-align: center;
+    }
+    hr.dgs:after {
+        content: url('/images/logo-small.png');
+        display: inline-block;
+        position: relative;
+        top: -12px;
+        left: -12px;
     }
     p {
         font-size: .9em;
@@ -103,12 +130,21 @@ article {
     }
     img {
         display: inline;
-        border: 2px solid $dark;
         border-radius: 3px;
         max-width: 400px;
         max-height: 400px;
         margin: 0 10px 0 10px;
+        @include box-shadow(1px, 1px);
     }
+
+    ul {
+        list-style: lower-greek;
+        /*li:before {
+            content: "\2014  ";
+        }*/
+    }
+    
+
     @media only screen and (max-width: 650px) {
         img {
             display: none;
@@ -118,6 +154,6 @@ article {
 article#home {
     margin-top: 20px;
     border: none;
-    box-shadow: -3px -3px 3px 2px $gray;
+    @include box-shadow(1px, 1px);
     background-color: $bgColor;
 }

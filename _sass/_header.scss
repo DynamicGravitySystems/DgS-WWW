@@ -11,7 +11,8 @@ header {
     background-size: cover;
     background-position: 0px;
     background-repeat: no-repeat;
-    border: 1px solid $dark;
+    border: none;
+    border-bottom: 1px solid $dark;
     border-radius: 0 0 2px 2px;
     .container {
         width: $bodyWidth;
