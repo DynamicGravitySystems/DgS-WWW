@@ -6,21 +6,19 @@
     <main>
         <article>
             {{ content }}
+
+            <div id="gallery">
+                <h1>{{ site.data.gallery.description }}</h1>
+
+            </div>
+            {% assign path = site.data.gallery.imagePath %}
+            {% for image in site.data.gallery.images %}
+            <a href="{{ image.name | prepend: path }}" data-lightbox="DGS"
+                data-title="{{ image.title }}">
+                <img src="{{ image.thumb | prepend: path }}" />
+            </a>
+            {% endfor %}
         </article>
-
-        <div id="gallery">
-            <h1>{{ site.data.gallery.description }}</h1>
-
-        </div>
-        {% assign path = site.data.gallery.imagePath %}
-        {% for image in site.data.gallery.images %}
-        <a href="{{ image.name | prepend: path }}" data-lightbox="DGS"
-            data-title="{{ image.title }}">
-            <img src="{{ image.thumb | prepend: path }}" />
-        </a>
-
-
-        {% endfor %}
     </main>
     {% include footer.html %}
     <script src="{{ "/scripts/lightbox-plus-jquery.js" | prepend: site.baseurl }}"></script>
