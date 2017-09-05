@@ -6,6 +6,7 @@ permalink: /products/
 # PRODUCTS #
 {:.center-text}
 *Dynamic Gravity Systems* specializes in the manufacture and servicing of zero-length spring based, full feedback, dynamic gravity meters - for Air, Sea and Land applications.
+{:.center-text}
 
 ## [AIR][airborne] | [MARINE][marine] | [LAND][land] ##
 {:.center-text .navbox}
@@ -35,7 +36,7 @@ Our new and upgraded systems feature full feedback magnetic damping, redesigned 
 * Improved reliability and lower maintenance/calibration requirements
 * No spring tension system or counter screw required, reduces mechanical failures
 
-![Airborne Gravity Meter 2](/images/img3.jpg){:.left}
+![Airborne Gravity Meter 2](/images/sensor-1.jpg){:.left}
 
 #### Specifications: ####
 * Worldwide gravity range
@@ -62,7 +63,7 @@ Our new and upgraded systems feature full feedback magnetic damping, redesigned 
 {:.center-text}
 <div class="section" markdown="1">
 
-![Marine Gravity Meter](/images/img1.jpg){:.right}
+![Marine Gravity Meter](/images/marine-meter-1.jpg){:.right}
 
 #### Features: ####
 * Full feedback magnetically damped zero-length spring
@@ -92,6 +93,7 @@ Dynamic Gravity Systems Inc. (DgS) Introduces its newest Advanced Technology to 
 * Improved reliability and lower maintenance/calibration requirements
 * No spring tension system or counter screw required, reduces mechanical failures
 
+![Land Meter Prototype](/images/land-meter.jpg){:.right}
 
 
 #### SPECIFICATIONS: ####

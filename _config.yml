@@ -9,5 +9,6 @@ url: "http://localhost:4000"
 sass:
   sass_dir: _sass
 include: ['_pages']
+exclude: ['images/sources']
 kramdown:
   input: GFM
