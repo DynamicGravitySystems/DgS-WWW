@@ -20,6 +20,18 @@ article {
     padding: 5px 5px 10px 5px;
     background-color: $light;
     
+    div.smallsection {
+        position: relative;
+        padding: 10px;
+        margin-bottom: 5px;
+        background-color: $white;
+        border-radius: 3px;
+        @include box-shadow(1px 1px 2px $dark);
+        h2 {
+            margin-top: 0px;
+            padding-top: 0px;
+        }
+    }
     div.section {
         position: relative;
         padding: 10px;
@@ -67,7 +79,7 @@ article {
         float: left;
         margin-right: 30px;
     }
-    p, a, li, span, h2, h3, h4 {
+    p, a, li, span, h2, h3, h4, h5 {
         font-family: $bodyFont;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -86,7 +98,7 @@ article {
         color: $dark;
         padding-top: 55px;
     }
-    h2:first-of-type, h2#air {
+    h2:first-of-type, h2#air, h2#upgrade {
         padding-top: 10px;
     }
     h2 > a {
@@ -101,6 +113,11 @@ article {
         font-weight: bold;
         font-size: 1.2em;
         color: $primaryColor;
+    }
+    h5 {
+        font-weight: bold;
+        font-size: 1.1em;
+        color: $secondaryColor;
     }
     hr.dgs {
         margin-top: 25px;
@@ -146,6 +163,9 @@ article {
         max-height: 400px;
         margin: 0 10px 0 10px;
         @include box-shadow(1px, 1px);
+    }
+    img#gallery {
+        border: 1px solid $dark;
     }
     ul {
         list-style: lower-greek;
