@@ -8,6 +8,8 @@ url: "http://localhost:4000"
 # Build Settings
 sass:
   sass_dir: _sass
+gems:
+  - jekyll-octicons
 include: ['_pages']
 exclude: ['images/sources']
 kramdown:
