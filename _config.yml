@@ -11,6 +11,6 @@ sass:
 gems:
   - jekyll-octicons
 include: ['_pages']
-exclude: ['images/sources']
+exclude: ['images/sources', vendor]
 kramdown:
   input: GFM
