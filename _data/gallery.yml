@@ -8,9 +8,6 @@ images:
     - name: airborne.jpg
       thumb: airborne-thumb.jpg
       title: Airborne Gravity Meter
-    - name: sea.jpg
-      thumb: sea-thumb.jpg
-      title: Marine Gravity Meter
     - name: control-module.jpg
       thumb: control-module-thumb.jpg
       title: DGS Control Module

@@ -5,8 +5,8 @@ permalink: /services/
 ---
 
 # SERVICES #
-
 {:.center-text}
+
 We offer a variety of services, from full system upgrades, system repairs and servicing to training and testing. Please contact us for more information.
 {:.center-text}
 
@@ -49,12 +49,13 @@ We can also conduct field servicing of sensors and systems at __your__ location.
 ## Training and Testing ##
 {:.center-text #training}
 <div class="section" markdown="1">
+##### Training and Testing Services #####
 
 * We can conduct training on installation, operation, maintenance, and data processing for marine and airborne gravity systems manufactured by Lacoste and Romberg, and Micro-g Lacoste.
 
 </div>
 
-[upgrade]: #upgrades
-[repair]: #repairs
+[upgrade]: #upgrade
+[repair]: #repair
 [service]: #service
 [training]: #training

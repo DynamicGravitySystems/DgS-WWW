@@ -1,5 +1,7 @@
 # Dynamic Gravity Systems Public Website #
 
+[![Build Status](https://travis-ci.org/bradyzp/dgs-jekyll.svg?branch=master)](https://travis-ci.org/bradyzp/dgs-jekyll)
+
 Generated using [Jekyll][jekyll] Static Site Generator
 
 ## Build Info ##
@@ -13,9 +15,10 @@ Generated using [Jekyll][jekyll] Static Site Generator
 
     bundle exec jekyll build
 
-- tatic HTML source will be built in _site directory
+- Static HTML source will be built in _site directory
 
-Designed by Zachery Brady for Dynamic Gravity Systems
+---
+*Designed by Zachery Brady for Dynamic Gravity Systems*
 
 [jekyll]: https://jekyllrb.com/
 [jekyllqs]: http://jekyllrb.com/docs/quickstart/

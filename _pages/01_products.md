@@ -15,7 +15,7 @@ permalink: /products/
 {:.dgs}
 
 ## Airborne Gravity ##
-{:.center-text #air}
+{:.center-text}
 
 <div class="section" markdown="1">
 #### Advanced Technology Airborne Gravity Meter ####
