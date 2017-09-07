@@ -98,7 +98,7 @@ article {
         color: $dark;
         padding-top: 55px;
     }
-    h2:first-of-type, h2#air, h2#upgrade {
+    h2:first-of-type, h2#airborne-gravity, h2#upgrade {
         padding-top: 10px;
     }
     h2 > a {
@@ -167,8 +167,13 @@ article {
     img#gallery {
         border: 1px solid $dark;
     }
+    img#github {
+        width: 75px;
+        vertical-align: middle;
+    }
     ul {
-        list-style: lower-greek;
+        list-style: square;
+        overflow: hidden;
         /*li:before {
             content: "\2014  ";
         }*/

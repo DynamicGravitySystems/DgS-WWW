@@ -15,7 +15,7 @@
             {% for image in site.data.gallery.images %}
             <a href="{{ image.name | prepend: path }}" data-lightbox="DGS"
                 data-title="{{ image.title }}">
-                <img src="{{ image.thumb | prepend: path }}" id="gallery"/>
+                <img src="{{ image.thumb | prepend: path }}" alt="{{ image.name }}" id="gallery"/>
             </a>
             {% endfor %}
         </article>
