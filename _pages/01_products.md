@@ -3,6 +3,7 @@ layout: default
 title: Products
 permalink: /products/
 ---
+
 # PRODUCTS #
 {:.center-text}
 *Dynamic Gravity Systems* specializes in the manufacture and servicing of zero-length spring based, full feedback, dynamic gravity meters - for Air, Sea and Land applications.

@@ -1,34 +1,26 @@
 nav {
-    position: fixed;
-    top: 0;
+    position: absolute;
     z-index: 2;
-    background-color: rgba($white, .9);
-    box-shadow: 0 2px 2px 2px rgba($white, .9);
-    width: 100%;
-    margin: 0;
+    width: $bodyWidth;
+    max-width: $contentMax;
+    left: 15%;
     padding: 0;
-    max-width: 3000px;
-    .container {
-        width: $bodyWidth;
-        margin-left: 15%;
-        margin-right: 15%;
-    }
+    border-bottom: 1px solid black;
     ul {
         list-style: none;
-        margin: 0;
+        margin: auto;
         padding: 0;
     }
     li {
-        display: block;
         float: right;
         margin-left: 15px;
         margin-right: 5px;
     }
     a, a:visited {
-        display: block;
+        display: inline-block;
         color: $textColor;
-        font-family: $navFont;
-        font-size: 1.2em;
+        font-family: $bodyFont;
+        font-size: 1.3em;
         font-weight: bolder;
         text-decoration: none;
         padding: 15px 5px 15px 5px;
@@ -55,15 +47,36 @@ nav {
         #dgs {
             display: none;
         }
+        a, a:visited {
+            font-size: 1.1em;
+        }
         ul {
+            text-align: center;
             table-layout: fixed;
             height: 50px;
-            overflow: hidden;
+        }
+        li {
+            display: inline-block;
+            float: none;
+            margin: 0;
         }
     }
-    @media only screen and (max-width: 700px){
+    @media only screen and (max-width: 550px){
         a, a:visited {
             font-size: .8em;
         }
+        ul {
+            overflow: hidden;
+        }
     }
+}
+@media only screen and (min-width: $maxWidth){
+    nav {
+        left: $maxWidth * .15;
+    }
+}
+.fixed {
+    position: fixed;
+    top: 0;
+    background-color: $light;
 }
