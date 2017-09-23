@@ -19,4 +19,4 @@ deploy:
   local-dir: _site
   acl: public_read
   on:
-    repo: bradyzp/dgs-jekyll
+    repo: DynamicGravitySystems/dgs-static-web
