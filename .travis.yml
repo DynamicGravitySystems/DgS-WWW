@@ -1,10 +1,12 @@
 language: ruby
 rvm:
 - 2.3.3
-python:
-- 3.5
+before_install:
+  - sudo apt-get -y install python3-pip python-dev
+  - python3 -V
+  - pip3 -V
 install:
-- pip install awscli
+- pip3 install awscli
 before_script:
 - chmod +x ./script/cibuild
 script: "./script/cibuild"
@@ -13,7 +15,7 @@ env:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 sudo: false
 deploy:
-  provider: s3
+  provider: s4
   access_key_id: AKIAIVD5ETY2L5NLPM6Q
   secret_access_key:
     secure: hEo+ONcdF4onA/PtYzIdwh8aEHbdgDwKpQZ82uAhwQeQJ6AFpw5Rz8T6s0tWr1puUBzgwuDogbzjDD9liGRaNDDp1Mxmcz7HyZPK7CSooTh+N2GAjsFqAs61y5GvkBYO/o7orGeyboA4PdtmrTXIl+IsPKpG77+0OC91f4L62inCmK85xx55/QPLvYjXr8dJhUDaCM3D1W4zKo0RjT2OE3LhHOSLeHUqPx1u1HSNWwCsdpSKmfTEJ06TYQnZD84QHoTAirZiYguEGzjiso8SCrT2+25qHMsGDTsEY+wTPVf95v5F+gq+CnKXLmmd0N78i+ZO9vM2xcOgbHVCMT4fN8TSIhXquXYGd0Cv0cj0vRsexoLggFeHJ4dcYGB3RI+wVgaVoysrbfSTpIAapDDavw8Ht13fvgf1dmTZbOtBWivf5nOzzK63wrQv+Ki9LncoMea520o7SGOb2Ca/7DLHWgNtvsk5zQqP1UFMsFkRMEIphprO42QXsHLP4vDOa8VJnSIh1UMbopXNkSjbChKb9y+JjMlcHnguGCno7Ge+ARZlQHJQC3sFgY9NsAWeSSJFQlNhkn6rgcQPOu1pOLZdt8xucxDfF3eUooOM6Nlx15+20H4eQgn3S3Y2XegO3qPdzFalakROsH6zq2IxiwTFQ4RcXV/rKslDOWZ2+BI0JxY=
