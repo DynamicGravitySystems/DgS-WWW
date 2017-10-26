@@ -25,11 +25,10 @@ deploy:
     local-dir: _site
     acl: public_read
     on:
-      repo: $DEPLOYREPO
+      branch: master
   - provider: s3
-    access_key_id: $AWSKEYID
-    secret_access_key:
-      secure: $AWSSECRET
+    access_key_id: $AWSDEVKEYID
+    secret_access_key: $AWSDEVSECRET
     bucket: $AWSDEVBUCKET
     skip_cleanup: true
     region: $AWSREGION
