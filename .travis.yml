@@ -25,7 +25,7 @@ deploy:
     local-dir: _site
     acl: public_read
     on:
-      branch: master
+      branch: $DEPLOYPRODBRANCH
   - provider: s3
     access_key_id: $AWSDEVKEYID
     secret_access_key: $AWSDEVSECRET
@@ -35,4 +35,4 @@ deploy:
     local-dir: _site
     acl: public_read
     on:
-      branch: develop
+      branch: $DEPLOYDEVBRANCH
