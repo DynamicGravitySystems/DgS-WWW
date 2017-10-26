@@ -1,7 +1,6 @@
 # Dynamic Gravity Systems Public Website #
 
-[![Build Status](https://travis-ci.org/bradyzp/dgs-jekyll.svg?branch=master)](https://travis-ci.org/bradyzp/dgs-jekyll)
-
+[![Build Status](https://travis-ci.org/DynamicGravitySystems/dgs-static-web.svg?branch=master)](https://travis-ci.org/DynamicGravitySystems/dgs-static-web)
 Generated using [Jekyll][jekyll] Static Site Generator
 
 ## Build Info ##
