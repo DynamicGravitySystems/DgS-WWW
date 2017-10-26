@@ -17,8 +17,7 @@ sudo: false
 deploy:
   - provider: s3
     access_key_id: $AWSKEYID
-    secret_access_key:
-      secure: $AWSSECRET
+    secret_access_key: $AWSSECRET
     bucket: $AWSBUCKET
     skip_cleanup: true
     region: $AWSREGION
