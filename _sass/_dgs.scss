@@ -1,0 +1,22 @@
+// =================================
+// Custom font-styles for DgS theme
+// =================================
+
+
+$dgs-header-fonts: Orbitron, "Courier New", monospace;
+
+
+.dgs-heavy{
+    font-family: $dgs-header-fonts;
+    font-weight: 800;
+}
+.dgs-medium {
+  font-family: $dgs-header-fonts;
+  font-weight: 600;
+}
+
+.rounded {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}

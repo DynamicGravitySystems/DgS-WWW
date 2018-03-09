@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
+
 <body>
-    {% include header.html %}
-    <main>
-        <article id="home">
+{% include nav.html %}
+<main>
+    {% include banner.html %}
+    <div class="section">
+        <div class="container row">
             {{ content }}
-        </article>
-        <div class="home">
-            <a class="container" id="air" href="{{ 'products#airborne-gravity' | prepend: site.baseurl }}"><span class="link">AIRBORNE</span></a>
-            <a class="container" id="sea" href="/products#marine-gravity"><span class="link">MARINE</span></a>
-            <a class="container" id="land" href="/products#land-gravity"><span class="link">LAND</span></a>
+
+            <div class="row">
+                <div class="col s4 center">
+                    <a href="/products#airborne">
+                        <i class="large material-icons black-text darken-4">flight_takeoff</i>
+                        <h4 class="center purple-text">Airborne Gravity</h4>
+                    </a>
+                    <p>{{ site.data.home.airborne_caption }}</p>
+                </div>
+                <div class="col s4 center">
+                    <a href="/products#marine">
+                        <i class="large material-icons blue-text">directions_boat</i>
+                        <h4 class="center purple-text">Marine Gravity</h4>
+                    </a>
+                    <p>{{ site.data.home.marine_caption }}</p>
+                </div>
+                <div class="col s4 center">
+                    <a href="/products#land">
+                        <i class="large material-icons green-text">landscape</i>
+                        <h4 class="center purple-text">Land Gravity</h4>
+                    </a>
+                    <p>{{ site.data.home.land_caption }}</p>
+                </div>
+            </div>
+            <div class="divider"></div>
         </div>
-    </main>
-    {% include footer.html %}
+    </div>
+</main>
+{% include footer.html %}
+{% include scripts.html %}
 </body>
 </html>

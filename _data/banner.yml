@@ -1,0 +1,13 @@
+images:
+  - path: /assets/banner/banner1.jpg
+    alt-text:
+    caption:
+    sm_caption:
+    align: right-align
+    top: 5%
+  - path: /assets/banner/banner2.png
+    alt-text:
+    caption:
+    align: right-align
+    top: 50%
+  - path: /assets/banner/banner3.jpg

@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: products
 title: Products
 permalink: /products/
+active: true
 ---
 
 # PRODUCTS #

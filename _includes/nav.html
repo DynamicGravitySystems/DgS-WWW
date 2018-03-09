@@ -1,0 +1,19 @@
+<div class="navbar-fixed" id="top">
+    <nav class="blue" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="/" class="brand-logo hide-on-small left">
+                <img class="" width="75px" src="/assets/images/DGS-Logo.png">
+            </a>
+            <ul class="left hide-on-med-and-down">
+                <li style="margin-left: 85px"><a style="font-size: 1.3em;" href="/">Dynamic Gravity Systems</a></li>
+            </ul>
+            <ul class="right">
+                {%- for page in site.pages -%}
+                {%- if page.active -%}
+                <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+                {%- endif -%}
+                {%- endfor -%}
+            </ul>
+        </div>
+    </nav>
+</div>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+{% include nav.html %}
+{% include banner.html %}
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m10">
+                <h3 class="dgs-heavy center-align blue-text">DgS Products</h3>
+                <h6>{{ site.data.products.intro }}</h6>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 m10">
+                {%- assign row_idx = 0 %}
+                {%- for product in site.data.products.products %}
+                {%- assign row_idx = row_idx | plus: 1 %}
+                {%- capture mod %}{{ row_idx | modulo: 2}}{% endcapture %}
+                {%- if mod == 0 -%}
+                <!--TODO: Fix push/pull for alternate side images (if desired to use that functionality)-->
+                {%- else -%}
+                {%- endif -%}
+                <div class="card grey lighten-5 scrollspy" id="{{ product.anchor }}">
+                    <div class="card-action white darken-3 valign-wrapper">
+                        <span class="bold" style="font-size: 2em; width: 100%">{{ product.name }}
+                            <i class="material-icons medium right {{product.icon_color}}-text">{{ product.icon }}</i></span>
+                    </div>
+                    <div class="card-content">
+                        <p>
+                            {{ product.content }}
+                        </p>
+                        <br>
+                        <div class="divider"></div>
+                        <br>
+                        <div class="row">
+                            <div class="col s9 m8 l7">
+                                {%- if product.table %}
+                                <!--Spec Table Container-->
+                                <h6 class="center-align">Specifications:</h6>
+                                <table class="highlight">
+                                    {%- if product.tbl_headers -%}
+                                    <thead>
+                                    <tr>
+                                        {%- for header in product.tbl_headers -%}
+                                        <th>{{ header }}</th>
+                                        {%- endfor -%}
+                                    </tr>
+                                    </thead>
+                                    {%- endif -%}
+                                    <tbody>
+                                    {% for row in product.tbl_rows %}
+                                    <tr>
+                                        <td>{{ row[0] }}</td>
+                                        <td>{{ row[1] }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                {% endif %}
+                            </div>
+                            <div class="col s3 m4 l5">
+                                <!--Image Container-->
+                                <img class="materialboxed responsive-img rounded" src="{{ product.image | prepend: site.data.products.image-base }}">
+
+                            </div>
+                        </div>
+                        <a href="#top" class="btn waves-effect waves-light purple"><i class="material-icons left">arrow_upward</i>Top</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col hide-on-small-only s0 m2 l2">
+                <div class="hide-on-small" id="toc">
+                    <ul class="table-of-contents">
+                        {%- for product in site.data.products.products -%}
+                        <li><a href="#{{ product.anchor }}">{{ product.name }}</a></li>
+                        {%- endfor -%}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+{% include footer.html %}
+{% include scripts.html %}
+
+</body>
+</html>

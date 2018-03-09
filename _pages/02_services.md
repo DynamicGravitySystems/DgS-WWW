@@ -1,7 +1,8 @@
 ---
-layout: default
+layout: services
 title: Services
 permalink: /services/
+active: true
 ---
 
 # SERVICES #

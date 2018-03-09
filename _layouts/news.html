@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+{% include nav.html %}
+<main>
+    {% include banner.html %}
+    {{ content }}
+    <div class="container">
+    <div class="section">
+        {% for post in site.posts %}
+        {{ post }}
+        {%- endfor -%}
+    </div>
+    </div>
+    {% include footer.html %}
+</main>
+{% include scripts.html %}
+</body>
+</html>
