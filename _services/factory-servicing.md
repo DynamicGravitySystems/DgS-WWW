@@ -1,7 +1,7 @@
 ---
 title: Factory Servicing
 image:
-icon: 
+icon: settings
 ---
 ##### Servicing Options #####
 
@@ -10,4 +10,5 @@ icon:
 
 ##### Field Service #####
 
-We can also conduct field servicing of sensors and systems at *your* location. Including system maintenance checks and field calibration of sensor, servicing of gimbal and platform controller, and system software updates.
+We can also conduct field servicing of sensors and systems at *your* location. Including system maintenance 
+checks and field calibration of sensor, servicing of gimbal and platform controller, and system software updates.

@@ -1,6 +1,6 @@
 ---
 title: Training and Testing
-icon: 
+icon: school
 image:
 ---
 

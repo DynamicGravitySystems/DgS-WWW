@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 {% include head.html %}
-
 <body>
 {% include nav.html %}
 {% include banner.html %}
@@ -9,17 +8,17 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m10">
-                <h3 class="dgs-heavy center-align blue-text">DgS Products</h3>
+                <h3 class="dgs-heavy center-align blue-text">Products</h3>
                 <h6>{{ site.data.products.intro }}</h6>
             </div>
         </div>
-
         <div class="row">
-            <div class="col s12 m10">
+            <div class="col s12 m10 l10">
                 {%- assign row_idx = 0 %}
                 {%- for product in site.data.products.products %}
                 {%- assign row_idx = row_idx | plus: 1 %}
                 {%- capture mod %}{{ row_idx | modulo: 2}}{% endcapture %}
+
                 {%- if mod == 0 -%}
                 <!--TODO: Fix push/pull for alternate side images (if desired to use that functionality)-->
                 {%- else -%}
@@ -65,7 +64,6 @@
                             <div class="col s3 m4 l5">
                                 <!--Image Container-->
                                 <img class="materialboxed responsive-img rounded" src="{{ product.image | prepend: site.data.products.image-base }}">
-
                             </div>
                         </div>
                         <a href="#top" class="btn waves-effect waves-light purple"><i class="material-icons left">arrow_upward</i>Top</a>
@@ -84,12 +82,8 @@
             </div>
         </div>
     </div>
-
-
-
 </main>
 {% include footer.html %}
 {% include scripts.html %}
-
 </body>
 </html>

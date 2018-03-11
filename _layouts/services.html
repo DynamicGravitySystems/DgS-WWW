@@ -21,10 +21,12 @@
                 {%- for service in site.services -%}
 
                 <div class="card grey lighten-5 scrollspy" id="{{ service.title }}">
-                    <div class="card-action blue lighten-2 valign-wrapper">
+                    <div class="card-action white valign-wrapper">
                         <span style="font-size: 1.8em; width: 100%">
                             {{ service.title }}
-                            <i class="material-icons small right">{{ service.icon }}</i>
+                            {%- if service.icon -%}
+                            <i class="material-icons right" style="font-size: 1.4em">{{ service.icon }}</i>
+                            {%- endif -%}
                         </span>
                     </div>
                     <div class="card-content">
@@ -38,7 +40,7 @@
                             </div>
                             {%- endif -%}
                         </div>
-                        <a href="#top" class="btn waves-effect waves-light purple"><i class="material-icons left">arrow_upward</i>Top</a>
+                        <a href="#top" class="btn-small waves-effect waves-purple btn-flat"><i class="material-icons left">arrow_upward</i>Top</a>
                     </div>
                 </div>
                 {%- endfor -%}
