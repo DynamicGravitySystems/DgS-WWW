@@ -3,7 +3,7 @@
 <script type="text/javascript" src="/js/bin/materialize.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function() {
-        $('.slider').slider({height: 400, full_width: true, indicators: false, interval: 12000});
+        $('.slider').slider({height: 400, full_width: true, indicators: true, interval: 12000});
         $('.materialboxed').materialbox();
         $('.tooltipped').tooltip();
         $('.scrollspy').scrollSpy();
@@ -11,5 +11,6 @@
             top: 650,
             offset: 64
         });
+        $('.modal').modal();
     });
 </script>

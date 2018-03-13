@@ -4,6 +4,7 @@
 
 
 $dgs-header-fonts: Orbitron, "Courier New", monospace;
+$dgs-card-color: 'purple';
 
 
 .dgs-heavy{
@@ -19,4 +20,15 @@ $dgs-header-fonts: Orbitron, "Courier New", monospace;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+
+// Sticky footer - sticks footer to bottom of page even when content is short
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
 }

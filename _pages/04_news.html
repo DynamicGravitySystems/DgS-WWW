@@ -1,0 +1,29 @@
+---
+layout: news
+title: News
+permalink: /news/
+active: true
+---
+<div class="container">
+    <div class="row">
+        <h3 class="dgs-heavy center-align blue-text">{{ page.title }}</h3>
+        <div class="col s12 m10">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m10 l10">
+            {%- for post in site.posts -%}
+            {{ post }}
+            {%- endfor -%}
+        </div>
+        <div class="col hide-on-small-only s0 m2 l2">
+            <div class="hide-on-small" id="toc">
+                <ul class="table-of-contents">
+                    {%- for post in site.posts -%}
+                    <li><a href="#{{ post.title }}">{{ post.title }}</a></li>
+                    {%- endfor -%}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,7 @@ sass:
   sass_dir: _sass
 include: ['_pages']
 exclude: ['assets/images/sources', vendor, 'script/', Gemfile, Gemfile.lock, README.md, '.idea/']
+markdown: kramdown
 kramdown:
   input: GFM
 

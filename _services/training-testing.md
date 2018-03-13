@@ -1,7 +1,7 @@
 ---
 title: Training and Testing
 icon: school
-image:
+image: testing1.jpg
 ---
 
 We can conduct training on installation, operation, maintenance, and data processing for marine and airborne gravity 

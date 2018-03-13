@@ -1,7 +1,7 @@
 intro: >
   Dynamic Gravity Systems (DgS) specializes in the manufacture and servicing of zero-length spring based, full feedback,
    dynamic gravity meters - for Air, Sea and Land applications.
-image-base: /assets/images/products/
+image-base: /assets/products/
 products:
   - name: Airborne Gravity
     icon: flight_takeoff
