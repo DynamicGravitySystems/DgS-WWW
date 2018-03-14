@@ -4,7 +4,7 @@ intro: >
 image-base: /assets/products/
 products:
   - name: Airborne Gravity
-    icon: flight_takeoff
+    icon: flight
     icon_color: black
     anchor: airborne
     content: >

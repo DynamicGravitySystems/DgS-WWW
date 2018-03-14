@@ -6,7 +6,7 @@ images:
     align: right-align
     top: 5%
   - path: /assets/banner/banner2.png
-    alt-text:
+    alt-text: Flight operations in Antarctica
     caption:
     align: right-align
     top: 50%
