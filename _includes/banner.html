@@ -1,0 +1,17 @@
+<div class="slider">
+    <ul class="slides">
+        {%- for image in site.data.banner.images %}
+        <li>
+            <img src="{{ image.path }}" alt="{{ image.alt-text }}">
+            <div class="caption {{ image.align }}" style="top: {{ image.top }}">
+                {%- if image.caption -%}
+                <h3 class="dgs-heavy bold italic purple-text text-lighten-1">{{ image.caption }}</h3>
+                {%- endif -%}
+                {%- if image.sm_caption -%}
+                <h6 class="white-text text-darken-2">{{ image.sm_caption }}</h6>
+                {%- endif -%}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -2,13 +2,12 @@
 <html>
 {% include head.html %}
 <body>
-    {% include header.html %}
-    <main>
-        <article>
-            {{ content }}
-        </article>
-    </main>
-    {% include footer.html %}
-    <script src="{{ "/scripts/lightbox-plus-jquery.js" | prepend: site.baseurl }}"></script>
+{% include nav.html %}
+{% include banner.html %}
+<main>
+    {{ content }}
+</main>
+{% include footer.html %}
+{% include scripts.html %}
 </body>
 </html>

@@ -1,0 +1,95 @@
+intro: >
+  Dynamic Gravity Systems (DgS) specializes in the manufacture and servicing of zero-length spring based, full feedback,
+   dynamic gravity meters - for Air, Sea and Land applications.
+image-base: /assets/products/
+products:
+  - name: Airborne Gravity
+    icon: flight
+    icon_color: black
+    anchor: airborne
+    content: >
+      Dynamic Gravity Systems Inc. (DgS) presents its airborne gravity survey system, a robust full feedback zero-length
+      spring based gravity meter, with worldwide gravity range. Our new and upgraded systems feature full feedback
+      magnetic damping, redesigned and improved platform control, integrated high-performance, temperature-controlled
+      electronics, and a simplified user-friendly data display and system control interface.
+    image: airborne-meter-1.jpg
+    table: true
+    tbl_headers:
+    tbl_rows:
+      Gravity Range: 7000 mGals (Worldwide)
+      Sensor Type: Zero-Length Spring
+      Resolution: 0.01 milliGals (mGals)
+      Static Repeatability: 0.05 mGals
+      Dynamic Repeatability: |
+        0.25 mGal @ 50,00 mGal horizontal<br>
+        0.50 mGal @ 100,000 mGal horizontal<br>
+        0.25 mGal @ 100,00 mGal vertical<br>
+      Platform Period: 4 Minutes
+      Data and GPS recording freq: 10Hz
+      INS Platform Control: Optional
+      Dimensions (approx): |
+        71(l) x 56(w) x 84(h) cm<br>
+        28(l) x 22(w) x 33(h) inches
+      Weight (approx): |
+        80kg / 177lbs<br>
+        +25kg / +55lbs with UPS
+      Power Consumption: |
+        Avg: 60 Watts<br>
+        Max: 150 Watts<br>
+        Input: 80-265 VAC
+
+  - name: Marine Gravity
+    icon: directions_boat
+    icon_color: blue
+    anchor: marine
+    content: >
+      DgS's workhorse Marine Gravity Sensor is based on the same advanced sensor and platform technology as our Airborne
+      gravity platform, with a more compact frame.
+    image: marine-meter-1.jpg
+    table: true
+    tbl_headers:
+    tbl_rows:
+      Gravity Range: 7000 mGals (Worldwide)
+      Sensor Type: Zero-Length Spring
+      Resolution: 0.01 milliGals (mGals)
+      Static Repeatability: 0.05 mGals
+      Dynamic Repeatability: |
+        0.25 mGal @ 50,00 mGal horizontal<br>
+        0.50 mGal @ 100,000 mGal horizontal<br>
+        0.25 mGal @ 100,00 mGal vertical<br>
+      Platform Period: 4 Minutes
+      Data and GPS recording freq: 10Hz
+      INS Platform Control: Optional
+      Dimensions (approx): |
+        71(l) x 56(w) x 84(h) cm<br>
+        28(l) x 22(w) x 33(h) inches
+      Weight (approx): |
+        80kg / 177lbs<br>
+        +25kg / +55lbs with UPS
+      Power Consumption: |
+        Avg: 60 Watts<br>
+        Max: 150 Watts<br>
+        Input: 80-265 VAC
+
+  - name: Land Gravity
+    icon: landscape
+    icon_color: green
+    anchor: land
+    content: >
+      Dynamic Gravity Systems Inc. (DgS) Introduces its newest Advanced Technology to the latest land gravity meter. Following in the footsteps of the famous LaCoste and Romberg Model G land meter, DgS has developed the first worldwide range, full force feedback land meter using a zero length spring.
+    image: land-meter-1.jpg
+    table: true
+    tbl_rows:
+      Gravity Range: 7000 mGals (Worldwide)
+      Sensor Type: Zero Length Metal Spring
+      Resolution: 0.005 milliGals (mGal)
+      Repeatability: 0.01 - 0.02 mGals
+      Accuracy: 0.02 mGals
+      Temperature Range: -25deg Celcius to +45deg Celcius
+      Drift: < 1.0 mGal per month from factory, < 0.5 mGal/month after aging
+      Output: Serial Data Output/Bluetooth
+      Power: Lithium Battery
+      Dimensions (approx): 20cm x 18cm x 25cm
+      Weight (approx): Meter and Battery 4kg + 5kg with Hard Case
+      Available Options: Low temperature environment accessories
+
