@@ -8,7 +8,32 @@
     
       gtag('config', 'UA-108735070-1');
     </script>
-    <title>Dynamic Gravity Systems: Advanced Technology Gravity Meters</title>
+    <!-- Google reCaptcha Script -->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://api.dynamicgravitysystems.com/js/sendmail.js"></script>
+    <script>
+        function onEmailSubmit(token){
+            // TODO: Iterate through form to grab inputs?
+            var fromEmail = document.getElementById('email-input');
+            var fromName = document.getElementById('name-input');
+            var subject = document.getElementById('subject-input');
+            var message = document.getElementById('body-input');
+            var payload = {
+                from: fromEmail,
+                name: fromName,
+                subject: subject,
+                message: message,
+                captcha: token
+            };
+            var http = new XMLHttpRequest();
+            http.open("POST", "https://api.dynamicgravitysystems.com/sendmail", true);
+            http.setRequestHeader("Content-type", "application/json");
+            http.send(JSON.stringify(payload));
+            http.onload = function(){
+                window.alert("Your message was sent!");
+            }
+        }
+    </script>
 
 
     <!--Import Google Icon Font-->
@@ -17,11 +42,12 @@
     <link type="text/css" rel="stylesheet" href="/css/main.css"   media="screen,projection"/>
     <!--Import Google Orbitron Font for DgS Headers-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Orbitron">
-
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+    <!-- Load Favicons -->
     <link rel="icon" type="image/png" href="/assets/logos/favicon.png">
     <link rel="shortcut icon" type="image/png" href="/assets/logos/favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/logos/favicon.ico">
+
+    <title>Dynamic Gravity Systems: Advanced Technology Gravity Meters</title>
 </head>

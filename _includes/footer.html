@@ -3,7 +3,13 @@
         <div class="modal-content">
             <div class="row">
                 <h5 class="black-text">Send us an email!</h5>
-                <form class="col s12">
+                <form id="email-form" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input disabled id="email-to" type="email" value="info@dynamicgravitysystems.com">
+                            <label for="email-to">To:</label>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="material-icons prefix blue-text">account_circle</i>
@@ -27,15 +33,17 @@
                             <textarea id="body-input" rows="3" class="materialize-textarea"></textarea>
                             <label for="body-input">Message:</label>
                         </div>
-
                     </div>
                 </form>
 
             </div>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-purple btn">Cancel</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-purple btn">Send</a>
+            <a href="#" class="modal-action modal-close waves-effect waves-purple btn">Cancel</a>
+            <button class="g-recaptcha" data-sitekey="6LdaQ00UAAAAALKO6Y8zMJcd8UXfS9C0Aeg5rok0"
+                    data-callback="onEmailSubmit">
+                Submit
+            </button>
         </div>
     </div>
     <div class="container">
@@ -50,8 +58,8 @@
             <div class="col s9 m5 l4">
                 <div class="valign-wrapper">
                     <p>
-                        <!--<a href="#email-modal" class="btn-floating blue pulse modal-trigger"><i class="material-icons white-text">email</i></a>-->
-                        <a href="mailto: info@dynamicgravitysystems.com" class="btn-floating blue pulse"><i class="material-icons white-text">email</i></a>
+                        <a href="#email-modal" class="btn-floating blue pulse modal-trigger"><i class="material-icons white-text">email</i></a>
+                        <!--<a href="mailto: info@dynamicgravitysystems.com" class="btn-floating blue pulse"><i class="material-icons white-text">email</i></a>-->
                         <a href="mailto: info@dynamicgravitysystems.com" class="white-text">info@dynamicgravitysystems.com</a><br><br>
                         <a href="tel: +13038156376" class="btn-floating blue"><i class="material-icons white-text">phone</i></a>
                         <a href="tel: +13038156376" class="white-text">+1-303-815-6376</a><br><br>
