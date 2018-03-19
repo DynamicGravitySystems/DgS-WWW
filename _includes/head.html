@@ -1,5 +1,6 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    {% if jekyll.environment == "production" %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108735070-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -8,10 +9,22 @@
     
       gtag('config', 'UA-108735070-1');
     </script>
+        {% assign sitekey = "6LdaQ00UAAAAALKO6Y8zMJcd8UXfS9C0Aeg5rok0" %}
+    {% elsif jekyll.environment == "development" %}
+        {% assign sitekey = "6LfiZ00UAAAAAOv13yLR_BbBQ-X36qeBjV6y3o4x" %}
+    {% endif %}
     <!-- Google reCaptcha Script -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src="https://api.dynamicgravitysystems.com/js/sendmail.js"></script>
+    <!--<script src="https://api.dynamicgravitysystems.com/js/sendmail.js" async defer></script>-->
     <script>
+        function validate(){
+            const form = document.getElementById("email-form");
+            if (form.reportValidity()){
+                grecaptcha.reset();
+                grecaptcha.execute();
+            } else {
+                alert("Invalid input in form");
+            }
+        }
         function onEmailSubmit(token){
             // TODO: Iterate through form to grab inputs?
             var fromEmail = document.getElementById('email-input');
@@ -26,14 +39,19 @@
                 captcha: token
             };
             var http = new XMLHttpRequest();
-            http.open("POST", "https://api.dynamicgravitysystems.com/sendmail", true);
+            // http.open("POST", "https://api.dynamicgravitysystems.com/sendmail", true);
+            http.open("POST", "https://localhost/sendmail", true);
+            http.onload = function () {
+                M.toast({html: "Your message was sent!", displayLength: 4000});
+            };
+            http.onerror = function (ev) {
+                M.toast({html: "Error sending your message.", displayLength: 4000});
+            };
             http.setRequestHeader("Content-type", "application/json");
             http.send(JSON.stringify(payload));
-            http.onload = function(){
-                window.alert("Your message was sent!");
-            }
         }
     </script>
+    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
 
 
     <!--Import Google Icon Font-->
