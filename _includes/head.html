@@ -1,6 +1,6 @@
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    {% if jekyll.environment == "production" %}
+    {%- if jekyll.environment == "production" -%}
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108735070-1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,16 +9,15 @@
     
       gtag('config', 'UA-108735070-1');
     </script>
-        {% assign sitekey = "6LdaQ00UAAAAALKO6Y8zMJcd8UXfS9C0Aeg5rok0" %}
-    {% elsif jekyll.environment == "development" %}
-        {% assign sitekey = "6LfiZ00UAAAAAOv13yLR_BbBQ-X36qeBjV6y3o4x" %}
-    {% endif %}
     <!--DgS Sendmail API Script-->
-    <script src="https://api.dynamicgravitysystems.com/js/sendmail.js" async defer></script>
+    <script src="https://api.dynamicgravitysystems.com/js/dgsapi.js" async defer></script>
+        {%- assign sitekey = "6LdaQ00UAAAAALKO6Y8zMJcd8UXfS9C0Aeg5rok0" -%}
+    {%- elsif jekyll.environment == "development" -%}
+        {% assign sitekey = "6LfiZ00UAAAAAOv13yLR_BbBQ-X36qeBjV6y3o4x" -%}
+    <script src="http://localhost:8080/js/dgsweb.js" async defer></script>
+    {% endif %}
     <!-- Google reCaptcha Script -->
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
-
-
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
