@@ -3,7 +3,7 @@ title: Dynamic Gravity Systems
 description: >
   Dynamic Gravity Systems Homepage
 baseurl: ""
-url: "http://localhost:4000"
+#url: "http://localhost:4000"
 
 # Build Settings
 sass:
