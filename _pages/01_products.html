@@ -7,8 +7,8 @@ active: true
 <div class="container">
     <div class="row">
         <h3 class="dgs-heavy center-align blue-text">{{ page.title }}</h3>
-        <div class="col s12 m10">
-            <h6>{{ site.data.products.intro }}</h6>
+        <div class="col s12">
+            <p class="flow-text">{{ site.data.products.intro }}</p>
         </div>
     </div>
     <div class="row">
@@ -17,11 +17,6 @@ active: true
             {%- for product in site.data.products.products %}
             {%- assign row_idx = row_idx | plus: 1 %}
             {%- capture mod %}{{ row_idx | modulo: 2}}{% endcapture %}
-
-            {%- if mod == 0 -%}
-            <!--TODO: Fix push/pull for alternate side images (if desired to use that functionality)-->
-            {%- else -%}
-            {%- endif -%}
             <div class="card grey lighten-4 scrollspy" id="{{ product.anchor }}">
                 <div class="card-action grey lighten-1 white-text valign-wrapper" style="padding-top: 6px; padding-bottom: 6px;">
                     <span style="font-weight: 600; font-size: 2em; width: 100%">{{ product.name }}</span>
@@ -40,17 +35,17 @@ active: true
                             <!--Spec Table Container-->
                             <h6 class="center-align">Specifications:</h6>
                             <table class="highlight">
-                                {%- if product.tbl_headers -%}
+                                {% if product.tbl_headers %}
                                 <thead>
                                 <tr>
-                                    {%- for header in product.tbl_headers -%}
+                                    {% for header in product.tbl_headers -%}
                                     <th>{{ header }}</th>
                                     {%- endfor -%}
                                 </tr>
                                 </thead>
                                 {%- endif -%}
                                 <tbody>
-                                {% for row in product.tbl_rows %}
+                                {% for row in product.tbl_rows -%}
                                 <tr>
                                     <td>{{ row[0] }}</td>
                                     <td>{{ row[1] }}</td>
@@ -65,7 +60,6 @@ active: true
                             <img class="materialboxed responsive-img rounded" src="{{ product.image | prepend: site.data.products.image-base }}">
                         </div>
                     </div>
-                    <a href="#top" class="btn-flat purple darken-3 white-text"><i class="material-icons left">arrow_upward</i>Top</a>
                 </div>
             </div>
             {% endfor %}
@@ -81,4 +75,3 @@ active: true
         </div>
     </div>
 </div>
-

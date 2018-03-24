@@ -5,7 +5,7 @@ images:
     sm_caption:
     align: right-align
     top: 5%
-  - path: /assets/banner/banner2.png
+  - path: /assets/banner/banner2.jpg
     alt-text: Flight operations in Antarctica
     caption:
     align: right-align
