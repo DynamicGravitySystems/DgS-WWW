@@ -13,11 +13,11 @@
         {%- assign sitekey = "6LdaQ00UAAAAALKO6Y8zMJcd8UXfS9C0Aeg5rok0" -%}
     {%- elsif jekyll.environment == "development" -%}
         {% assign sitekey = "6LfiZ00UAAAAAOv13yLR_BbBQ-X36qeBjV6y3o4x" -%}
-    <script src="http://localhost:8080/js/dgsweb.js" async defer></script>
+    <!--<script src="http://localhost:8080/js/dgsapi.js" async defer></script>-->
     {% endif %}
-    <script src="/js/helpers.js" async defer></script>
+    <script src="/js/dist/index.bundle.js"></script>
     <!-- Google reCaptcha Script -->
-    <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+    <!--<script src='https://www.google.com/recaptcha/api.js' async defer></script>-->
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->

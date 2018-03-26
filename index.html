@@ -44,12 +44,29 @@ permalink: /
         <div class="divider"></div>
 </div>
 
-<div class="section grey lighten-3">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div class="section grey darken-3">
+    <div class="container">
+        <div class="card">
+            <div class="card-content" style="height: 500px;">
+                <span class="center-align card-title" id="gravChartTitle">AT1M-X Live Data</span>
+                <canvas id="gravChart" height="500px">
+                    Graph unavailable.
+                </canvas>
+                <script src="/js/dist/plot.bundle.js"></script>
+                <script defer>listen('http://localhost:8000/live');</script>
+            </div>
+            <div class="card-action">
+                Controls:
+                <div class="switch">
+                    <label>Disabled
+                        <input type="checkbox" checked onchange="">
+                        <span class="lever">
+                    </span>
+                        Enabled
+                    </label>
+                </div>
+            </div>
+        </div>
 
-    <div class="container row">
-        <h4 class="center-align">AT1M-X Live Data</h4>
-        <div class="col s12 center" id="plot-container"></div>
     </div>
-    <script defer>initPlot('plot-container')</script>
 </div>

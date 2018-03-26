@@ -1,16 +1,31 @@
 <!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="/js/bin/materialize.min.js"></script>
+<!--<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
+<script type="text/javascript" src="/js/dist/materialize.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('.slider').slider({height: 400, full_width: true, indicators: true, interval: 12000});
-        $('.materialboxed').materialbox();
-        $('.tooltipped').tooltip();
-        $('.scrollspy').scrollSpy();
-        $('#toc').pushpin({
-            top: 650,
-            offset: 64
-        });
-        $('.modal').modal();
+    M.Slider.init(document.querySelector('.slider'), {
+        height: 400,
+        full_width: true,
+        indicators: true,
+        interval: 12000});
+    var pushpin = M.Pushpin.init(document.querySelector('#toc'), {
+        top: 650,
+        offset: 64,
     });
+
+    M.Materialbox.init(document.querySelectorAll('.materialboxed'));
+    var scrollspy = M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
+    M.Modal.init(document.querySelector('.modal'));
+    // M.Tooltip.init(document.querySelector('.tooltipped'));
+
+    // $(document).ready(function() {
+    //     $('.slider').slider({height: 400, full_width: true, indicators: true, interval: 12000});
+    //     $('.materialboxed').materialbox();
+    //     $('.tooltipped').tooltip();
+    //     $('.scrollspy').scrollSpy();
+    //     $('#toc').pushpin({
+    //         top: 650,
+    //         offset: 64
+    //     });
+    //     $('.modal').modal();
+    // });
 </script>
