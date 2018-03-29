@@ -1,4 +1,5 @@
-_site
-_site/*
+_site/
+node_modules/
 .sass-cache
 .idea/
+*.psd

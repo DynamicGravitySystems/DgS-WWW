@@ -6,7 +6,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'UA-108735070-1');
     </script>
     <!--DgS Sendmail API Script-->
@@ -14,8 +13,9 @@
         {%- assign sitekey = "6LdaQ00UAAAAALKO6Y8zMJcd8UXfS9C0Aeg5rok0" -%}
     {%- elsif jekyll.environment == "development" -%}
         {% assign sitekey = "6LfiZ00UAAAAAOv13yLR_BbBQ-X36qeBjV6y3o4x" -%}
-    <script src="http://localhost:8080/js/dgsweb.js" async defer></script>
+    <!--<script src="http://localhost:8080/js/dgsapi.js" async defer></script>-->
     {% endif %}
+    <script src="/js/dist/index.bundle.js"></script>
     <!-- Google reCaptcha Script -->
     <script src='https://www.google.com/recaptcha/api.js' async defer></script>
     <!--Import Google Icon Font-->
@@ -30,6 +30,5 @@
     <link rel="icon" type="image/png" href="/assets/logos/favicon.png">
     <link rel="shortcut icon" type="image/png" href="/assets/logos/favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/logos/favicon.ico">
-
     <title>Dynamic Gravity Systems: Advanced Technology Gravity Meters</title>
 </head>

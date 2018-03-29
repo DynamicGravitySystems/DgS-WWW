@@ -7,13 +7,12 @@ active: true
 <div class="container">
     <div class="row">
         <h3 class="dgs-heavy center-align blue-text">{{ page.title }}</h3>
-        <div class="col s12 m10 l10">
-            <p>
+        <div class="col s12">
+            <p class="flow-text">
                 Dynamic Gravity Systems offers a variety of repair, upgrade, and training services. We can perform
                 repairs on our own products, as well as Microg-Lacoste TAGS systems, either at our location, or on-site
                 at yours.
-            </p>
-            <p>
+                <br><br>
                 We also offer upgraded Control Modules for TAGS systems, with upgrade electronics and control
                 software, which are drop-in replacements for the original control modules.
             </p>
@@ -24,13 +23,11 @@ active: true
             {%- for service in site.services -%}
 
             <div class="card grey lighten-4 scrollspy" id="{{ service.title }}">
-                <div class="card-title">
-                    <div class="valign-wrapper">
-                        <span style="font-size: 1.4em; font-weight: 500; padding-left: 12px; width: 100%;">{{ service.title }}</span>
-                        {%- if service.icon -%}
-                        <i class="material-icons right" style="font-size: 1.4em; padding-right: 24px;">{{ service.icon }}</i>
-                        {%- endif -%}
-                    </div>
+                <div class="card-action grey lighten-1 white-text valign-wrapper">
+                    <span style="font-size: 1.8em; font-weight: 600; width: 100%;">{{ service.title }}</span>
+                    {%- if service.icon -%}
+                    <i class="material-icons right" style="font-size: 2em;">{{ service.icon }}</i>
+                    {%- endif -%}
                 </div>
                 <div class="card-content">
                     <div class="row">
@@ -43,7 +40,6 @@ active: true
                         </div>
                         {%- endif -%}
                     </div>
-                    <a href="#top" class="btn-flat purple darken-3 white-text"><i class="material-icons left">arrow_upward</i>Top</a>
                 </div>
             </div>
             {%- endfor -%}
