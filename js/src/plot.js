@@ -1,6 +1,8 @@
 import Chart from 'chart.js';
 import io from 'socket.io-client';
 
+var dataWindow = 900000;
+
 const chartOpts = {
     responsive: true,
     maintainAspectRatio: false,
@@ -18,6 +20,8 @@ const chartOpts = {
                 labelString: 'Date'
             },
             time: {
+                min: new Date(Date.now() - dataWindow),
+                max: Date.now(),
                 displayFormats: {
                     second: 'HH:mm:ss'
                 },
@@ -34,6 +38,8 @@ const chartOpts = {
     elements: {
         line: {
             tension: 0,  // disable bezier curves
+            pointRadius: 0,  // disable points at line intersections
+            spanGaps: false
         }
     }
 };
@@ -65,6 +71,7 @@ function initChart(elementId){
         data: {
             datasets: [{
                 label: 'Gravity (Free Air)',
+                pointRadius: 0,
                 fill: false,
                 borderColor: '#3e95cd',
                 data: []
@@ -75,6 +82,8 @@ function initChart(elementId){
     chart.pushData = function(data, dataSet=0, update=false){
         this.data.datasets[dataSet].data.push(data);
         this.data.labels.push(data.x);
+        this.options.scales.xAxes[0].time.min = Date.now() - dataWindow;
+        this.options.scales.xAxes[0].time.max = Date.now();
         if (update) this.update(0);
     };
     chart.shift = function(dataSet=0){
@@ -85,7 +94,7 @@ function initChart(elementId){
     return chart;
 }
 
-const displayLimit = 100;
+const displayLimit = 15 * 60;
 const queue = [];
 export function listen(address){
     let socket;
