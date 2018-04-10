@@ -119,7 +119,7 @@ products:
       A typical repeatability of the dynamic readings is sigma < 0.060 mGal
       <br><br>
     applications: >
-    image: at-auv-1.jpg
+    image: at-auv-1.png
     image-text: Prototype AT1
     table: true
     tbl_rows:

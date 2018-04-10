@@ -1,6 +1,24 @@
 ---
-layout: gallery
+layout: default
 title: Gallery
 permalink: /gallery/
 active: false
 ---
+<div class="">
+    <div class="row">
+        <h3 class="center-align dgs-medium blue-text">Gallery</h3>
+        <div class="divider"></div>
+    </div>
+    <div class="row">
+        <p class="center-align grey-text text-darken-2">Click and drag or swipe to view more</p>
+        <!--<div class="card grey col s12">-->
+            <!--<div class="card-content">-->
+                <div class="carousel">
+                    {% for img in site.data.gallery.images %}
+                    <a class="carousel-item" style="height: 800px"><img src="{{ img.name | prepend: site.data.gallery.imagePath }}"></a>
+                    {% endfor %}
+                </div>
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
