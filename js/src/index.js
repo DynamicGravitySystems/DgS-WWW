@@ -1,6 +1,6 @@
 
 export function copyEmail(id){
-    var emailAddr = document.getElementById(id);
+    let emailAddr = document.getElementById(id);
     emailAddr.disabled = false;
     emailAddr.focus();
     emailAddr.select();
@@ -21,12 +21,13 @@ export function initMaterialize(){
         indicators: true,
         interval: 12000});
     M.Pushpin.init(document.querySelector('#toc'), {
-        top: 650,
+        top: 750,
         offset: 64
     });
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
     M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
-    M.Modal.init(document.querySelector('.modal'));
+    M.Modal.init(document.querySelectorAll('.modal'));
     M.FormSelect.init(document.querySelector('select'));
+    M.Carousel.init(document.querySelector('.carousel'), {numVisible: 6, fullWidth: true, indicators: true});
     return true;
 }

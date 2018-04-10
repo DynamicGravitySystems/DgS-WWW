@@ -1,6 +1,6 @@
 id: DGS Gallery
 description: Gallery
-imagePath: /images/gallery/
+imagePath: /assets/gallery/
 images:
     - name: land.jpg
       thumb: land-thumb.jpg

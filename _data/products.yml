@@ -3,9 +3,10 @@ intro: >
    dynamic gravity meters - for Air, Sea and Land applications.
 image-base: /assets/products/
 products:
-  - name: Airborne Gravity
+  - name: Airborne Gravity - AT1A
     icon: flight
-    icon_color: black
+    icon_color: text-darken-2 blue-grey
+    accent: purple
     anchor: airborne
     content: >
       Dynamic Gravity Systems Inc. (DgS) presents its airborne gravity survey system, a robust full feedback zero-length
@@ -13,18 +14,19 @@ products:
       magnetic damping, redesigned and improved platform control, integrated high-performance, temperature-controlled
       electronics, and a simplified user-friendly data display and system control interface.
     image: airborne-meter-1.jpg
+    image-alt:
     table: true
     tbl_headers:
     tbl_rows:
-      Gravity Range: 7000 mGals (Worldwide)
+      Gravity Range/Specific Force: +/- 1g (1000mGals)
       Sensor Type: Zero-Length Spring
       Resolution: 0.01 milliGals (mGals)
-      Static Repeatability: 0.05 mGals
+      Static Repeatability: 0.03 mGals
       Dynamic Repeatability: |
         0.25 mGal @ 50,00 mGal horizontal<br>
         0.50 mGal @ 100,000 mGal horizontal<br>
-        0.25 mGal @ 100,00 mGal vertical<br>
-      Platform Period: 4 Minutes
+        0.50 mGal @ 100,000 mGal vertical<br>
+      Platform Period: 4 Minutes/8 Minutes/INS aided
       Data and GPS recording freq: 10Hz
       INS Platform Control: Optional
       Dimensions (approx): |
@@ -38,26 +40,28 @@ products:
         Max: 150 Watts<br>
         Input: 80-265 VAC
 
-  - name: Marine Gravity
+  - name: Marine Gravity - AT1M
     icon: directions_boat
     icon_color: blue
+    accent: '#6196ed'
     anchor: marine
     content: >
-      DgS's workhorse Marine Gravity Sensor is based on the same advanced sensor and platform technology as our Airborne
-      gravity platform, with a more compact frame.
-    image: marine-meter-1.jpg
+      DgS's Marine Gravity Sensor is based on the same advanced sensor and platform technology as our Airborne
+      gravity platform, with a more compact frame. Our Marine gravity solution utilizes a similar custom data-display and
+      data collection interface, for easy and robust operation.
+    image: marine-meter-4.png
     table: true
     tbl_headers:
     tbl_rows:
-      Gravity Range: 7000 mGals (Worldwide)
+      Gravity Range: +/- 1g (200,000 mGals)
       Sensor Type: Zero-Length Spring
-      Resolution: 0.01 milliGals (mGals)
-      Static Repeatability: 0.05 mGals
+      Resolution: 0.01 mGals
+      Static Repeatability: 0.03 mGals
       Dynamic Repeatability: |
         0.25 mGal @ 50,00 mGal horizontal<br>
         0.50 mGal @ 100,000 mGal horizontal<br>
-        0.25 mGal @ 100,00 mGal vertical<br>
-      Platform Period: 4 Minutes
+        0.25 mGal @ 100,000 mGal vertical<br>
+      Platform Period: 4 Minutes/8 Minutes
       Data and GPS recording freq: 10Hz
       INS Platform Control: Optional
       Dimensions (approx): |
@@ -74,9 +78,12 @@ products:
   - name: Land Gravity
     icon: landscape
     icon_color: green
+    accent: '#84ed61'
     anchor: land
     content: >
-      Dynamic Gravity Systems Inc. (DgS) Introduces its newest Advanced Technology to the latest land gravity meter. Following in the footsteps of the famous LaCoste and Romberg Model G land meter, DgS has developed the first worldwide range, full force feedback land meter using a zero length spring.
+      Dynamic Gravity Systems Inc. (DgS) Introduces its newest Advanced Technology to the latest land gravity meter.
+      Following in the footsteps of the famous LaCoste and Romberg Model G land meter, DgS has developed the first
+      worldwide range, full force feedback land meter using a zero length spring.<br><br><br>
     image: land-meter-1.jpg
     table: true
     tbl_rows:
@@ -93,3 +100,35 @@ products:
       Weight (approx): Meter and Battery 4kg + 5kg with Hard Case
       Available Options: Low temperature environment accessories
 
+  - name: AT1-AUV-M
+    accent: '#61ede6'
+    content: >
+      Dynamic Gravity Systems has developed the AT1-AUV-M as a low-cost solution for user that that would like to add a
+      dynamic gravity meter for their existing AUV, for underwater marine survey applications. The systems include the Gravity sensor
+      and the electronics necessary for acquiring and storing the Gravity horizontal accelerations, sensor temperature,
+      and other signals. The AT1-AUV-M has very high stability and low drift, with an excellent Clamp / Un-clamp repeatability.
+    details: >
+      Gravity is a powerful tool to profile underground structures. Surface ship gravity is an efficient way to collect gravity over a relatively
+      large marine region with medium resolution, due to the distance from the sea floor. A sea-floor gravity meter can observe gravity with high
+      resolution, but are limited to small areas and quiet sites.
+      <br>
+      The AT1-AUV-M can allow operators to match the performance of the sea bottom meters, but over a much larger area, through integration
+      with your autonomous underwater vehicle (AUV), allowing high-resolution data collection over an area dependent only on your AUV platform.
+      Typically, gravity drifts less than 2 mGals/month and 0.5 mGals/month after aging. This sensor hast also  excellent clamp unclamp repeat characteristics, almost comparable with a Land Meter, which allows the meter to be used as a sea bottom surveying meter with  repeatability  better than 0.030 mGals
+      The AT-AUV has been designed as a Dynamic Gravity Sensor with with a gravity range 20.000 mGals making the sensor for dynamic Gravity reading. For this application the user needs to provide a suitable gyroscopic stable platform and and positioning.
+      A typical repeatability of the dynamic readings is sigma < 0.060 mGal
+      <br><br>
+    applications: >
+    image: at-auv-1.jpg
+    image-text: Prototype AT1
+    table: true
+    tbl_rows:
+      Resolution: 0.001 mGals
+      Dynamic Repeatability: 0.060 mGals
+      Clamp/Unclamp Repeatability: < 0.030 mGals
+      Dynamic Range: 10,000 to 20,000
+      Data Output Rate: 10Hz
+      Data Output Format: Digital (RS-232)
+      Dimensions (approx): 32cm x 32cm x 35cm
+      Weight (approx): 7kg/15lbs
+      Power Consumption: < 50 watts

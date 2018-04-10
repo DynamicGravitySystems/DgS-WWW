@@ -8,7 +8,8 @@ baseurl: ""
 sass:
   sass_dir: _sass
 include: ['_pages']
-exclude: ['assets/images/sources', vendor, 'script/', Gemfile, Gemfile.lock, '.idea/', License, README.md, 'node_modules/', 'package-lock.json']
+exclude: ['assets/images/sources', vendor, 'script/', Gemfile, Gemfile.lock, '.idea/', License, README.md,
+          'node_modules/', 'package-lock.json', 'webpack.config.js', 'LICENSE-Materialize', 'js/src']
 markdown: kramdown
 kramdown:
   input: GFM
