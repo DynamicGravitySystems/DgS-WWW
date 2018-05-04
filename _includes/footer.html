@@ -43,8 +43,6 @@
         </div>
         <div class="modal-footer row">
             <div id="recaptcha" class="g-recaptcha"
-                 data-sitekey="{{ sitekey }}"
-                 data-callback="onEmailSubmit"
                  data-badge="bottomleft"
                  data-size="invisible">
             </div>
@@ -52,6 +50,7 @@
             <button class="right btn" onclick="validate()">
                 Submit
             </button>
+            <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
         </div>
     </div>
     <!--Footer Contents-->
@@ -79,15 +78,16 @@
             </div>
             <div class="col s2">
                 <ul>
-                    <li><a class="white-text" href="https://github.com/DynamicGravitySystems" target="_blank">Github</a></li>
-                    <li><a class="white-text" href="https://github.com/DynamicGravitySystems/DGP" target="_blank">Dynamic Gravity Processor</a></li>
+                    <li><a class="white-text" href="https://github.com/DynamicGravitySystems" target="_blank" rel="noopener">Github</a></li>
+                    <li><a class="white-text" href="https://github.com/DynamicGravitySystems/DGP" target="_blank" rel="noopener">Dynamic Gravity Processor</a></li>
+                    <li><a class="white-text" href="https://github.com/bradyzp/LongmanTide" target="_blank" rel="noopener">TideGravity</a></li>
                 </ul>
             </div>
             <div class="col s5 m5 l4">
                 <ul>
                     <li>
-                        <a href="#email-modal" class="btn-floating blue pulse modal-trigger"><i class="material-icons white-text">email</i></a>
-                        <a href="#email-modal" class="modal-trigger white-text hide-on-med-and-down">Email</a>
+                        <a href="#email-modal" class="btn-floating blue pulse modal-trigger email-trigger"><i class="material-icons white-text">email</i></a>
+                        <a href="#email-modal" class="modal-trigger white-text hide-on-med-and-down email-trigger">Email</a>
                     </li>
                     <li><br></li>
                     <li>
