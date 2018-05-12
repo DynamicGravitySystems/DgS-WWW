@@ -5,7 +5,8 @@ const webpack = require('webpack');
 module.exports = merge(common, {
     plugins: [
         new webpack.DefinePlugin({
-            CAPTCHA_KEY: "'6LfiZ00UAAAAAOv13yLR_BbBQ-X36qeBjV6y3o4x'"
+            CAPTCHA_KEY: "'6LfiZ00UAAAAAOv13yLR_BbBQ-X36qeBjV6y3o4x'",
+            API_ENDPOINT: "'localhost:3000/tide'"
         })
     ]
 });

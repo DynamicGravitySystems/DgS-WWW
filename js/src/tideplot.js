@@ -4,7 +4,15 @@ import io from 'socket.io-client';
 
 const chartOpts = {
     responsive: true,
+    showLines: false,
     maintainAspectRatio: false,
+    animation: {
+        duration: 0,
+    },
+    hover: {
+        animationDuration: 0,
+    },
+    responsiveAnimationDuration: 0,
     layout: {
         padding: {
             bottom: 50,
@@ -21,7 +29,7 @@ const chartOpts = {
             time: {
                 min: Date.now(),
                 max: Date.now(),
-                minUnit: 'hour',
+                minUnit: 'minute',
             },
         }],
         yAxes: [{
@@ -32,10 +40,11 @@ const chartOpts = {
         }]
     },
     elements: {
-        line: {
-            tension: 0,  // disable bezier curves
-            pointRadius: 0,  // disable points at line intersections
-            spanGaps: false
+        // line: {
+        //     tension: 0,  // disable bezier curves
+        // },
+        point: {
+            radius: 2,
         }
     }
 };
@@ -67,9 +76,9 @@ function createChart(elementId){
         data: {
             datasets: [{
                 label: 'Gravity (Total Correction)',
-                pointRadius: 0,
                 fill: false,
-                borderColor: '#3e95cd',
+                borderWidth: 0,
+                backgroundColor: '#3e95cd',
                 data: []
             }]
         },
@@ -83,7 +92,6 @@ function createChart(elementId){
         });
         this.options.scales.xAxes[0].time.min = this.data.labels[0];
         this.options.scales.xAxes[0].time.max = this.data.labels.slice(-1)[0];
-        this.update(0);
     };
     chart.pushData = function(data, dataSet=0){
         this.data.datasets[dataSet].data.push(data.g0);
@@ -110,6 +118,7 @@ function listen(address){
         if (!hasData){
             console.log("Requesting cache");
             socket.emit('getcache', 3600);
+            console.log("Requesting location");
             socket.emit('getloc');
         }
     }).on('cache', (cache) => {
@@ -117,8 +126,9 @@ function listen(address){
         if (cache) {
             hasData = true;
             cdata = cache.slice(-1)[0];
+            chart.pushCache(cache);
             window.requestAnimationFrame(() => {
-                chart.pushCache(cache);
+                chart.update(0);
                 if (cdata) {
                     document.getElementById('currentTC').innerText = `${cdata.g0.toFixed(7)} mGals`;
                     document.getElementById('currentDate').innerText = `${moment.utc(cdata.ts).format(dateFmt)}`;
@@ -126,8 +136,13 @@ function listen(address){
             });
         }
     }).on('location', (loc) => {
-        hasLoc = true;
-        document.getElementById('coordinates').innerText = `Latitude: ${loc.latitude} Longitude: ${loc.longitude}`
+        if (loc.latitude && loc.longitude){
+            hasLoc = true;
+            document.getElementById('coordinates').innerText = `Latitude: ${loc.latitude.toFixed(4)} Longitude: ${loc.longitude.toFixed(4)}`
+        } else {
+            console.log("Location undefined");
+            hasLoc = false;
+        }
     }).on('tc', (data) => {
         cdata = data;
         window.requestAnimationFrame(() => {
@@ -143,9 +158,10 @@ function listen(address){
             chart.update(0);
         });
         if (!hasLoc){
-            socket.emit('getLoc');
+            console.log("Requesting location");
+            socket.emit('getloc');
         }
     });
 }
 
-listen('http://localhost:3000/tide');
+listen(API_ENDPOINT);

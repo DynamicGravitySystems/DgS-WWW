@@ -79,6 +79,7 @@ export function initMaterialize(){
     M.Modal.init(document.querySelectorAll('.modal'));
     M.FormSelect.init(document.querySelector('select'));
     M.Carousel.init(document.querySelector('.carousel'), {numVisible: 6, fullWidth: true, indicators: true});
+    M.Tooltip.init(document.querySelectorAll('.tooltipped'));
     return true;
 }
 
