@@ -51,7 +51,7 @@ export function onEmailSubmit(token){
     };
     console.log(payload);
     let http = new XMLHttpRequest();
-    http.open("POST", "https://api.dynamicgravitysystems.com/sendmail", true);
+    http.open("POST", "https://api.dynamicgravitysystems.com/v1/sendmail", true);
     http.onload = function () {
         M.toast({html: "Your message was sent!", displayLength: 4000});
         M.Modal.getInstance(document.querySelector('.modal')).close();
@@ -61,6 +61,7 @@ export function onEmailSubmit(token){
         M.toast({html: "Error sending your message.", displayLength: 4000});
     };
     http.setRequestHeader("Content-type", "application/json");
+    http.setRequestHeader("x-api-key", "07CMXBMMLw4Xo7KPSFY0e38HbVyUlPb58FwFbzgT");
     http.send(JSON.stringify(payload));
 }
 
