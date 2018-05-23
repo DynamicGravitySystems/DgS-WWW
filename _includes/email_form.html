@@ -1,0 +1,67 @@
+<div id="email-modal" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <div class="row">
+            <h5 class="black-text" id="email-modal-title">Send us an email!</h5>
+            <p class="black-text">Please leave us your name, email, organization, and a message and we'll get back to you as soon as possible.</p>
+            <form id="email-form" class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <a href="javascript:void(0);" onclick="copyEmail('email-to')" class="prefix">
+                            <i class="material-icons blue-text">content_copy</i>
+                        </a>
+                        <input disabled id="email-to" type="email" autocomplete="off" value="info@dynamicgravitysystems.com">
+                        <label for="email-to">To:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix blue-text">account_circle</i>
+                        <input id="name-input" type="text" tabindex="1" class="validate user-field" autocomplete="name" required>
+                        <label for="name-input">Name:</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix blue-text">email</i>
+                        <input id="email-input" type="email" tabindex="2" class="validate user-field" autocomplete="email" required>
+                        <label for="email-input" data-error="Invalid Email">Email:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix blue-text">business</i>
+                        <input id="org-input" type="text" tabindex="3" class="validate user-field" autocomplete="organization" required>
+                        <label for="org-input" data-error="Please enter an organization">Organization:</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix blue-text">phone</i>
+                        <input id="tel-input" type="tel" tabindex="4" class="user-field" autocomplete="tel">
+                        <label for="tel-input">Telephone Number:</label>
+                        <span class="helper-text">(Optional) Please enter a telephone number, including country code.</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="subject-input"  placeholder="" type="text" class="validate user-field" tabindex="5" autocomplete="off" required>
+                        <label for="subject-input">Subject:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12" style="margin-bottom: 0px;">
+                        <textarea id="body-input" rows="3" class="materialize-textarea user-field" tabindex="6" autocomplete="off" required></textarea>
+                        <label for="body-input">Message:</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer row">
+        <div id="recaptcha" class="g-recaptcha"
+             data-badge="bottomleft"
+             data-size="invisible">
+        </div>
+        <button class="right modal-action modal-close waves-effect btn">Cancel</button>
+        <button class="right btn" onclick="validate()">
+            Submit
+        </button>
+        <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
+    </div>
+</div>

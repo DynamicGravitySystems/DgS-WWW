@@ -4,32 +4,38 @@ title: Products
 permalink: /products/
 active: true
 ---
+<div id="content" style="position: absolute; top: 400px;"></div>
 <div class="container">
     <div class="row">
         <h3 class="dgs-medium center-align blue-text">{{ page.title }}</h3>
         <div class="col s12">
-            <p class="flow-text">DgS offers a variety of products for your gravity survey needs; from fully integrated
-                airborne and marine dynamic sensor solutions, to portable and static land survey and monitoring sensors.</p>
+            <p class="flow-text">
+                DgS offers a variety of Advanced Technology products for your gravity survey needs; from fully integrated
+                airborne and marine dynamic sensor solutions, to portable and static land survey and monitoring sensors.
+            </p>
         </div>
     </div>
     {%- assign count = 0 -%}
-    {%- for product in site.data.products.products -%}
+    {%- for key in site.data.products -%}
+    {%- assign name = key[0] -%}
+    {%- assign product = key[1] -%}
     {% capture mod %}{{ counter | modulo: 2}}{% endcapture %}
+    {% capture link %}{{ product.link }}#{{ product.anchor }}{% endcapture %}
     {% if mod == '0' %}
     <div class="row">
     {% endif %}
-        <div class="col s6 m6 l6">
+        <div class="col s6">
             <div class="card">
                 <div class="card-content" style="border-bottom: 5px solid {{ product.accent }}; border-radius: 2px 0 0 0">
-                    <span class="card-title">{{ product.name }}</span>
-                    <p>{{ product.content }}</p>
+                    <span class="card-title"><a href="{{ link }}">{{ product.short-title }}</a></span>
+                    <p>{{ product.description }}</p>
                 </div>
                 <div class="card-image">
-                    <img class="materialboxed" src="{{ product.image | prepend: site.data.products.image-base }}">
+                    <a href="{{ link }}"><img class="" src="{{ product.image | prepend: '/assets/products/' }}"></a>
                 </div>
                 <div class="card-action">
-                    <a class="btn modal-trigger" href="#modal-{{ product.anchor }}">More Info</a>
-                    <a class="btn modal-trigger right email-trigger" href="#email-modal">Request a Quote</a>
+                    <a class="btn purple" href="{{ link }}">More Info</a>
+                    <a class="btn modal-trigger purple right email-trigger" href="#email-modal" onclick="setSubject('{{ product.name }}')">Request a Quote</a>
                 </div>
                 <div id="modal-{{ product.anchor }}" class="modal modal-fixed-footer">
                     <div class="modal-content">

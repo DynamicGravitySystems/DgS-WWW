@@ -1,0 +1,125 @@
+{
+  "airborne": {
+    "link": "at1a",
+    "short-title": "Airborne Gravity (AT1A)",
+    "accent": "purple",
+    "anchor": "airborne",
+    "image": "airborne-meter-1.jpg",
+    "description": "Dynamic Gravity Systems Inc. (DgS) presents its airborne gravity survey system, a robust full feedback zero-length spring based gravity meter, with worldwide gravity range of operation.<br>Our new and upgraded systems feature full feedback magnetic damping, redesigned and improved platform control, integrated high-performance, temperature-controlled electronics, and a simplified user-friendly data display and system control interface.",
+    "specifications": {
+      "Gravity Range/Specific Force": "Full World-Wide Range (20,000 mGals)",
+      "Dynamic Range": "+/- 1g",
+      "Sensor Type": "Full-feedback Zero-Length Spring",
+      "Resolution": "0.01 milliGals (mGals)",
+      "Static Repeatability": "0.03 mGals",
+      "Dynamic Repeatability": "0.25 mGal @ 50,00 mGal horizontal<br>0.50 mGal @ 100,000 mGal horizontal<br>0.50 mGal @ 100,000 mGal vertical<br>",
+      "Platform Control": "High performance Fiber Optic Gyros<br>Extended range accelerometers",
+      "Platform Period": "Adjustable - 4 Minutes/8 Minutes/INS Aided",
+      "INS Platform Control": "Integrated",
+      "Data and GPS Recording Frequency": "10Hz",
+      "Dimensions (approximate)": "71(l) x 56(w) x 84(h) cm<br>28(l) x 22(w) x 33(h) inches",
+      "Weight (approximate)": " 80kg /  177lbs<br>+25kg / +55lbs with Uninterruptible Power Supply (UPS)",
+      "Power Consumption": "Avg: 60 Watts<br>Max: 150 Watts<br>Input: 80-265 VAC"
+    },
+    "images": [
+      {
+        "src": "airplane.jpg"
+      },
+      {
+        "src": "airborne-at1m6.jpg",
+        "alt": "AT1M-6 configured for airborne operations"
+      }
+    ]
+  },
+  "marine": {
+    "link": "at1m",
+    "short-title": "Marine Gravity (AT1M)",
+    "accent": "blue",
+    "anchor": "marine",
+    "image": "marine-meter-4.png",
+    "description": "DgS's Marine Gravity Sensor is based on the same Advanced Technology sensor and platform as our Airborne gravity system. Our Marine gravity solution utilizes a similar custom data-display and data collection interface, for easy, robust, and reliable operation.",
+    "specifications": {
+      "Gravity Range/Specific Force": "Full World-Wide Range (20,000 mGals)",
+      "Dynamic Range": "+/- 0.5g",
+      "Sensor Type": "Full-feedback Zero-Length Spring",
+      "Resolution": "0.01 milliGals (mGals)",
+      "Static Repeatability": "0.03 mGals",
+      "Dynamic Repeatability": "0.25 mGal @ 50,00 mGal horizontal<br>0.50 mGal @ 100,000 mGal horizontal<br>0.50 mGal @ 100,000 mGal vertical<br>",
+      "Platform Control": "High performance Fiber Optic Gyros<br>High precision accelerometers",
+      "Platform Period": "Adjustable - 4 Minutes/8 Minutes/INS Aided",
+      "INS Platform Control": "Integrated",
+      "Data and GPS Recording Frequency": "10Hz",
+      "Dimensions (approximate)": "71(l) x 56(w) x 84(h) cm<br>28(l) x 22(w) x 33(h) inches",
+      "Weight (approximate)": " 80kg /  177lbs<br>+25kg / +55lbs with Uninterruptible Power Supply (UPS)",
+      "Power Consumption": "Avg: 60 Watts<br>Max: 150 Watts<br>Input: 80-265 VAC"
+    },
+    "images": [
+      {
+        "src": "marine-sensor-nobg.png",
+        "alt": "Advanced Technology Marine Gravity Sensor",
+        "caption": "AT1M Sensor"
+      },
+      {
+        "src": "marine-meter-side.jpg",
+        "alt": "Side view of Marine frame/platform and sensor.",
+        "caption": "Frame/Platform side view"
+      },
+      {
+        "src": "bgp-explorer.jpg"
+      },
+      {
+        "src": "marine-meter-1.jpg"
+      }
+    ]
+  },
+  "land": {
+    "link": "at1g",
+    "short-title": "Land Gravity (AT1G)",
+    "accent": "#84ed61",
+    "anchor": "land",
+    "image": "land-meter-1.png",
+    "description": "DgS' Introduces its newest Advanced sensor Technology to the latest land gravity meter. Following in the footsteps of the famous LaCoste and Romberg Model G Land Meter, DgS has developed the first worldwide range, full force-feedback land meter using a zero-length spring",
+    "specifications": {
+      "Gravity Range/Specific Force": "Full World-Wide Range (20,000 mGals)",
+      "Sensor Type": "Full-feedback Zero-Length Spring",
+      "Resolution": "0.005 milliGals (mGals)",
+      "Static Repeatability": "0.01 to 0.02 mGals",
+      "Drift Rate": "< 1 mGal/month from factory<br>< 0.5 mGal/month after spring aging",
+      "Data Recording Frequency": "1Hz",
+      "Temperature Range": "-25°C to +45°C",
+      "Dimensions (approximate)": "20(l) x 18(w) x 25(h) cm",
+      "Weight (approximate)": "Sensor and Bettery 4kg<br>+5kg with hard case",
+      "Power Source": "Rechargeable Lithium Battery",
+      "Available Options": "Low temperature environment accessories"
+    },
+    "images": [
+
+    ]
+  },
+  "underwater": {
+    "link": "at1auv",
+    "short-title": "Underwater Gravity (AT1-AUV-M)",
+    "name": "AT1-AUV-M",
+    "accent": "#61ede6",
+    "anchor": "auv",
+    "image": "at-auv-1.png",
+    "description": "Dynamic Gravity Systems has developed the AT1-AUV-M as a low-cost solution for user that that would like to add a dynamic gravity meter for their existing AUV, for underwater marine survey applications. The systems include the Gravity sensor and the electronics necessary for acquiring and storing the Gravity horizontal accelerations, sensor temperature, and other signals. The AT1-AUV-M has very high stability and low drift, with an excellent Clamp / Un-clamp repeatability.",
+    "specifications": {
+      "Gravity Range/Specific Force": "Full World-Wide Range (20,000 mGals)",
+      "Sensor Type": "Full-feedback Zero-Length Spring",
+      "Resolution": "0.005 milliGals (mGals)",
+      "Static Repeatability": "0.01 to 0.02 mGals",
+      "Drift Rate": "< 2 mGal/month from factory<br>< 0.5 mGal/month after aging",
+      "Data Recording Frequency": "1Hz",
+      "Temperature Range": "-25°C to +45°C",
+
+      "Dimensions (approximate)": "20(l) x 18(w) x 25(h) cm",
+      "Weight (approximate)": "Sensor and Bettery 4kg<br>+5kg with hard case",
+      "Power Source": "Rechargeable Lithium Battery",
+      "Available Options": "Low temperature environment accessories"
+    },
+    "images": [
+
+    ]
+  }
+}

@@ -2,11 +2,11 @@
 layout: default
 title: News
 permalink: /news/
-active: false
+active: true
 ---
 <div class="container">
     <div class="row">
-        <h3 class="dgs-heavy center-align blue-text">{{ page.title }}</h3>
+        <h3 class="dgs-medium center-align blue-text">{{ page.title }}</h3>
         <div class="col s12 m10">
         </div>
     </div>
@@ -20,7 +20,7 @@ active: false
             <div class="hide-on-small" id="toc">
                 <ul class="table-of-contents">
                     {%- for post in site.posts -%}
-                    <li><a href="#{{ post.title }}">{{ post.title }}</a></li>
+                    <li><a href="#{{ post.short-title }}">{{ post.short-title }}</a></li>
                     {%- endfor -%}
                 </ul>
             </div>

@@ -3,7 +3,7 @@
 // =================================
 
 $dgs-header-fonts: "Courier New", monospace;
-$p-color: #455a64;
+$dgs-text-primary: #455a64;
 
 
 .rounded {
@@ -19,7 +19,7 @@ $p-color: #455a64;
   border-top: 6px solid #1664c7;
 }
 
-// Sticky footer - sticks footer to bottom of page even when content is short
+// Sticky footer
 body {
   display: flex;
   min-height: 100vh;
@@ -31,7 +31,17 @@ main {
 }
 
 p {
-  color: $p-color;
+  color: $dgs-text-primary;
+}
+em {
+  color: $dgs-text-primary;
+}
+
+ul.li-circle {
+  li {
+    color: $dgs-text-primary;
+    list-style-type: circle !important;
+  }
 }
 
 // Additional Font Modifiers
@@ -47,6 +57,7 @@ p {
 }
 .dgs-medium {
   font-weight: 500;
+  color: $dgs-text-primary;
 }
 .dgs-light {
   font-weight: 400;

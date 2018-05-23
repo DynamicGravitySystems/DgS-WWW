@@ -1,0 +1,9 @@
+{% assign leaf = site.data.products[page.key] %}
+        <h5>Specifications:</h5>
+        <table>
+            {% for key in leaf.specifications -%}
+            <tr>
+                <td>{{ key[0] }}</td><td>{{ key[1] }}</td>
+            </tr>
+            {% endfor %}
+        </table>

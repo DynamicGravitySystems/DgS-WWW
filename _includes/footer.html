@@ -1,79 +1,28 @@
 <footer class="page-footer purple darken-3">
-    <div id="email-modal" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            <div class="row">
-                <h5 class="black-text">Send us an email!</h5>
-                <p class="black-text">Please leave us your name, email-address and a message and we'll get back to you as soon as possible.</p>
-                <form id="email-form" class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <a href="javascript:void(0);" onclick="copyEmail('email-to')" class="prefix">
-                                <i class="material-icons blue-text">content_copy</i>
-                            </a>
-                            <input disabled id="email-to" type="email" autocomplete="off" value="info@dynamicgravitysystems.com">
-                            <label for="email-to">To:</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix blue-text">account_circle</i>
-                            <input id="name-input" type="text" tabindex="1" class="validate" autocomplete="name" required>
-                            <label for="name-input">Name:</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <i class="material-icons prefix blue-text">email</i>
-                            <input id="email-input" type="email" tabindex="2" class="validate" autocomplete="email" required>
-                            <label for="email-input" data-error="Invalid Email">Email:</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input id="subject-input" type="text" class="validate" tabindex="3" required>
-                            <label for="subject-input">Subject:</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12" style="margin-bottom: 0px;">
-                            <textarea id="body-input" rows="3" class="materialize-textarea" tabindex="4" required></textarea>
-                            <label for="body-input">Message:</label>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="modal-footer row">
-            <div id="recaptcha" class="g-recaptcha"
-                 data-badge="bottomleft"
-                 data-size="invisible">
-            </div>
-            <button class="right modal-action modal-close waves-effect btn">Cancel</button>
-            <button class="right btn" onclick="validate()">
-                Submit
-            </button>
-            <script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
-        </div>
-    </div>
+    {%- include email_form.html %}
     <!--Footer Contents-->
     <div class="container">
         <div class="row white-text darken-3" style="margin-bottom: 0;">
             <div class="col s2"><span class="dgs-light">Products</span></div>
-            <div class="col s2"><span class="dgs-light">About Us</span></div>
+            <div class="col s2"><span class="dgs-light">Services</span></div>
             <div class="col s2"><span class="dgs-light">Projects</span></div>
             <div class="col s3"><span class="dgs-light">Contact Us</span></div>
         </div>
         <div class="row">
             <div class="col s2">
                 <ul>
-                    <li><a class="white-text" href="/products#airborne">Airborne</a></li>
-                    <li><a class="white-text" href="/products#marine">Marine</a></li>
-                    <li><a class="white-text" href="/products#land">Land</a></li>
-                    <li><a class="white-text" href="/services">Services</a></li>
+                    {%- for product in site.data.products %}
+                    <li><a class="white-text" href="/products/{{ product[1].link }}#{{ product[1].anchor }}">{{ product[0] | capitalize }}</a></li>
+                    {%- endfor %}
                 </ul>
             </div>
             <div class="col s2">
                 <ul>
-                    <li><a class="white-text" href="/contact">Contacts</a></li>
-                    <li><a class="white-text" href="#">News (Coming Soon)</a></li>
+                    {%- for service in site.services %}
+                    {% if service.active -%}
+                    <li><a class="white-text" href="/services#{{ service.title }}">{{ service.title }}</a></li>
+                    {%- endif %}
+                    {%- endfor -%}
                 </ul>
             </div>
             <div class="col s2">
@@ -86,8 +35,8 @@
             <div class="col s5 m5 l4">
                 <ul>
                     <li>
-                        <a href="#email-modal" class="btn-floating blue pulse modal-trigger email-trigger"><i class="material-icons white-text">email</i></a>
-                        <a href="#email-modal" class="modal-trigger white-text hide-on-med-and-down email-trigger">Email</a>
+                        <a href="#email-modal" class="btn-floating blue pulse modal-trigger email-trigger" onclick="setSubject('')"><i class="material-icons white-text">email</i></a>
+                        <a href="#email-modal" class="modal-trigger white-text hide-on-med-and-down email-trigger" onclick="setSubject('')">Email</a>
                     </li>
                     <li><br></li>
                     <li>
@@ -103,7 +52,7 @@
         <div class="divider"></div>
         <div class="row">
             <span class="left" style="font-size: 0.8em;">
-                Contact: <a href="mailto:info@dynamicgravitysystems.com">info@dynamicgravitysystems.com</a>
+                Email: <a href="mailto:info@dynamicgravitysystems.com">info@dynamicgravitysystems.com</a>
             </span>
             <span class="right" style="font-size: 0.8em;">
                 Copyright &copy; 2016-2018 Dynamic Gravity Systems LLC.<br>
@@ -115,4 +64,9 @@
             <i class="material-icons">arrow_upward</i>
         </a>
     </div>
+    {% if jekyll.environment == "development" -%}
+    <div class="row" style="background-color: orange; margin-bottom: 0;">
+        <h5 class="center-align">Development Build</h5>
+    </div>
+    {% endif -%}
 </footer>
