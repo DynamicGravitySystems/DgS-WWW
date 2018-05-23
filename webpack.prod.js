@@ -8,7 +8,7 @@ module.exports = merge(common, {
         new UglifyJSPlugin(),
         new webpack.DefinePlugin({
            CAPTCHA_KEY: "'6LdaQ00UAAAAALKO6Y8zMJcd8UXfS9C0Aeg5rok0'",
-           API_ENDPOINT: "'https://api.dynamicgravitysystems.com/tide'"
+           API_ENDPOINT: "'https://api2.dynamicgravitysystems.com/tide'"
         })
     ],
     mode: "production"

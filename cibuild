@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# Travis build script for jekyll
-set -e
-
-bundle install
-JEKYLL_ENV=production bundle exec jekyll build
-# bundle exec htmlproofer ./_site --disable-external

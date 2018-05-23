@@ -6,17 +6,17 @@ before_install:
 - node -v
 - npm version
 install:
-- nvm install node 8
+- nvm install 8
 - npm install npm
 - node -v
 - npm install
 - npm run deploy
-before_script:
-- chmod +x ./cibuild
-script: "./cibuild"
+- bundle install
+- bundle exec jekyll build
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - JEKYLL_ENV=production
 deploy:
   - provider: s3
     access_key_id: $AWSKEYID

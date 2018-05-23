@@ -1,6 +1,4 @@
-
-let captchaLoaded = false;
-
+import M from 'materialize-css';
 
 export function copyEmail(id){
     let emailAddr = document.getElementById(id);
@@ -17,17 +15,6 @@ export function copyEmail(id){
     }
 }
 
-function loadCaptcha(){
-    if (!captchaLoaded){
-        console.log("Loading captcha");
-        grecaptcha.render('recaptcha', {
-            'sitekey': CAPTCHA_KEY,
-            'callback': onEmailSubmit
-        });
-        captchaLoaded = true;
-    }
-}
-
 export function validate(){
     const form = document.getElementById("email-form");
     if (form.reportValidity()){
@@ -37,24 +24,34 @@ export function validate(){
         return false;
     }
 }
+
+function resetForm(){
+    document.querySelectorAll('.user-field').forEach(elem => {elem.value = ""});
+}
+
+export function setSubject(subject){
+    const elem = document.getElementById('subject-input');
+    elem.value = subject;
+}
+
 export function onEmailSubmit(token){
-    const fromEmail = document.getElementById('email-input').value;
-    const fromName = document.getElementById('name-input').value;
-    const subject = document.getElementById('subject-input').value;
-    const message = document.getElementById('body-input').value;
     const payload = {
-        from: fromEmail,
-        name: fromName,
-        subject: subject,
-        message: message,
+        from: document.getElementById('email-input').value,
+        name: document.getElementById('name-input').value,
+        organization: document.getElementById('org-input').value,
+        tel: document.getElementById('tel-input').value || 'None Provided',
+        subject: document.getElementById('subject-input').value,
+        message: document.getElementById('body-input').value,
         captcha: token
     };
-    console.log(payload);
+    // console.log(payload);
     let http = new XMLHttpRequest();
     http.open("POST", "https://api.dynamicgravitysystems.com/v1/sendmail", true);
     http.onload = function () {
+        console.log(http.response);
         M.toast({html: "Your message was sent!", displayLength: 4000});
         M.Modal.getInstance(document.querySelector('.modal')).close();
+        resetForm();
     };
     http.onerror = function (ev) {
         console.log(ev);
@@ -65,15 +62,15 @@ export function onEmailSubmit(token){
     http.send(JSON.stringify(payload));
 }
 
-export function initMaterialize(){
+function initMaterialize(){
     M.Slider.init(document.querySelector('.slider'), {
         height: 400,
         full_width: true,
         indicators: true,
         interval: 12000});
     M.Pushpin.init(document.querySelector('#toc'), {
-        top: 750,
-        offset: 64
+        top: 840,
+        offset: 84
     });
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
     M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
@@ -84,8 +81,20 @@ export function initMaterialize(){
     return true;
 }
 
+let captchaLoaded = false;
+function loadCaptcha(){
+    if (!captchaLoaded){
+        grecaptcha.render('recaptcha', {
+            'sitekey': CAPTCHA_KEY,
+            'callback': onEmailSubmit
+        });
+        captchaLoaded = true;
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function(event){
-    // Dynamically load Google Captcha only when the Email button is clicked.
+    initMaterialize();
+    // Dynamically load Google Captcha only when the Email button is clicked for the first time.
     document.querySelectorAll('.email-trigger').forEach(function(element){
         element.addEventListener('click', () => {
             loadCaptcha();
