@@ -3,20 +3,19 @@ sudo: required
 rvm:
   - 2.3.4
 before_install:
-- node -v
-- npm version
-install:
 - nvm install 8
 - npm install npm
 - node -v
+- npm version
+install:
 - npm install
-- npm run deploy
 - bundle install
-- bundle exec jekyll build
+before_script:
+- chmod +x ./build.sh
+script: "./build.sh"
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-  - JEKYLL_ENV=production
 deploy:
   - provider: s3
     access_key_id: $AWSKEYID
@@ -28,7 +27,7 @@ deploy:
     local-dir: _site
     acl: public_read
     on:
-      branch: $DEPLOYPRODBRANCH
+      branch: master
   - provider: s3
     access_key_id: $AWSDEVKEYID
     secret_access_key: $AWSDEVSECRET
@@ -38,4 +37,4 @@ deploy:
     local-dir: _site
     acl: public_read
     on:
-      branch: $DEPLOYDEVBRANCH
+      branch: develop
