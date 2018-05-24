@@ -3,20 +3,20 @@
     <!--Footer Contents-->
     <div class="container">
         <div class="row white-text darken-3" style="margin-bottom: 0;">
-            <div class="col s2"><span class="dgs-light">Products</span></div>
-            <div class="col s2"><span class="dgs-light">Services</span></div>
-            <div class="col s2"><span class="dgs-light">Projects</span></div>
-            <div class="col s3"><span class="dgs-light">Contact Us</span></div>
+            <div class="col s6 m2"><span class="dgs-light">Products</span></div>
+            <div class="col s6 m2"><span class="dgs-light">Services</span></div>
+            <div class="col m3"><span class="dgs-light hide-on-small-only">Projects</span></div>
+            <div class="col m3"><span class="dgs-light hide-on-small-only">Contact Us</span></div>
         </div>
         <div class="row">
-            <div class="col s2">
+            <div class="col s6 m2">
                 <ul>
                     {%- for product in site.data.products %}
                     <li><a class="white-text" href="/products/{{ product[1].link }}#{{ product[1].anchor }}">{{ product[0] | capitalize }}</a></li>
                     {%- endfor %}
                 </ul>
             </div>
-            <div class="col s2">
+            <div class="col s6 m2">
                 <ul>
                     {%- for service in site.services %}
                     {% if service.active -%}
@@ -25,18 +25,19 @@
                     {%- endfor -%}
                 </ul>
             </div>
-            <div class="col s2">
+            <div class="col m3">
                 <ul>
+                    <li class="show-on-small hide-on-med-and-up dgs-light">Projects</li>
                     <li><a class="white-text" href="https://github.com/DynamicGravitySystems" target="_blank" rel="noopener">Github</a></li>
                     <li><a class="white-text" href="https://github.com/DynamicGravitySystems/DGP" target="_blank" rel="noopener">Dynamic Gravity Processor</a></li>
                     <li><a class="white-text" href="https://github.com/bradyzp/LongmanTide" target="_blank" rel="noopener">TideGravity</a></li>
                 </ul>
             </div>
-            <div class="col s5 m5 l4">
-                <ul>
+            <div class="col s1 m5 l3">
+                <ul class="hide-on-small-only">
                     <li>
                         <a href="#email-modal" class="btn-floating blue pulse modal-trigger email-trigger" onclick="setSubject('')"><i class="material-icons white-text">email</i></a>
-                        <a href="#email-modal" class="modal-trigger white-text hide-on-med-and-down email-trigger" onclick="setSubject('')">Email</a>
+                        <a href="#email-modal" class="modal-trigger white-text email-trigger" onclick="setSubject('')">Email</a>
                     </li>
                     <li><br></li>
                     <li>

@@ -1,13 +1,16 @@
 <div class="navbar-fixed" id="top">
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="/" class="brand-logo hide-on-small">
+            <a id="logo-container" href="/" title="DgS Home" class="brand-logo left">
                 <img class="" width="75px" src="/assets/logos/DGS-Logo.png">
             </a>
-            <ul class="hide-on-med-and-down">
-                <li style="margin-left: 85px"><a style="font-weight: 500; font-size: 1.3em;" href="/" class="blue-text">Dynamic Gravity Systems</a></li>
+            <ul class="hide-on-small-only">
+                <li style="margin-left: 85px"><a href="/" title="DgS Home" class="dgs-medium large blue-text">Dynamic Gravity Systems</a></li>
             </ul>
-            <ul class="right">
+            <ul class="hide-on-large-only right">
+                <li><a class="blue-text" title="Menu" onclick="toggleSidenav()"><i class="material-icons">menu</i></a></li>
+            </ul>
+            <ul class="right hide-on-med-and-down">
                 {%- for page in site.pages -%}
                 {%- if page.active -%}
                 <li><a style="font-weight: 500; font-size: 1.2em;" href="{{ page.permalink }}" class="blue-text">{{ page.title }}</a></li>
@@ -17,3 +20,4 @@
         </div>
     </nav>
 </div>
+{% include sidenav.html %}

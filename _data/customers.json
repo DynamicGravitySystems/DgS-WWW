@@ -14,23 +14,23 @@
     "name": "Lamont Doherty Earth Observatory",
     "tagline": "DgS manufactured and provided an Advanced Technology Airborne gravity system, used in LDEO's Antarctic Ice Surveys",
     "logo": "ldeo-logo.gif",
-    "link": "/news/ldeo"
+    "link": "/news/ldeo/"
   },
   {
-    "name": "National Environmental Research Council (UK)",
-    "tagline": "DgS recently manufactured and delivered an Advanced Technology Marine gravity system (upgraded) to the UK's National Environmental Research Council",
+    "name": "Natural Environment Research Council (UK)",
+    "tagline": "DgS recently manufactured and delivered an Advanced Technology Marine gravity system (upgraded) to the UK's Natural Environment Research Council",
     "logo": "nerc-logo.png",
-    "link": "#"
-  },
-  {
-    "name": "British Antarctic Survey",
-    "tagline": "DgS is currently manufacturing an AT1 Marine gravity system for BAS's new research vessel the RSS Sir David Attenborough ",
-    "logo": "bas-logo.png",
     "link": "#"
   },
   {
     "name": "National Geodetic Survey",
     "tagline": "DgS has partnered with the NGS to perform airborne surveys and data processing",
     "logo": "ngs-logo.gif"
+  },
+  {
+    "name": "British Antarctic Survey",
+    "tagline": "DgS is currently manufacturing an AT1 Marine gravity system for BAS's new research vessel the RSS Sir David Attenborough ",
+    "logo": "bas-logo-blk.png",
+    "link": "/news/bas/"
   }
 ]

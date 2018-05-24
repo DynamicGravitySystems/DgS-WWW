@@ -19,7 +19,7 @@ permalink: /
     </p>
     <div class="row">
         <div class="col s4 center">
-            <a href="/products#airborne">
+            <a href="/products/at1a/#content">
                 <i class="large material-icons blue-grey-text text-darken-3">flight</i>
                 <h4 class="center orange-text">Airborne Gravity</h4>
             </a>
@@ -29,7 +29,7 @@ permalink: /
             </p>
         </div>
         <div class="col s4 center">
-            <a href="/products#marine">
+            <a href="/products/at1m/#content">
                 <i class="large material-icons blue-text">directions_boat</i>
                 <h4 class="center orange-text">Marine Gravity</h4>
             </a>
@@ -39,7 +39,7 @@ permalink: /
             </p>
         </div>
         <div class="col s4 center">
-            <a href="/products#land">
+            <a href="/products/at1g/#content">
                 <i class="large material-icons green-text">landscape</i>
                 <h4 class="center orange-text">Land Gravity</h4>
             </a>
@@ -58,14 +58,17 @@ permalink: /
     </div>
     <div class="row">
         {% for customer in site.data.customers %}
-        <div class="col s6 m4 center" style="min-height: 300px;">
-            <img src="{{ customer.logo | prepend: '/assets/logos/'}}" class="responsive-img">
-            <h5 class="center blue-text">{{ customer.name }}</h5>
-            <p class="hide-on-small-and-down">{{ customer.tagline }}</p>
-            {%- if customer.link -%}
-            <a href="{{ customer.link }}">Read More</a>
-            {%- endif -%}
-        </div>
+            <div class="col s12 m6 l4 center" style="min-height: 300px; padding: 0 50px 0 50px;">
+                <div class="row center-block valign-wrapper">
+                    <img src="{{ customer.logo | prepend: '/assets/logos/'}}" class="responsive-img">
+                </div>
+                <div class="row">
+                    <p class="hide-on-med-and-down">{{ customer.tagline }}</p>
+                    {%- if customer.link -%}
+                    <a href="{{ customer.link }}">Read More</a>
+                    {%- endif -%}
+                </div>
+            </div>
         {% endfor %}
     </div>
 </div>

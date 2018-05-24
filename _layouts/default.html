@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {% include head.html %}
 <body>
 {% include nav.html %}
 {% include banner.html %}
+<div id="content" style="position: absolute; top: 400px;"></div>
 <main>
-    {{- content -}}
+    {{ content }}
 </main>
 {% include footer.html -%}
 </body>

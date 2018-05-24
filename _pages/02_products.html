@@ -4,7 +4,6 @@ title: Products
 permalink: /products/
 active: true
 ---
-<div id="content" style="position: absolute; top: 400px;"></div>
 <div class="container">
     <div class="row">
         <h3 class="dgs-medium center-align blue-text">{{ page.title }}</h3>
@@ -17,13 +16,12 @@ active: true
     </div>
     {%- assign count = 0 -%}
     {%- for key in site.data.products -%}
-    {%- assign name = key[0] -%}
     {%- assign product = key[1] -%}
-    {% capture mod %}{{ counter | modulo: 2}}{% endcapture %}
-    {% capture link %}{{ product.link }}#{{ product.anchor }}{% endcapture %}
-    {% if mod == '0' %}
+    {%- capture mod %}{{ counter | modulo: 2}}{% endcapture %}
+    {%- capture link %}{{ product.link }}/#content{% endcapture %}
+    {%- if mod == '0' %}
     <div class="row">
-    {% endif %}
+    {%- endif %}
         <div class="col s6">
             <div class="card">
                 <div class="card-content" style="border-bottom: 5px solid {{ product.accent }}; border-radius: 2px 0 0 0">
@@ -31,58 +29,17 @@ active: true
                     <p>{{ product.description }}</p>
                 </div>
                 <div class="card-image">
-                    <a href="{{ link }}"><img class="" src="{{ product.image | prepend: '/assets/products/' }}"></a>
+                    <a href="{{ link }}"><img class="" src="{{ product.preview-image | prepend: '/assets/products/' }}"></a>
                 </div>
                 <div class="card-action">
                     <a class="btn purple" href="{{ link }}">More Info</a>
                     <a class="btn modal-trigger purple right email-trigger" href="#email-modal" onclick="setSubject('{{ product.name }}')">Request a Quote</a>
                 </div>
-                <div id="modal-{{ product.anchor }}" class="modal modal-fixed-footer">
-                    <div class="modal-content">
-                        <div class="row">
-                            <div class="col s12">
-                                <h4 class="grey-text text-darken-2">{{ product.name }}</h4>
-                                {% if product.details %}
-                                <p>{{ product.details }}</p>
-                                {% else %}
-                                <p>{{ product.content }}</p>
-                                {% endif %}
-                                {%- if product.table %}
-                                <h6 class="center-align">Specifications</h6>
-                                <table class="striped">
-                                    {% if product.tbl_headers %}
-                                    <thead>
-                                    <tr>
-                                        {% for header in product.tbl_headers -%}
-                                        <th>{{ header }}</th>
-                                        {% endfor %}
-                                    </tr>
-                                    </thead>
-                                    {%- endif -%}
-                                    <tbody>
-                                    {% for row in product.tbl_rows -%}
-                                    <tr>
-                                        <td>{{ row[0] }}</td>
-                                        <td>{{ row[1] }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                    </tbody>
-                                </table>
-                                {%- endif -%}
-
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#!" class="modal-action modal-close btn">Close</a>
-                    </div>
-                </div>
             </div>
         </div>
-    {% if mod == '1' %}
+    {%- if mod == '1' %}
     </div>
-    {% endif %}
-    {% capture count %}{% increment counter %}{% endcapture %}
+    {% endif -%}
+    {% capture count %}{% increment counter %}{% endcapture -%}
     {%- endfor -%}
 </div>

@@ -1,10 +1,12 @@
 {
   "airborne": {
     "link": "at1a",
+    "name": "AT1A",
     "short-title": "Airborne Gravity (AT1A)",
     "accent": "purple",
     "anchor": "airborne",
-    "image": "airborne-meter-1.jpg",
+    "preview-image": "airborne-meter-1.jpg",
+    "image": "airborne-meter-2.jpg",
     "description": "Dynamic Gravity Systems Inc. (DgS) presents its airborne gravity survey system, a robust full feedback zero-length spring based gravity meter, with worldwide gravity range of operation.<br>Our new and upgraded systems feature full feedback magnetic damping, redesigned and improved platform control, integrated high-performance, temperature-controlled electronics, and a simplified user-friendly data display and system control interface.",
     "specifications": {
       "Gravity Range/Specific Force": "Full World-Wide Range (20,000 mGals)",
@@ -28,15 +30,20 @@
       {
         "src": "airborne-at1m6.jpg",
         "alt": "AT1M-6 configured for airborne operations"
+      },
+      {
+        "src": "airborne-flight-2.jpg"
       }
     ]
   },
   "marine": {
     "link": "at1m",
+    "name": "AT1M",
     "short-title": "Marine Gravity (AT1M)",
     "accent": "blue",
     "anchor": "marine",
-    "image": "marine-meter-4.png",
+    "preview-image": "marine-meter-4.png",
+    "image": "marine-meter-1.jpg",
     "description": "DgS's Marine Gravity Sensor is based on the same Advanced Technology sensor and platform as our Airborne gravity system. Our Marine gravity solution utilizes a similar custom data-display and data collection interface, for easy, robust, and reliable operation.",
     "specifications": {
       "Gravity Range/Specific Force": "Full World-Wide Range (20,000 mGals)",
@@ -66,9 +73,6 @@
       },
       {
         "src": "bgp-explorer.jpg"
-      },
-      {
-        "src": "marine-meter-1.jpg"
       }
     ]
   },
@@ -77,6 +81,7 @@
     "short-title": "Land Gravity (AT1G)",
     "accent": "#84ed61",
     "anchor": "land",
+    "preview-image": "land-meter-1.png",
     "image": "land-meter-1.png",
     "description": "DgS' Introduces its newest Advanced sensor Technology to the latest land gravity meter. Following in the footsteps of the famous LaCoste and Romberg Model G Land Meter, DgS has developed the first worldwide range, full force-feedback land meter using a zero-length spring",
     "specifications": {
@@ -102,6 +107,7 @@
     "name": "AT1-AUV-M",
     "accent": "#61ede6",
     "anchor": "auv",
+    "preview-image": "at-auv-1.png",
     "image": "at-auv-1.png",
     "description": "Dynamic Gravity Systems has developed the AT1-AUV-M as a low-cost solution for user that that would like to add a dynamic gravity meter for their existing AUV, for underwater marine survey applications. The systems include the Gravity sensor and the electronics necessary for acquiring and storing the Gravity horizontal accelerations, sensor temperature, and other signals. The AT1-AUV-M has very high stability and low drift, with an excellent Clamp / Un-clamp repeatability.",
     "specifications": {

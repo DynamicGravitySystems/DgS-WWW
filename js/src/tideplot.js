@@ -164,4 +164,13 @@ function listen(address){
     });
 }
 
-listen(API_ENDPOINT);
+// Check windows size to see if we should init or not
+window.addEventListener('DOMContentLoaded', function(event){
+    if (window.innerWidth > 900){
+        console.log("Starting tide plot listener");
+        listen(API_ENDPOINT);
+    } else {
+        console.log("Window is too small, plot won't show")
+    }
+});
+

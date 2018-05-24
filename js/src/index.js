@@ -68,17 +68,35 @@ function initMaterialize(){
         full_width: true,
         indicators: true,
         interval: 12000});
-    M.Pushpin.init(document.querySelector('#toc'), {
-        top: 840,
-        offset: 84
-    });
+    // M.Pushpin.init(document.querySelector('#toc'), {
+    //     top: 840,
+    //     offset: 84
+    // });
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
     M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
     M.Modal.init(document.querySelectorAll('.modal'));
     M.FormSelect.init(document.querySelector('select'));
     M.Carousel.init(document.querySelector('.carousel'), {numVisible: 6, fullWidth: true, indicators: true});
     M.Tooltip.init(document.querySelectorAll('.tooltipped'));
+    M.Sidenav.init(document.querySelectorAll('.sidenav'), {});
     return true;
+}
+
+export function setPushpin(top, offset, id){
+    M.Pushpin.init(document.querySelector(id || '#toc'), {
+        top: top || 840,
+        offset: offset || 84
+    });
+}
+
+export function toggleSidenav(){
+    let instance = M.Sidenav.getInstance(document.querySelector('.sidenav'));
+    if (instance.isOpen){
+        instance.close();
+    } else {
+        instance.open();
+    }
+
 }
 
 let captchaLoaded = false;
