@@ -54,7 +54,7 @@ export const vue = new Vue({
             time: '',
             timelocal: ''
         },
-        endpoint: 'http://localhost:5000/v1/tidedelta/',
+        endpoint: API_ENDPOINT,
         query: ``,
         paused: 'Pause'
     },
