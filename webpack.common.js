@@ -4,7 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
     entry: {
         index: './js/src/index.js',
-        tideplot: './js/src/tideplot.js',
+        tideplot: './js/src/tideplot.js'
     },
     module: {
         rules: [
@@ -35,6 +35,6 @@ module.exports = {
     output: {
         filename: '[name].min.js',
         path: path.resolve(__dirname, 'js/dist'),
-        libraryTarget: "this",
+        libraryTarget: "this"
     },
 };
