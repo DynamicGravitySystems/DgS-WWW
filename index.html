@@ -4,17 +4,23 @@ permalink: /
 ---
 <div class="section container row">
     <h1 class="center-align blue-grey-text darken-2">Worldwide Gravity</h1>
-    <h4 class="center-align">Full force-feedback, worldwide-range gravity meters - for airborne, marine, and land survey applications.</h4>
+    <h4 class="center-align">Full force-feedback, worldwide-range gravity meters - for airborne, marine, and land survey
+        applications.</h4>
 
     <p class="flow-text thin">
-        Dynamic Gravity Systems specializes in the manufacture, repair, and servicing of marine and airborne gravity meters.
-        We make advanced technology gravity meters using a full feedback, zero-length spring sensor, which requires no spring
-        tension motor and is more responsive and accurate across the full worldwide range and the dynamic motions experienced
+        Dynamic Gravity Systems specializes in the manufacture, repair, and servicing of marine and airborne gravity
+        meters.
+        We make advanced technology gravity meters using a full feedback, zero-length spring sensor, which requires no
+        spring
+        tension motor and is more responsive and accurate across the full worldwide range and the dynamic motions
+        experienced
         in aircraft and ships.
     </p>
     <p class="flow-text thin">
-        We also repair air damped gravity meters manufactured by Lacoste and Romberg (SeaSys and AirSeaII), ZLS (Ultrasys) and
-        Micro-g Lacoste (AirSeaII) as well as the magnetically damped marine meter and Turnkey Airborne Gravity System (TAGS)
+        We also repair air damped gravity meters manufactured by Lacoste and Romberg (SeaSys and AirSeaII), ZLS
+        (Ultrasys) and
+        Micro-g Lacoste (AirSeaII) as well as the magnetically damped marine meter and Turnkey Airborne Gravity System
+        (TAGS)
         made by Micro-g Lacoste.
     </p>
     <div class="row">
@@ -24,7 +30,8 @@ permalink: /
                 <h4 class="center orange-text">Airborne Gravity</h4>
             </a>
             <p>
-                DgS manufactures a complete airborne gravity survey system, offering world-wide range, magnetically damped
+                DgS manufactures a complete airborne gravity survey system, offering world-wide range, magnetically
+                damped
                 zero-length spring sensors with IMU platform-control integration.
             </p>
         </div>
@@ -35,7 +42,8 @@ permalink: /
             </a>
             <p>
                 DgS manufactures advanced technology Marine gravity sensors and platforms, with world-wide range,
-                magnetically damped sensors with force-feedback beam measurement technology, eliminating the need for a counter-spring.
+                magnetically damped sensors with force-feedback beam measurement technology, eliminating the need for a
+                counter-spring.
             </p>
         </div>
         <div class="col s4 center">
@@ -44,7 +52,8 @@ permalink: /
                 <h4 class="center orange-text">Land Gravity</h4>
             </a>
             <p>
-                Coming Soon: Dynamic Gravity systems presents its forthcoming line of land gravity sensors based on a zero-length spring with
+                Coming Soon: Dynamic Gravity systems presents its forthcoming line of land gravity sensors based on a
+                zero-length spring with
                 our advanced force-feedback technology in a man-portable form factor.
             </p>
         </div>
@@ -53,24 +62,9 @@ permalink: /
         <a class="dgs-medium large blue-text" href="/products">View all products</a>
     </div>
     <div class="divider"></div>
-    <div class="row">
-        <h3 class="dgs-medium center-align blue-grey-text darken-2">Our Customers</h3>
-    </div>
-    <div class="row">
-        {% for customer in site.data.customers %}
-            <div class="col s12 m6 l4 center" style="min-height: 300px; padding: 0 50px 0 50px;">
-                <div class="row center-block valign-wrapper">
-                    <img src="{{ customer.logo | prepend: '/assets/logos/'}}" class="responsive-img">
-                </div>
-                <div class="row">
-                    <p class="hide-on-med-and-down">{{ customer.tagline }}</p>
-                    {%- if customer.link -%}
-                    <a href="{{ customer.link }}">Read More</a>
-                    {%- endif -%}
-                </div>
-            </div>
-        {% endfor %}
-    </div>
+    {%- if jekyll.environment == "development" -%}
+    {% include customers.html %}
+    {%- endif -%}
 </div>
 
 {%- if jekyll.environment == "development" -%}

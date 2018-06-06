@@ -43,13 +43,18 @@ ul.li-circle {
     list-style-type: circle !important;
   }
 }
+ul.list{
+  li {
+    margin-bottom: 8px;
+  }
+}
 
 // Additional Font Modifiers
 .large {
   font-size: 125%;
 }
 .extra-large {
-  font-size: 150%;
+  font-size: 250%;
 }
 .dgs-heavy{
   font-family: $dgs-header-fonts;
@@ -57,7 +62,6 @@ ul.li-circle {
 }
 .dgs-medium {
   font-weight: 500;
-  color: $dgs-text-primary;
 }
 .dgs-light {
   font-weight: 400;

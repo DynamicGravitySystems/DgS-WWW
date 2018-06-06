@@ -1,4 +1,4 @@
-import M from 'materialize-css';
+import M from "materialize-css";
 
 export function copyEmail(id){
     let emailAddr = document.getElementById(id);
@@ -44,9 +44,8 @@ export function onEmailSubmit(token){
         message: document.getElementById('body-input').value,
         captcha: token
     };
-    // console.log(payload);
     let http = new XMLHttpRequest();
-    http.open("POST", "https://api.dynamicgravitysystems.com/v1/sendmail", true);
+    http.open("POST", MSG_ENDPOINT, true);
     http.onload = function () {
         console.log(http.response);
         M.toast({html: "Your message was sent!", displayLength: 4000});
@@ -67,11 +66,8 @@ function initMaterialize(){
         height: 400,
         full_width: true,
         indicators: true,
-        interval: 12000});
-    // M.Pushpin.init(document.querySelector('#toc'), {
-    //     top: 840,
-    //     offset: 84
-    // });
+        interval: 12000
+    });
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
     M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
     M.Modal.init(document.querySelectorAll('.modal'));

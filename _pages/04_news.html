@@ -7,7 +7,7 @@ active: true
 {% assign excerpt_len = 50 %}
 <div class="container">
     <div class="row">
-        <h3 class="dgs-medium center-align blue-text">{{ page.title }}</h3>
+        <h3 class="center-align blue-text extra-large">{{ page.title }}</h3>
         <div class="col s12 m10">
         </div>
     </div>
@@ -16,19 +16,18 @@ active: true
             {%- for post in site.posts -%}
             <div class="card white scrollspy" id="{{ post.short-title }}">
                 <div class="card-content">
-                    <span class="card-title white">
-                        <span class="bold ">{{ post.short-title }}</span>
-                        <span class="right">{{ post.date | date: "%Y-%m-%d %H:%M" }}</span>
-                    </span>
-                    <div class="row">
-                        <span class="dgs-medium large"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
+                    <div class="card-title white">
+                        <span class="bold blue-text"><a href="{{ post.permalink }}">{{ post.short-title }}</a></span>
+                        <span class="right">{{ post.date | date: "%Y-%m-%d" }}</span>
                     </div>
+                    <span class="dgs-medium">{{ post.title }}</span>
+                    <div class="divider"></div><br>
                     <div class="row">
                         <div class="col s8">
                             {{ post.content | truncatewords: excerpt_len }}
                             {% assign wc = post.content | strip_html | split: " " | size %}
                             {% if wc > excerpt_len %}
-                            <br>
+                            <br><br>
                             <a href="{{ post.permalink }}">Read More</a>
                             {% endif %}
                         </div>

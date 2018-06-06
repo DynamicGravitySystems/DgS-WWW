@@ -1,0 +1,20 @@
+<div class="section">
+    <div class="row">
+        <h3 class="dgs-medium center-align blue-grey-text darken-2">Our Customers</h3>
+    </div>
+    <div class="row">
+        {% for customer in site.data.customers %}
+        <div class="col s12 m6 l4 center" style="min-height: 300px; padding: 0 50px 0 50px;">
+            <div class="row center-block valign-wrapper">
+                <img src="{{ customer.logo | prepend: '/assets/logos/'}}" class="responsive-img">
+            </div>
+            <div class="row">
+                <p class="hide-on-med-and-down">{{ customer.tagline }}</p>
+                {%- if customer.link -%}
+                <a href="{{ customer.link }}">Read More</a>
+                {%- endif -%}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
