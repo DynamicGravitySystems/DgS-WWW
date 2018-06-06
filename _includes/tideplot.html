@@ -1,32 +1,42 @@
+<script async defer src="/js/dist/tideplot.min.js"></script>
 <div class="section grey darken-3  hide-on-med-and-down">
     <div id="tide-info-modal" class="modal modal-fixed-footer">
         <div class="modal-content">
             <div class="row">
                 <h4>Tidal Gravity Correction</h4>
                 <p>
-                    When measuring gravity on Earth, we must also take into account the tidal effects of the Sun and Moon
-                    on the reading, as depending on each body's location relative to the surveyor, a positive or negative
-                    gravitational correction must be made to the reading. This effect can be on the order of several hundred
+                    When measuring gravity on Earth, we must also take into account the tidal effects of the Sun and
+                    Moon
+                    on the reading, as depending on each body's location relative to the surveyor, a positive or
+                    negative
+                    gravitational correction must be made to the reading. This effect can be on the order of several
+                    hundred
                     microGals depending on the relative positions of the Sun and Moon.
-                    <br />
-                    The graph shown here displays the total tidal gravity correction (Sun and Moon) at DgS's office location
-                    in Broomfield, CO. The correction is calculated using the method proposed by Ivor M. Longman in his 1959 paper
+                    <br/>
+                    The graph shown here displays the total tidal gravity correction (Sun and Moon) at DgS's office
+                    location
+                    in Broomfield, CO. The correction is calculated using the method proposed by Ivor M. Longman in his
+                    1959 paper
                     <i>Formulas for Computing the Tidal Accelerations Due to the Moon and the Sun.</i>
                 </p>
                 <h5>Usage:</h5>
-                <p>The data displayed here is for informational/demonstration purposes only. As the tidal correction for gravity is
+                <p>The data displayed here is for informational/demonstration purposes only. As the tidal correction for
+                    gravity is
                     location dependent, and the values displayed here are calculated only for our location.
-                    However please feel free to visit our GitHub page and download a copy of the source code from the link below.
-                    <br /><b>Coming soon:</b> We are developing a web-based tool which will allow you to input a location
-                    (latitude/longitude/altitude), and generate a table of tide corrections over a specified time period.
+                    However please feel free to visit our GitHub page and download a copy of the source code from the
+                    link below.
+                    <br/><b>Coming soon:</b> We are developing a web-based tool which will allow you to input a location
+                    (latitude/longitude/altitude), and generate a table of tide corrections over a specified time
+                    period.
                 </p>
                 <p>The calculated correction should be subtracted from the gravity data.</p>
                 <h5>Implementation:</h5>
                 <p>You can view the source code used to compute the tidal correction seen here, on GitHub:
-                    <a href="https://github.com/bradyzp/LongmanTide" target="_blank" rel="noopener">TideGravity</a><br />
-                    If you use Python 3 in your environment, you can also download and install our Tide Gravity library from
+                    <a href="https://github.com/bradyzp/LongmanTide" target="_blank" rel="noopener">TideGravity</a><br/>
+                    If you use Python 3 in your environment, you can also download and install our Tide Gravity library
+                    from
                     the Python Package Index (PyPi) via pip:
-                    <blockquote>pip install tidegravity</blockquote>
+                <blockquote>pip install tidegravity</blockquote>
                 </p>
             </div>
         </div>
@@ -34,23 +44,88 @@
             <button class="modal-action modal-close waves-effect btn">Close</button>
         </div>
     </div>
-    <div class="container show-on-large">
-        <div class="card">
-            <div class="card-content" style="height: 800px;">
-                <div class="center-align card-title" id="tideChartTitle">Tidal Gravity Correction (Broomfield, CO)
-                    <a class="tooltipped right modal-trigger" data-position="right" data-tooltip="Info" href="#tide-info-modal">
-                        <i class="material-icons">info</i>
-                    </a>
+    <!-- Tide Plot Container/App-->
+    <div class="show-on-large">
+        <div id="plot-controls">
+            <div class="row">
+                <div class="col s3">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title center-align">Chart Controls</span>
+                            <form @submit.prevent="updateLoc">
+                                <div class="row">
+                                    <label for="lat">Latitude:</label>
+                                    <input type="text" id="lat" v-model="loc.lat" class="validate" required :pattern="validation">
+                                </div>
+                                <div class="row">
+                                    <label for="lon">Longitude:</label>
+                                    <input type="text" id="lon" v-model="loc.lon" class="validate" required :pattern="validation">
+                                </div>
+                                <div class="row">
+                                    <button class="btn blue" type="submit">Set Location</button>
+                                    <a @click="reset" class="btn blue right" title="Reset"><i class="material-icons white-text">refresh</i></a>
+                                </div>
+                                <h6 class="center-align">Channels</h6>
+                                <div class="row">
+                                    <label>
+                                        <input type="checkbox" id="total" checked="checked" @click="toggleChannel(0)"/>
+                                        <span class="blue-text">Total Correction</span>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <label>
+                                        <input type="checkbox" id="lunar" @click="toggleChannel(1)"/>
+                                        <span class="red-text">Lunar Correction</span>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <label>
+                                        <input type="checkbox" id="solar" @click="toggleChannel(2)"/>
+                                        <span class="orange-text">Solar Correction</span>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="card-title center-align">Current Data</span>
+                            <div class="row center-align">
+                                <div class="brown-text bold" v-html="correction.time">Waiting for Data</div>
+                                <div class="brown-text bold" v-html="correction.timelocal">Waiting for Data</div>
+                            </div>
+                            <div class="row input-field">
+                                <label for="tc-current" class="blue-text">Total Current Correction (mGals):</label>
+                                <input id="tc-current" class="black-text" type="text" disabled placeholder="" :value="correction.total">
+                            </div>
+                            <div class="row input-field">
+                                <label for="lunar-current" class="red-text">Lunar Correction (mGals):</label>
+                                <input id="lunar-current" class="black-text" type="text" disabled placeholder="" :value="correction.lunar">
+                            </div>
+                            <div class="row input-field">
+                                <label for="solar-current" class="orange-text">Solar Correction (mGals):</label>
+                                <input id="solar-current" class="black-text" type="text" disabled placeholder="" :value="correction.solar">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <span class="right" id="coordinates"></span>
-                <canvas id="tideChart">
-                    Graph unavailable.
-                </canvas>
-                <script async defer src="/js/dist/tideplot.min.js"></script>
-            </div>
-            <div class="card-action row">
-                TC: <b><span id="currentTC"></span></b>
-                <span class="right"> Last Data: <span id="currentDate" class=""></span></span>
+                <div class="col s9">
+                    <div class="card">
+                        <div class="card-content" style="height: 800px;">
+                            <div class="center-align card-title" id="tideChartTitle">
+                                <span>Tidal Gravity Correction +/- 12 Hours</span>
+                                <a class="tooltipped right modal-trigger" data-position="left" data-tooltip="Info"
+                                   href="#tide-info-modal">
+                                    <i class="material-icons">info</i>
+                                </a>
+                            </div>
+                            <div class="center dgs-light">5 Minute Resolution</div>
+                            <canvas id="tideChart">
+                                Graph unavailable.
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
