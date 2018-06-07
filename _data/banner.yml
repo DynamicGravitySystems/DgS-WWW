@@ -8,6 +8,9 @@ images:
   - path: /assets/banner/banner2.jpg
     alt-text: Flight operations in Antarctica
     caption:
-    align: right-align
-    top: 50%
-  - path: /assets/banner/banner3.jpg
+    sm_caption: "Flight operations in Antarctica..."
+    link: /news/ldeo/
+    align: left-align
+    top: 68%
+  - path: /assets/banner/banner4.jpg
+    sm_caption: "Airborne flight testing with NGS"

@@ -102,14 +102,14 @@
     ]
   },
   "underwater": {
-    "link": "at1auv",
-    "short-title": "Underwater Gravity (AT1-AUV-M)",
-    "name": "AT1-AUV-M",
+    "link": "at1u",
+    "short-title": "Underwater Gravity (AT1U)",
+    "name": "AT1U",
     "accent": "#61ede6",
     "anchor": "auv",
     "preview-image": "at-auv-1.png",
     "image": "at-auv-1.png",
-    "description": "Dynamic Gravity Systems has developed the AT1-AUV-M as a low-cost solution for user that that would like to add a dynamic gravity meter for their existing AUV, for underwater marine survey applications. The systems include the Gravity sensor and the electronics necessary for acquiring and storing the Gravity horizontal accelerations, sensor temperature, and other signals. The AT1-AUV-M has very high stability and low drift, with an excellent Clamp / Un-clamp repeatability.",
+    "description": "Dynamic Gravity Systems has developed the AT1U as a low-cost solution for user that that would like to add a dynamic gravity meter for their existing AUV, for underwater marine survey applications. The systems include the Gravity sensor and the electronics necessary for acquiring and storing the Gravity horizontal accelerations, sensor temperature, and other signals. The AT1U has very high stability and low drift, with an excellent Clamp / Un-clamp repeatability.",
     "specifications": {
       "Gravity Range/Specific Force": "Full World-Wide Range (20,000 mGals)",
       "Sensor Type": "Full-feedback Zero-Length Spring",

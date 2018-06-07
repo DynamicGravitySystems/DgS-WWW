@@ -61,6 +61,7 @@ export function onEmailSubmit(token){
     http.send(JSON.stringify(payload));
 }
 
+
 function initMaterialize(){
     M.Slider.init(document.querySelector('.slider'), {
         height: 400,
