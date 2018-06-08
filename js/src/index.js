@@ -61,19 +61,18 @@ export function onEmailSubmit(token){
     http.send(JSON.stringify(payload));
 }
 
-
 function initMaterialize(){
     M.Slider.init(document.querySelector('.slider'), {
         height: 400,
         full_width: true,
-        indicators: true,
+        indicators: false,
         interval: 12000
     });
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
     M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
     M.Modal.init(document.querySelectorAll('.modal'));
     M.FormSelect.init(document.querySelector('select'));
-    M.Carousel.init(document.querySelector('.carousel'), {numVisible: 6, fullWidth: true, indicators: true});
+    M.Carousel.init(document.querySelector('.carousel'), {numVisible: 6, fullWidth: true, indicators: false});
     M.Tooltip.init(document.querySelectorAll('.tooltipped', {position: 'left'}));
     M.Sidenav.init(document.querySelectorAll('.sidenav'), {});
     return true;
