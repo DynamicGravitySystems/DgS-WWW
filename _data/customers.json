@@ -1,13 +1,13 @@
 [
   {
     "name": "Edcon PRJ",
-    "tagline": "Dgs has partnered with Edcon PRJ in joint stuff",
+    "tagline": "",
     "logo": "edcon-logo.jpg",
     "link": "#"
   },
   {
     "name": "BGP China",
-    "tagline": "Words about BGP China go here to make this a little longer and push everything down",
+    "tagline": "",
     "logo": "bgp-logo.jpg"
   },
   {
@@ -19,8 +19,7 @@
   {
     "name": "Natural Environment Research Council (UK)",
     "tagline": "DgS recently manufactured and delivered an Advanced Technology Marine gravity system (upgraded) to the UK's Natural Environment Research Council",
-    "logo": "nerc-logo.png",
-    "link": "#"
+    "logo": "nerc-logo.png"
   },
   {
     "name": "National Geodetic Survey",

@@ -6,7 +6,8 @@ baseurl: ""
 # Build Settings
 sass:
   sass_dir: _sass
-include: ['_pages', '_products']
+  style: compressed
+include: ['_pages', '_products', '_tools']
 exclude: ['assets/images/sources/', 'assets/raw/', 'vendor', 'script/', 'Gemfile', 'Gemfile.lock', '.idea/', 'LICENSE',
           'README.md', 'node_modules/', 'package-lock.json', 'package.json', 'webpack.common.js', 'webpack.dev.js',
           'webpack.prod.js', 'LICENSE-Materialize', 'js/src', 'build.sh', '_config.yml']

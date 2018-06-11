@@ -62,27 +62,24 @@ export function onEmailSubmit(token){
 }
 
 function initMaterialize(){
-    M.Slider.init(document.querySelector('.slider'), {
-        height: 400,
-        full_width: true,
-        indicators: false,
-        interval: 12000
-    });
+    // M.Slider.init(document.querySelector('.slider'), {
+    //     height: 400,
+    //     full_width: true,
+    //     indicators: false,
+    //     interval: 12000
+    // });
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
     M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
     M.Modal.init(document.querySelectorAll('.modal'));
     M.FormSelect.init(document.querySelector('select'));
-    M.Carousel.init(document.querySelector('.carousel'), {numVisible: 6, fullWidth: true, indicators: false});
+    // M.Carousel.init(document.querySelector('.carousel'), {numVisible: 6, fullWidth: true, indicators: false});
     M.Tooltip.init(document.querySelectorAll('.tooltipped', {position: 'left'}));
     M.Sidenav.init(document.querySelectorAll('.sidenav'), {});
-    return true;
-}
-
-export function setPushpin(top, offset, id){
-    M.Pushpin.init(document.querySelector(id || '#toc'), {
-        top: top || 840,
-        offset: offset || 84
+    M.Pushpin.init(document.querySelector('#toc'), {
+        top: 860,
+        offset: 84
     });
+    return true;
 }
 
 export function toggleSidenav(){
@@ -92,7 +89,6 @@ export function toggleSidenav(){
     } else {
         instance.open();
     }
-
 }
 
 let captchaLoaded = false;
@@ -106,12 +102,10 @@ function loadCaptcha(){
     }
 }
 
-document.addEventListener("DOMContentLoaded", function(event){
-    initMaterialize();
-    // Dynamically load Google Captcha only when the Email button is clicked for the first time.
-    document.querySelectorAll('.email-trigger').forEach(function(element){
-        element.addEventListener('click', () => {
-            loadCaptcha();
-        })
+initMaterialize();
+// Dynamically load Google Captcha only when the Email button is clicked for the first time.
+document.querySelectorAll('.email-trigger').forEach(function(element){
+    element.addEventListener('click', () => {
+        loadCaptcha();
     })
 });

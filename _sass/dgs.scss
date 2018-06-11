@@ -32,6 +32,7 @@ main {
 
 p {
   //color: $dgs-text-primary;
+  font-size: 115%;
 }
 em {
   color: $dgs-text-primary;
@@ -66,6 +67,13 @@ ul.list{
 .dgs-light {
   font-weight: 400;
   font-size: 1.2em;
+}
+
+.banner {
+  height: 375px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image ease-in-out .5s;
 }
 
 .carousel {

@@ -6,7 +6,7 @@
         {% for customer in site.data.customers %}
         <div class="col s12 m6 l4 center" style="min-height: 300px; padding: 0 50px 0 50px;">
             <div class="row center-block valign-wrapper">
-                <img src="{{ customer.logo | prepend: '/assets/logos/'}}" class="responsive-img">
+                <img src="{{ customer.logo | prepend: '/assets/logos/'}}" alt="{{ customer.name }}" class="responsive-img">
             </div>
             <div class="row">
                 <p class="hide-on-med-and-down">{{ customer.tagline }}</p>

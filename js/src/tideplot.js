@@ -1,5 +1,4 @@
 'use strict';
-
 import Chart from 'chart.js';
 import annotation from 'chartjs-plugin-annotation';
 import moment from 'moment';
@@ -31,9 +30,13 @@ Storage.prototype.getObject = function (key) {
 };
 
 const validator = /^[+-]?\d{1,3}\.?\d*$/;
-// validator.exec()
 
-// TODO: Validate lat/lon input is number
+const channel_idx = {
+    total: 0,
+    lunar: 1,
+    solar: 2
+};
+
 export const vue = new Vue({
     el: '#plot-controls',
     data: {
@@ -78,15 +81,22 @@ export const vue = new Vue({
             this.loc.lat = 39.9092;
             this.loc.lon = -105.0748;
             this.updateLoc();
-
         },
         pause() {
             console.log("Pausing chart");
             this.paused = 'Resume'
-        },
-        toggleChannel(idx){
-            chart.data.datasets[idx].hidden = !chart.data.datasets[idx].hidden;
-            chart.update();
+        }
+    },
+    watch: {
+        channel: {
+            handler: function () {
+                Object.entries(this.channel).forEach(([key, value]) => {
+                   let idx = channel_idx[key];
+                   chart.data.datasets[idx].hidden = !value;
+                });
+                chart.update();
+            },
+            deep: true
         }
     },
     created: function () {
@@ -94,8 +104,13 @@ export const vue = new Vue({
         if(meta){
             this.loc.lat = meta.latitude;
             this.loc.lon = meta.longitude;
+            // this.channel = meta.channel;
         } else {
-            localStorage.putObject('tidemeta', {latitude: this.loc.lat, longitude: this.loc.lon});
+            localStorage.putObject('tidemeta', {
+                    latitude: this.loc.lat,
+                    longitude: this.loc.lon,
+                    channels: this.channel
+            });
         }
         this.query = `?lat=${this.loc.lat}&lon=${this.loc.lon}&increment=5min`;
     }
@@ -264,8 +279,6 @@ Chart.prototype.updateSlicer = function() {
         this.annotation.elements['ctime'].options.value = label;
         this.annotation.elements['ctime'].options.label.content = moment.utc(label).format('HH:mm (UTC)');
         this.update(0);
-    } else {
-        console.debug("Index hasn't changed");
     }
 };
 
@@ -328,7 +341,7 @@ function makeChart(id) {
 function fetchData(n = 1440, period=1) {
     return new Promise((resolve, reject) => {
         let request = vue.endpoint + vue.query + `&n=${n}&delta=${(n / 2) * period}`;
-        console.log(`Fetching data with query: ${request}`);
+        // console.debug(`Fetching data with query: ${request}`);
         fetch(request).then(data => {
             return resolve(data.json());
         }).catch(err => {
@@ -337,9 +350,8 @@ function fetchData(n = 1440, period=1) {
     })
 }
 
-const jitter = 300;
+const jitter = 500;
 function updatePlot() {
-    console.log("Running update");
     let lastData = moment.utc(chart.data.labels.slice(-1)[0]);
     if(lastData.isBefore(moment.utc())){
         console.log("Ran out of data, requesting more");
@@ -347,7 +359,6 @@ function updatePlot() {
     } else {
         chart.updateSlicer();
         let delta = moment.utc(chart.data.labels[chart.cindex+1]).diff(moment.utc());
-        console.log("Setting new timeout to: " + delta);
         updateInterval = setTimeout(updatePlot, delta + jitter);
     }
 }
@@ -364,14 +375,12 @@ function restoreChart(){
     } else {
         return false;
     }
-
 }
 
 function plot(clear=false) {
     if (chart === null)
         chart = makeChart('tideChart');
     if(updateInterval){
-        console.debug("Clearing update interval");
         clearInterval(updateInterval);
     }
 
@@ -388,21 +397,6 @@ function plot(clear=false) {
             console.error(err);
         });
     }
-
-    // if(sessionStorage.getObject('tidedata') !== null && !clear){
-    //     let data = sessionStorage.getObject('tidedata');
-    //     // Ensure that cached data has at least 1 hour of current data
-    //     if (moment.utc(data.slice(-1)[0].ts).isAfter(moment().add(1, 'hours'))){
-    //         chart.pushData(data);
-    //         chart.update(0);
-    //         updatePlot();
-    //         return
-    //     } else {
-    //         console.log("New data will be requested");
-    //     }
-    // } else {
-    //     console.log("No local session data available");
-    // }
 }
 
 plot();

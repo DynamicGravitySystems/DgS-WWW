@@ -1,11 +1,11 @@
 <div class="navbar-fixed" id="top">
     <nav class="white" role="navigation">
         <div class="nav-wrapper container">
-            <a id="logo-container" href="/" title="DgS Home" class="brand-logo left">
-                <img class="" width="75px" src="/assets/logos/DGS-Logo.png">
+            <a id="logo-container" href="/" title="DgS Home" name="DgS Homepage" class="brand-logo left">
+                <img class="" width="75px" alt="Dynamic Gravity Systems" src="/assets/logos/DGS-Logo.png">
             </a>
             <ul class="hide-on-small-only">
-                <li style="margin-left: 85px"><a href="/" title="DgS Home" class="dgs-medium large blue-text">Dynamic Gravity Systems</a></li>
+                <li style="margin-left: 85px"><a href="/" title="DgS Home" name="DgS Homepage" class="dgs-medium large blue-text">Dynamic Gravity Systems</a></li>
             </ul>
             <ul class="hide-on-large-only right">
                 <li><a class="blue-text" title="Menu" onclick="toggleSidenav()"><i class="material-icons">menu</i></a></li>
@@ -20,4 +20,4 @@
         </div>
     </nav>
 </div>
-{% include sidenav.html %}
+{%- include sidenav.html -%}

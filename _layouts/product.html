@@ -4,12 +4,14 @@
 <body>
 {% include nav.html %}
 {% include banner.html %}
-<div id="content" style="position: absolute; top: 400px;"></div>
+<div id="content" style="position: absolute; top: 375px;"></div>
 <main>
     {% assign leaf = site.data.products[page.key] -%}
     <div class="container">
-        <a class="btn purple" href="/products/#content">Back to Products</a>
-        <a class="right btn purple modal-trigger email-trigger" href="#email-modal" onclick="setSubject('{{ page.subject }}')">Request a Quote</a>
+        <div class="row" style="margin-top: 5px;">
+            <a class="btn purple" href="/products/#content">Back to Products</a>
+            <a class="right btn purple modal-trigger email-trigger" href="#email-modal" onclick="setSubject('{{ page.subject }}')">Request a Quote</a>
+        </div>
         <div class="row">
             <h4 class="dgs-medium">{{ page.title }}</h4>
         </div>

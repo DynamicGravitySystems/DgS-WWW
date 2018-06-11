@@ -9,11 +9,11 @@
             </div>
         </div>
     </li>
-    {% for page in site.pages %}
-    {% if page.active %}
+    {%- for page in site.pages -%}
+    {%- if page.active %}
     <li><a href="{{ page.permalink }}" class="blue-text" style="font-size: 1.2em">{{ page.title }}</a></li>
-    {% endif %}
-    {% endfor %}
+    {%- endif -%}
+    {%- endfor -%}
     <li class="center large">Contact Us</li>
     <li><a href="mailto: info@dynamicgravitysystems.com">info@dynamicgravitysystems.com</a></li>
     <li><a href="tel: +13038156376">+1 (303) 815-6376</a></li>

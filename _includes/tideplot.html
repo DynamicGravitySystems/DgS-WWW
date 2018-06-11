@@ -1,4 +1,13 @@
-<script async defer src="/js/dist/tideplot.min.js"></script>
+<script>
+    if (screen && screen.width > 480){
+        let tide = document.createElement('script');
+        tide.async = true;
+        tide.defer = true;
+        tide.src = '/js/dist/tideplot.min.js';
+        const s0 = document.getElementsByTagName('script')[0];
+        s0.parentNode.insertBefore(tide, s0);
+    }
+</script>
 <div class="section grey darken-3  hide-on-med-and-down">
     <div id="tide-info-modal" class="modal modal-fixed-footer">
         <div class="modal-content">
@@ -68,19 +77,19 @@
                                 <h6 class="center-align">Channels</h6>
                                 <div class="row">
                                     <label>
-                                        <input type="checkbox" id="total" checked="checked" @click="toggleChannel(0)"/>
+                                        <input type="checkbox" id="total" v-model="channel.total"/>
                                         <span class="blue-text">Total Correction</span>
                                     </label>
                                 </div>
                                 <div class="row">
                                     <label>
-                                        <input type="checkbox" id="lunar" @click="toggleChannel(1)"/>
+                                        <input type="checkbox" id="lunar" v-model="channel.lunar"/>
                                         <span class="red-text">Lunar Correction</span>
                                     </label>
                                 </div>
                                 <div class="row">
                                     <label>
-                                        <input type="checkbox" id="solar" @click="toggleChannel(2)"/>
+                                        <input type="checkbox" id="solar" v-model="channel.solar"/>
                                         <span class="orange-text">Solar Correction</span>
                                     </label>
                                 </div>
