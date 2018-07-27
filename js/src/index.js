@@ -17,12 +17,13 @@ export function copyEmail(id){
 
 export function validate(){
     const form = document.getElementById("email-form");
-    if (form.reportValidity()){
-        grecaptcha.reset();
-        grecaptcha.execute();
-    } else {
-        return false;
-    }
+    return form.reportValidity();
+    // if (form.reportValidity()){
+    //     grecaptcha.reset();
+    //     grecaptcha.execute();
+    // } else {
+    //     return false;
+    // }
 }
 
 function resetForm(){
@@ -31,10 +32,14 @@ function resetForm(){
 
 export function setSubject(subject){
     const elem = document.getElementById('subject-input');
-    elem.value = subject;
+    elem.value = subject || '';
 }
 
 export function onEmailSubmit(token){
+    if (!validate()){
+        M.toast({html: "Invalid form input"});
+        return;
+    }
     const payload = {
         from: document.getElementById('email-input').value,
         name: document.getElementById('name-input').value,
@@ -62,12 +67,6 @@ export function onEmailSubmit(token){
 }
 
 function initMaterialize(){
-    // M.Slider.init(document.querySelector('.slider'), {
-    //     height: 400,
-    //     full_width: true,
-    //     indicators: false,
-    //     interval: 12000
-    // });
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
     M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
     M.Modal.init(document.querySelectorAll('.modal'));
@@ -91,21 +90,21 @@ export function toggleSidenav(){
     }
 }
 
-let captchaLoaded = false;
-function loadCaptcha(){
-    if (!captchaLoaded){
-        grecaptcha.render('recaptcha', {
-            'sitekey': CAPTCHA_KEY,
-            'callback': onEmailSubmit
-        });
-        captchaLoaded = true;
-    }
-}
+// let captchaLoaded = false;
+// function loadCaptcha(){
+//     if (!captchaLoaded){
+//         grecaptcha.render('recaptcha', {
+//             'sitekey': CAPTCHA_KEY,
+//             'callback': onEmailSubmit
+//         });
+//         captchaLoaded = true;
+//     }
+// }
 
 initMaterialize();
 // Dynamically load Google Captcha only when the Email button is clicked for the first time.
-document.querySelectorAll('.email-trigger').forEach(function(element){
-    element.addEventListener('click', () => {
-        loadCaptcha();
-    })
-});
+// document.querySelectorAll('.email-trigger').forEach(function(element){
+//     element.addEventListener('click', () => {
+//         loadCaptcha();
+//     })
+// });

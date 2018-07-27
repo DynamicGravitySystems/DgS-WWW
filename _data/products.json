@@ -69,7 +69,7 @@
       {
         "src": "marine-meter-side.jpg",
         "alt": "Side view of Marine frame/platform and sensor.",
-        "caption": "Frame/Platform side view"
+        "caption": "Marine Frame/Platform"
       },
       {
         "src": "bgp-explorer.jpg"
@@ -79,6 +79,7 @@
   "land": {
     "link": "at1g",
     "short-title": "Land Gravity (AT1G)",
+    "name": "AT1G",
     "accent": "#84ed61",
     "anchor": "land",
     "preview-image": "land-meter-2.jpg",

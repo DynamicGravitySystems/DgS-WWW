@@ -2,8 +2,7 @@
   {
     "name": "Edcon PRJ",
     "tagline": "",
-    "logo": "edcon-logo.jpg",
-    "link": "#"
+    "logo": "edcon-logo.jpg"
   },
   {
     "name": "BGP China",
@@ -17,6 +16,12 @@
     "link": "/news/ldeo/"
   },
   {
+    "name": "British Antarctic Survey",
+    "tagline": "DgS is currently manufacturing an AT1 Marine gravity system for BAS's new research vessel the RSS Sir David Attenborough ",
+    "logo": "bas-logo-blk.png",
+    "link": "/news/bas/"
+  },
+  {
     "name": "Natural Environment Research Council (UK)",
     "tagline": "DgS recently manufactured and delivered an Advanced Technology Marine gravity system (upgraded) to the UK's Natural Environment Research Council",
     "logo": "nerc-logo.png"
@@ -25,11 +30,5 @@
     "name": "National Geodetic Survey",
     "tagline": "DgS has partnered with the NGS to perform airborne surveys and data processing",
     "logo": "ngs-logo.gif"
-  },
-  {
-    "name": "British Antarctic Survey",
-    "tagline": "DgS is currently manufacturing an AT1 Marine gravity system for BAS's new research vessel the RSS Sir David Attenborough ",
-    "logo": "bas-logo-blk.png",
-    "link": "/news/bas/"
   }
 ]
