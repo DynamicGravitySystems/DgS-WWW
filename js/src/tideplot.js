@@ -228,11 +228,11 @@ Chart.prototype.pushData = function (data) {
     }
     this.data.labels = [];
     data.forEach(item => {
-        this.data.datasets[0].data.push(item.g0);
+        this.data.datasets[0].data.push(-item.g0);
         if (item.gm)
-            this.data.datasets[1].data.push(item.gm);
+            this.data.datasets[1].data.push(-item.gm);
         if (item.gs)
-            this.data.datasets[2].data.push(item.gs);
+            this.data.datasets[2].data.push(-item.gs);
         this.data.labels.push(item.ts)
     });
     this.options.scales.xAxes[0].time.min = this.data.labels[0];
@@ -388,7 +388,8 @@ function plot(clear=false) {
         console.debug("Restored plot from session data");
     } else {
         console.log("No session data available");
-        fetchData(288, 5).then(list => {
+        // fetchData(288, 5).then(list => {
+        fetchData(1152, 5).then(list => {  // +- 2 Days at 5 minute resolution
             chart.pushData(list);
             chart.update(0);
             sessionStorage.putObject('tidedata', list);
