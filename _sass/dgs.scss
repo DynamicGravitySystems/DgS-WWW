@@ -1,0 +1,85 @@
+// =================================
+// Custom styles for DgS theme
+// =================================
+
+$dgs-header-fonts: "Courier New", monospace;
+$dgs-text-primary: #455a64;
+
+
+.rounded {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.accent-border-purple {
+  border-top: 6px solid #5a1e96;
+}
+.accent-border-blue{
+  border-top: 6px solid #1664c7;
+}
+
+// Sticky footer
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+p {
+  //color: $dgs-text-primary;
+  font-size: 115%;
+}
+em {
+  color: $dgs-text-primary;
+}
+
+ul.li-circle {
+  li {
+    //color: $dgs-text-primary;
+    list-style-type: circle !important;
+  }
+}
+ul.list{
+  li {
+    margin-bottom: 8px;
+  }
+}
+
+// Additional Font Modifiers
+.large {
+  font-size: 125%;
+}
+.extra-large {
+  font-size: 250%;
+}
+.dgs-heavy{
+  font-family: $dgs-header-fonts;
+  font-weight: 800;
+}
+.dgs-medium {
+  font-weight: 500;
+}
+.dgs-light {
+  font-weight: 400;
+  font-size: 1.2em;
+}
+
+.banner {
+  height: 375px;
+  background-size: cover;
+  background-position: center;
+  transition: background-image ease-in-out .5s;
+}
+
+.carousel {
+  min-height: 800px;
+}
+
+.carousel-item {
+  width: 400px !important;
+}

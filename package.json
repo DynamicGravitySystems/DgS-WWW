@@ -1,35 +1,43 @@
 {
-  "name": "dgs-web",
+  "name": "dgs-www",
   "sideEffects": false,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "DgS Public Website",
   "private": true,
   "dependencies": {
     "chart.js": "^2.7.2",
+    "chartjs-plugin-annotation": "^0.5.7",
+    "materialize-css": "^1.0.0-rc.1",
     "moment": "^2.22.1",
-    "npm": "^5.8.0",
-    "socket.io-client": "^2.0.4"
+    "vue": "^2.5.16",
+    "vue-loader": "^15.2.2"
   },
   "devDependencies": {
+    "babel-loader": "^7.1.4",
+    "css-loader": "^0.28.11",
+    "npm": "^5.8.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "vue-template-loader": "^0.4.1",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
     "webpack-merge": "^4.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode development --config webpack.dev.js",
+    "build": "webpack --config webpack.dev.js",
     "deploy": "webpack --config webpack.prod.js",
     "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DynamicGravitySystems/dgs-static-web.git"
+    "url": "git+https://github.com/DynamicGravitySystems/DgS-WWW.git"
   },
   "author": "Zachery Brady",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/DynamicGravitySystems/dgs-static-web/issues"
+    "url": "https://github.com/DynamicGravitySystems/DgS-WWW/issues"
   },
-  "homepage": "https://github.com/DynamicGravitySystems/dgs-static-web#readme"
+  "homepage": "https://github.com/DynamicGravitySystems/DgS-WWW#readme"
 }

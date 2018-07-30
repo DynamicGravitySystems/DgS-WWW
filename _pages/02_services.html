@@ -6,48 +6,61 @@ active: true
 ---
 <div class="container">
     <div class="row">
-        <h3 class="dgs-heavy center-align blue-text">{{ page.title }}</h3>
+        <h3 class="center-align blue-text">{{ page.title }}</h3>
         <div class="col s12">
             <p class="flow-text">
                 Dynamic Gravity Systems offers a variety of repair, upgrade, and training services. We can perform
-                repairs on our own products, as well as Microg-Lacoste TAGS systems, either at our location, or on-site
-                at yours.
+                repairs and upgrades on zero-length spring based gravity meters from Micro-g Lacoste (MgL) and ZLS.
                 <br><br>
-                We also offer upgraded Control Modules for TAGS systems, with upgrade electronics and control
-                software, which are drop-in replacements for the original control modules.
+                We also build new, replacement Control Modules for MgL AirSeaII Systems with upgraded electronics and
+                performance. These are a direct replacement for old AirSeaII control modules.
             </p>
         </div>
     </div>
     <div class="row">
         <div class="col s12 m10">
             {%- for service in site.services -%}
-            <div class="card grey lighten-4 scrollspy accent-border-blue" id="{{ service.title }}">
-                <div class="card-content">
+            {% if service.active %}
+            <div class="card horizontal scrollspy" id="{{ service.title }}">
+                {% if service.pos == 'left' and service.image %}
+                <div class="card-image hide-on-med-and-down">
+                    <img class="" src="{{ service.image | prepend: '/assets/services/' }}">
+                </div>
+                {% endif %}
+                <div class="card-stacked">
+                    <div class="card-content">
                     <span class="card-title">
-                        <span class="grey-text text-darken-3 large">{{ service.title }}</span>
+                        <span class="blue-text large">{{ service.title }}</span>
                     </span>
-                    <div class="row">
-                        <div class="col s7 m9 l9">
+                        <div class="row">
                             {{ service.content }}
                         </div>
-                        {%- if service.image -%}
-                        <div class="col s5 m3 l3">
-                            <img class="materialboxed responsive-img rounded" src="{{ service.image | prepend: '/assets/services/'}}">
-                        </div>
-                        {%- endif -%}
+                    </div>
+                    <div class="card-action">
+                        <a class="btn modal-trigger purple email-trigger" href="#email-modal"
+                           onclick="setSubject('{{ service.subject }}')">Contact Us</a>
                     </div>
                 </div>
+                {% if service.pos != 'left' and service.image %}
+                <div class="card-image hide-on-med-and-down">
+                    <img class="" src="{{ service.image | prepend: '/assets/services/' }}">
+                </div>
+                {% endif %}
             </div>
+            {% endif %}
             {%- endfor -%}
         </div>
         <div class="col hide-on-small-only s0 m2 l2">
             <div class="hide-on-small" id="toc">
                 <ul class="table-of-contents">
                     {%- for service in site.services -%}
+                    {%- if service.active -%}
                     <li><a href="#{{ service.title }}">{{ service.title }}</a></li>
+                    {%- endif -%}
                     {%- endfor -%}
                 </ul>
             </div>
         </div>
     </div>
+    <div class="row" style="height: 250px;"></div>
 </div>

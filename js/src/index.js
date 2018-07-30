@@ -1,6 +1,4 @@
-
-let captchaLoaded = false;
-
+import M from "materialize-css";
 
 export function copyEmail(id){
     let emailAddr = document.getElementById(id);
@@ -17,77 +15,96 @@ export function copyEmail(id){
     }
 }
 
-function loadCaptcha(){
-    if (!captchaLoaded){
-        console.log("Loading captcha");
-        grecaptcha.render('recaptcha', {
-            'sitekey': CAPTCHA_KEY,
-            'callback': onEmailSubmit
-        });
-        captchaLoaded = true;
-    }
-}
-
 export function validate(){
     const form = document.getElementById("email-form");
-    if (form.reportValidity()){
-        grecaptcha.reset();
-        grecaptcha.execute();
-    } else {
-        return false;
-    }
+    return form.reportValidity();
+    // if (form.reportValidity()){
+    //     grecaptcha.reset();
+    //     grecaptcha.execute();
+    // } else {
+    //     return false;
+    // }
 }
+
+function resetForm(){
+    document.querySelectorAll('.user-field').forEach(elem => {elem.value = ""});
+}
+
+export function setSubject(subject){
+    const elem = document.getElementById('subject-input');
+    elem.value = subject || '';
+}
+
 export function onEmailSubmit(token){
-    const fromEmail = document.getElementById('email-input').value;
-    const fromName = document.getElementById('name-input').value;
-    const subject = document.getElementById('subject-input').value;
-    const message = document.getElementById('body-input').value;
+    if (!validate()){
+        M.toast({html: "Invalid form input"});
+        return;
+    }
     const payload = {
-        from: fromEmail,
-        name: fromName,
-        subject: subject,
-        message: message,
+        from: document.getElementById('email-input').value,
+        name: document.getElementById('name-input').value,
+        organization: document.getElementById('org-input').value,
+        tel: document.getElementById('tel-input').value || 'None Provided',
+        subject: document.getElementById('subject-input').value,
+        message: document.getElementById('body-input').value,
         captcha: token
     };
-    console.log(payload);
     let http = new XMLHttpRequest();
-    http.open("POST", "https://api.dynamicgravitysystems.com/sendmail", true);
+    http.open("POST", MSG_ENDPOINT, true);
     http.onload = function () {
+        console.log(http.response);
         M.toast({html: "Your message was sent!", displayLength: 4000});
         M.Modal.getInstance(document.querySelector('.modal')).close();
+        resetForm();
     };
     http.onerror = function (ev) {
         console.log(ev);
         M.toast({html: "Error sending your message.", displayLength: 4000});
     };
     http.setRequestHeader("Content-type", "application/json");
+    http.setRequestHeader("x-api-key", "07CMXBMMLw4Xo7KPSFY0e38HbVyUlPb58FwFbzgT");
     http.send(JSON.stringify(payload));
 }
 
-export function initMaterialize(){
-    M.Slider.init(document.querySelector('.slider'), {
-        height: 400,
-        full_width: true,
-        indicators: true,
-        interval: 12000});
-    M.Pushpin.init(document.querySelector('#toc'), {
-        top: 750,
-        offset: 64
-    });
+function initMaterialize(){
     M.Materialbox.init(document.querySelectorAll('.materialboxed'));
     M.ScrollSpy.init(document.querySelectorAll('.scrollspy'));
     M.Modal.init(document.querySelectorAll('.modal'));
     M.FormSelect.init(document.querySelector('select'));
-    M.Carousel.init(document.querySelector('.carousel'), {numVisible: 6, fullWidth: true, indicators: true});
-    M.Tooltip.init(document.querySelectorAll('.tooltipped'));
+    // M.Carousel.init(document.querySelector('.carousel'), {numVisible: 6, fullWidth: true, indicators: false});
+    M.Tooltip.init(document.querySelectorAll('.tooltipped', {position: 'left'}));
+    M.Sidenav.init(document.querySelectorAll('.sidenav'), {});
+    M.Pushpin.init(document.querySelector('#toc'), {
+        top: 860,
+        offset: 84
+    });
     return true;
 }
 
-document.addEventListener("DOMContentLoaded", function(event){
-    // Dynamically load Google Captcha only when the Email button is clicked.
-    document.querySelectorAll('.email-trigger').forEach(function(element){
-        element.addEventListener('click', () => {
-            loadCaptcha();
-        })
-    })
-});
+export function toggleSidenav(){
+    let instance = M.Sidenav.getInstance(document.querySelector('.sidenav'));
+    if (instance.isOpen){
+        instance.close();
+    } else {
+        instance.open();
+    }
+}
+
+// let captchaLoaded = false;
+// function loadCaptcha(){
+//     if (!captchaLoaded){
+//         grecaptcha.render('recaptcha', {
+//             'sitekey': CAPTCHA_KEY,
+//             'callback': onEmailSubmit
+//         });
+//         captchaLoaded = true;
+//     }
+// }
+
+initMaterialize();
+// Dynamically load Google Captcha only when the Email button is clicked for the first time.
+// document.querySelectorAll('.email-trigger').forEach(function(element){
+//     element.addEventListener('click', () => {
+//         loadCaptcha();
+//     })
+// });
