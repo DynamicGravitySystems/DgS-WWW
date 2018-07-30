@@ -27,14 +27,14 @@ active: true
                 <div class="card-content">
                     <span class="card-title center"><a class="large" style="font-weight: 400" href="{{ link }}">{{ product.short-title }}</a></span>
                     <p>
-                        {{ product.description | truncatewords: 26 }}
+                        {{ product.description | truncatewords: 25 }}
                         <a href="{{ link }}">Read more</a>
                     </p>
                 </div>
                 <div class="card-image">
                     <a href="{{ link }}"><img class="" src="{{ product.preview-image | prepend: '/assets/products/' }}"></a>
                 </div>
-                <div class="card-action hide-on-small-only">
+                <div class="card-action hide-on-med-and-down">
                     <a class="btn purple" href="{{ link }}">More Info</a>
                     <a class="btn modal-trigger purple right email-trigger" href="#email-modal" onclick="setSubject('{{ product.name }}')">Request a Quote</a>
                 </div>
