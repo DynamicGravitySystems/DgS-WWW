@@ -22,7 +22,7 @@ active: true
     {%- if mod == '0' %}
     <div class="row">
     {%- endif %}
-        <div class="col s6">
+        <div class="col s12 m6">
             <div class="card">
                 <div class="card-content">
                     <span class="card-title center"><a class="large" style="font-weight: 400" href="{{ link }}">{{ product.short-title }}</a></span>
@@ -32,7 +32,9 @@ active: true
                     </p>
                 </div>
                 <div class="card-image">
-                    <a href="{{ link }}"><img class="" src="{{ product.preview-image | prepend: '/assets/products/' }}"></a>
+                    <a href="{{ link }}" name="{{ product.name }}">
+                        <img class="" src="{{ product.preview-image | prepend: '/assets/products/' }}" alt="{{ product.short-title }}">
+                    </a>
                 </div>
                 <div class="card-action hide-on-med-and-down">
                     <a class="btn purple" href="{{ link }}">More Info</a>

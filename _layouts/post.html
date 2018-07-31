@@ -15,10 +15,18 @@
                 <span class="right">{{ page.date | date: "%Y-%m-%d %H:%M" }}</span>
                 </span>
                 <div class="section row">
-                    <div class="col s8">
+                    <div class="col s12 m8">
                         {{ content }}
+                        {% if page.links %}
+                        <ul>
+                            <li><span class="dgs-medium">See Also:</span></li>
+                            {% for key in page.links %}
+                            <li><a href="{{ key[1] }}" rel="noopener" target="_blank">{{ key[0] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
                     </div>
-                    <div class="col s4">
+                    <div class="col s12 m8">
                         {% if page.image %}
                         <img class="responsive-img rounded" src="{{ page.image | prepend: '/assets/news/' }}">
                         {% endif %}

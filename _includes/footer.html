@@ -5,8 +5,8 @@
         <div class="row white-text darken-3" style="margin-bottom: 0;">
             <div class="col s6 m2"><span class="dgs-light">Products</span></div>
             <div class="col s6 m2"><span class="dgs-light">Services</span></div>
-            <div class="col m3"><span class="dgs-light hide-on-small-only">Projects</span></div>
-            <div class="col m3"><span class="dgs-light hide-on-small-only"><a class="white-text" href="/about/">About</a></span></div>
+            <div class="col s6 m3"><span class="dgs-light hide-on-small-only">Projects</span></div>
+            <div class="col s6 m3 hide-on-small-only"><span class="dgs-light"></span></div>
         </div>
         <div class="row">
             <div class="col s6 m2">
@@ -25,7 +25,7 @@
                     {%- endfor -%}
                 </ul>
             </div>
-            <div class="col m3">
+            <div class="col s6 m3">
                 <ul>
                     <li class="show-on-small hide-on-med-and-up dgs-light">Projects</li>
                     <li><a class="white-text" href="https://github.com/DynamicGravitySystems" target="_blank" rel="noopener">Github</a></li>
@@ -33,22 +33,23 @@
                     <li><a class="white-text" href="https://github.com/DynamicGravitySystems/LongmanTide" target="_blank" rel="noopener">TideGravity</a></li>
                 </ul>
             </div>
-            <div class="col s1 m5 l3">
-                <span class="dgs-light white-text"><a class="white-text" href="/contact/">Contact Us</a></span>
+            <div class="col s6 m5 l3">
+                <span class="dgs-light show-on-small"><a class="white-text" href="/about/">About</a></span><br>
+                <span class="dgs-light white-text"><a class="white-text" href="/contact/">Contact</a></span>
                 <ul>
                     <li>
                         <a href="#email-modal" class="btn-floating blue pulse modal-trigger email-trigger" onclick="setSubject('')"><i class="material-icons white-text">email</i></a>
-                        <a href="#email-modal" class="modal-trigger white-text email-trigger" onclick="setSubject('')">Email</a>
+                        <a href="#email-modal" class="modal-trigger white-text email-trigger hide-on-small-only" onclick="setSubject('')">Email</a>
                     </li>
                     <li><br></li>
                     <li>
                         <a href="tel: +13038156376" class="btn-floating blue"><i class="material-icons white-text">phone</i></a>
-                        <a href="tel: +13038156376" class="white-text">Call</a>
+                        <a href="tel: +13038156376" class="white-text hide-on-small-only">Call</a>
                     </li>
                 </ul>
             </div>
             <div class="col l2">
-                <a href="/"><img class="right responsive-img hide-on-med-and-down" width="150px" height="150px" src="/assets/logos/DGS-Logo.png"></a><br>
+                <a href="/" name="DgS Homepage"><img class="right responsive-img hide-on-med-and-down" alt="DgS Homepage" src="/assets/logos/DGS-Logo.png"></a><br>
             </div>
         </div>
         <div class="divider"></div>
