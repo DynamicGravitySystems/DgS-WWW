@@ -11,24 +11,26 @@
   },
   {
     "name": "Lamont Doherty Earth Observatory",
-    "tagline": "DgS manufactured and provided an Advanced Technology Airborne gravity system, used in LDEO's Antarctic Ice Surveys",
+    "tagline": "A DgS Airborne gravity system was a major instrument on the Rosetta Project Antarctic Survey",
     "logo": "ldeo-logo.gif",
     "link": "/news/ldeo/"
   },
   {
     "name": "British Antarctic Survey",
-    "tagline": "DgS is currently manufacturing an AT1 Marine gravity system for BAS's new research vessel the RSS Sir David Attenborough ",
+    "tagline": "DgS is currently manufacturing an AT1 Marine gravity system for BAS's new research vessel the RRS Sir David Attenborough ",
     "logo": "bas-logo-blk.png",
     "link": "/news/bas/"
   },
   {
-    "name": "Natural Environment Research Council (UK)",
-    "tagline": "DgS recently manufactured and delivered an Advanced Technology Marine gravity system (upgraded) to the UK's Natural Environment Research Council",
-    "logo": "nerc-logo.png"
+    "name": "Natural Environment Research Council (NOC)",
+    "tagline": "DgS supplies and supports gravity instruments on the NOC (National Oceanography Centre) research vessels RRS Discovery and RRS James Cook",
+    "logo": "noc-logo.png",
+    "ext_link": "http://noc.ac.uk/"
   },
   {
     "name": "National Geodetic Survey",
-    "tagline": "DgS has partnered with the NGS to perform airborne surveys and data processing",
-    "logo": "ngs-logo.gif"
+    "tagline": "Using Airborne Gravity to map the Geoid",
+    "logo": "ngs-logo.gif",
+    "ext_link": "https://www.ngs.noaa.gov/GRAV-D/science.shtml"
   }
 ]
