@@ -17,6 +17,14 @@
                 <div class="section row">
                     <div class="col s8">
                         {{ content }}
+                        {% if page.links %}
+                        <ul>
+                            <li><span class="dgs-medium">See Also:</span></li>
+                            {% for key in page.links %}
+                            <li><a href="{{ key[1] }}" rel="noopener" target="_blank">{{ key[0] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
                     </div>
                     <div class="col s4">
                         {% if page.image %}
