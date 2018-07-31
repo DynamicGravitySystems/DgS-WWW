@@ -9,7 +9,7 @@
                 <img src="{{ customer.logo | prepend: '/assets/logos/'}}" alt="{{ customer.name }}" class="responsive-img">
             </div>
             <div class="row">
-                <p class="hide-on-med-and-down">{{ customer.tagline }}</p>
+                <p>{{ customer.tagline }}</p>
                 {%- if customer.link -%}
                 <a href="{{ customer.link }}">Read More</a>
                 {%- elsif customer.ext_link -%}

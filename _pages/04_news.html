@@ -23,7 +23,7 @@ active: true
                     <span class="dgs-medium">{{ post.title }}</span>
                     <div class="divider"></div><br>
                     <div class="row">
-                        <div class="col s8">
+                        <div class="col s12 m8">
                             {{ post.content | truncatewords: excerpt_len }}
                             {% assign wc = post.content | strip_html | split: " " | size %}
                             {% if wc > excerpt_len %}
@@ -31,7 +31,7 @@ active: true
                             <a href="{{ post.permalink }}">Read More</a>
                             {% endif %}
                         </div>
-                        <div class="col s4">
+                        <div class="col s12 m4">
                             {% if post.image %}
                             <img class="responsive-img rounded" src="{{ post.image | prepend: '/assets/news/' }}">
                             {% endif %}
