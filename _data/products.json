@@ -5,8 +5,8 @@
     "short-title": "Airborne Gravity (AT1A)",
     "accent": "purple",
     "anchor": "airborne",
-    "preview-image": "airborne-meter-1.jpg",
-    "image": "airborne-meter-2.jpg",
+    "preview-image": "airborne-meter-blue.png",
+    "image": "airborne-meter-blue.png",
     "description": "Dynamic Gravity Systems Inc. (DgS) presents its airborne gravity survey system, a robust full feedback zero-length spring based gravity meter, with worldwide gravity range of operation.<br>Our new and upgraded systems feature full feedback magnetic damping, redesigned and improved platform control, integrated high-performance, temperature-controlled electronics, and a simplified user-friendly data display and system control interface.",
     "specifications": {
       "Gravity Range/Specific Force": "Full World-Wide Range (20,000 mGals)",
@@ -112,8 +112,8 @@
     "name": "AT1U",
     "accent": "#61ede6",
     "anchor": "auv",
-    "preview-image": "at-auv-1.png",
-    "image": "at-auv-1.png",
+    "preview-image": "auv-prototype.png",
+    "image": "auv-prototype.png",
     "description": "Dynamic Gravity Systems has developed the AT1U as a low-cost solution for user that that would like to add a dynamic gravity meter for their existing AUV, for underwater marine survey applications. The systems include the Gravity sensor and the electronics necessary for acquiring and storing the Gravity horizontal accelerations, sensor temperature, and other signals. The AT1U has very high stability and low drift, with an excellent Clamp / Un-clamp repeatability.",
     "specifications": {
       "Gravity Range/Specific Force": "Full World-Wide Range (20,000 mGals)",
