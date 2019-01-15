@@ -2,10 +2,10 @@
 layout: default
 title: Contact
 permalink: /contact/
-active: false
+active: true
 ---
 
-<div class="container">
+<div id="contacts" class="container">
     <div class="row">
         <h3 class="center-align blue-text">{{ page.title }}</h3>
     </div>
@@ -15,34 +15,36 @@ active: false
         </div>
     </div>
     <div class="row">
-        <ul class="collection col s12">
-            <li class="collection-item avatar">
-                <img src="/assets/logos/DGS-Logo.png" class="circle">
-                <span class="title dgs-heavy">Nigel Brady</span>
-                <p>Director of Operations and Customer Service<br><br>
-                    nigel@dynamicgravitysystems.com<br>
-                    +1(303) 815-6376<br>
-                    Skype: nige5128
-                </p>
-                <div class="secondary-content">
-                    <a href="mailto:nigel@dynamicgravitysystems.com"><i class="material-icons">email</i></a><br>
-                    <a href="tel:+13038156376"><i class="material-icons">phone</i></a>
+        <div class="col l6 m12 s12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">
+                        <img src="/assets/logos/DGS-Logo.png" class="circle right" height="50px" alt="Dynamic Gravity Systems">
+                        Nigel Brady
+                    </span>
+                    <p>Director of Operations and Customer Service<br><br>
+                        <a href="mailto:nigel@dynamicgravitysystems.com">nigel@dynamicgravitysystems.com</a><br>
+                        +1 (303) 815-6376<br>
+                        Skype: nige5128
+                    </p>
                 </div>
-
-            </li>
-            <li class="collection-item avatar">
-                <img src="/assets/avatars/placeholder.png" class="circle">
-                <span class="title dgs-heavy">Daniel Aliod</span>
-                <p>President & Chief Scientist<br><br>
-                    daniel@dynamicgravitysystems.com<br>
-                    +1 (303) 941-5639
-                </p>
-                <div class="secondary-content">
-                    <a href="mailto:daniel@dynamicgravitysystems.com"><i class="material-icons">email</i></a><br>
-                    <a href="tel:+13039415639"><i class="material-icons">phone</i></a>
+            </div>
+        </div>
+        <div class="col l6 m12 s12">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">
+                        <img src="/assets/logos/DGS-Logo.png" class="circle right" height="50px" alt="Dynamic Gravity Systems">
+                        Daniel Aliod
+                    </span>
+                    <p>President & Chief Scientist<br><br>
+                        <a href="mailto:daniel@dynamicgravitysystems.com">daniel@dynamicgravitysystems.com</a><br />
+                        +1 (303) 941-5639
+                    </p>
                 </div>
-            </li>
-
-        </ul>
+            </div>
+        </div>
     </div>
 </div>
+
+{% include about.html %}
